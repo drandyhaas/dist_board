@@ -3,7 +3,7 @@
 <eagle version="8.7.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
@@ -161,6 +161,8 @@
 <wire x1="80" y1="0" x2="80" y2="80" width="0" layer="20"/>
 <wire x1="80" y1="80" x2="0" y2="80" width="0" layer="20"/>
 <wire x1="0" y1="80" x2="0" y2="0" width="0" layer="20"/>
+<dimension x1="7.4" y1="5.5" x2="12.5" y2="5.5" x3="9.95" y3="4.5" textsize="1.778" layer="1"/>
+<dimension x1="6.6" y1="5.4" x2="8.2" y2="5.4" x3="7.4" y3="6" textsize="1.778" layer="1"/>
 </plain>
 <libraries>
 <library name="Seeed-Connector" urn="urn:adsk.eagle:library:478">
