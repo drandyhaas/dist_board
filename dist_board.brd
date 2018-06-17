@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.1">
+<eagle version="9.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -211,7 +211,7 @@
 Radiall  and M/A COM.&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="BU-SMB-V" urn="urn:adsk.eagle:footprint:6175/1" library_version="1">
+<package name="BU-SMB-V" urn="urn:adsk.eagle:footprint:6175/1" locally_modified="yes" library_version="1" library_locally_modified="yes">
 <description>FEMALE &lt;b&gt;SMB CONNECTOR&lt;/b&gt;&lt;p&gt;
 Radiall&lt;p&gt;
 distributor RS 112-2993</description>
@@ -225,7 +225,7 @@ distributor RS 112-2993</description>
 <wire x1="1" y1="-3.2" x2="-1" y2="-3.2" width="0.2032" layer="21"/>
 <circle x="0" y="0" radius="1.8001" width="0.2032" layer="21"/>
 <circle x="0" y="0" radius="0.3" width="1.016" layer="51"/>
-<pad name="1" x="0" y="0" drill="1.1"/>
+<pad name="1" x="0" y="0" drill="1.4"/>
 <pad name="2" x="-2.54" y="2.54" drill="1.4"/>
 <pad name="3" x="2.54" y="2.54" drill="1.4"/>
 <pad name="4" x="2.54" y="-2.54" drill="1.4"/>
@@ -235,10 +235,13 @@ distributor RS 112-2993</description>
 </package>
 </packages>
 <packages3d>
-<package3d name="BU-SMB-V" urn="urn:adsk.eagle:package:6209/1" type="box" library_version="1">
+<package3d name="BU-SMB-V" urn="urn:adsk.eagle:package:6209/1" locally_modified="yes" type="box" library_version="1" library_locally_modified="yes">
 <description>FEMALE SMB CONNECTOR
 Radiall
 distributor RS 112-2993</description>
+<packageinstances>
+<packageinstance name="BU-SMB-V"/>
+</packageinstances>
 </package3d>
 </packages3d>
 </library>
