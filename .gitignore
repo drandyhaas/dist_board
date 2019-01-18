@@ -1,5 +1,6 @@
 *_firmware/PLLJ_PLLSPE_INFO.txt
-*_firmware/serial1.qws
+*_firmware/*.qws
+*_firmware/*.sopcinfo
 *_firmware/db/
 *_firmware/incremental_db/
 *_firmware/output_files/
