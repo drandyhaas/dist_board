@@ -1,0 +1,50 @@
+module LED_4(
+	input nrst,
+	input clk,
+	inout reg [3:0]led,
+	input coax1,
+	input coax2,
+	output reg coax_out_1
+	);
+	
+	reg [31:0] counter;	
+	reg clk2;
+		
+	always@(posedge clk) begin
+		if(!nrst) begin
+			counter <= 0;
+			clk2 <= 0;
+		end
+		else if (counter == 100000000) begin
+			counter <= 0;
+			clk2 = ~clk2; // posedge once per sec for input of 200 MHz from PLL
+		end
+		else begin
+			counter <= counter + 32'd1;
+			
+			// main trigger code
+			if (coax1 && coax2) begin
+				coax_out_1 = 1;
+			end
+			else begin
+				coax_out_1 = 0;
+			end
+			// -----------------
+			
+		end
+	end
+
+	reg [2:0] ledi;	
+	always@(posedge clk2) begin
+		if(!nrst)
+			led <= 4'd0;
+		else
+			case (ledi)
+		      0:	begin led <= 4'b0001;ledi<=ledi+1; end
+				1:	begin led <= 4'b0010;ledi<=ledi+1; end
+				2:	begin led <= 4'b0100;ledi<=ledi+1; end
+				3:	begin led <= 4'b1000;ledi<=0; end
+			endcase			
+	end
+	
+endmodule

@@ -1,1 +1,11 @@
-.*.lck
+*_firmware/PLLJ_PLLSPE_INFO.txt
+*_firmware/serial1.qws
+*_firmware/db/
+*_firmware/incremental_db/
+*_firmware/output_files/
+*_firmware/simulation/
+*.b#*
+*.s#*
+*.job
+*.pro
+*.pyc

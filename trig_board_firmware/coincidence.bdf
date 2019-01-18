@@ -1,0 +1,307 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 592 432 760 448)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "coax1" (rect 5 0 34 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 512 424 592 448))
+)
+(pin
+	(input)
+	(rect 592 448 760 464)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "coax2" (rect 5 0 34 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 512 448 592 472))
+)
+(pin
+	(input)
+	(rect 592 400 760 416)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "reset" (rect 5 0 29 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 512 392 592 416))
+)
+(pin
+	(input)
+	(rect -224 376 -56 392)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "clk50" (rect 5 0 30 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -296 376 -232 400))
+)
+(pin
+	(output)
+	(rect 1200 440 1376 456)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "coax_out_1" (rect 90 0 146 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1376 440 1472 464))
+)
+(pin
+	(output)
+	(rect 1200 400 1376 416)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "led[3..0]" (rect 90 0 130 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1376 344 1512 408))
+)
+(pin
+	(output)
+	(rect 1200 464 1376 480)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "coax_out_2" (rect 90 0 146 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1376 472 1456 496))
+)
+(symbol
+	(rect -8 312 472 496)
+	(text "clock" (rect 225 -1 261 15)(font "Arial" (font_size 10)))
+	(text "inst3" (rect 8 168 31 180)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 41 75)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 192 72))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "reset_reset_n" (rect 0 0 80 14)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 101 84 115)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 192 112))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "altpll_0_inclk_interface_reset_reset" (rect 0 0 201 14)(font "Arial" (font_size 8)))
+		(text "altpll_0_inclk_interface_reset_reset" (rect 4 141 205 155)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 192 152))
+	)
+	(port
+		(pt 480 72)
+		(output)
+		(text "clk_0_clk_reset_reset_n" (rect 0 0 139 14)(font "Arial" (font_size 8)))
+		(text "clk_0_clk_reset_reset_n" (rect 355 61 494 75)(font "Arial" (font_size 8)))
+		(line (pt 480 72)(pt 288 72))
+	)
+	(port
+		(pt 480 112)
+		(output)
+		(text "altpll_0_c0_clk" (rect 0 0 82 14)(font "Arial" (font_size 8)))
+		(text "altpll_0_c0_clk" (rect 405 101 487 115)(font "Arial" (font_size 8)))
+		(line (pt 480 112)(pt 288 112))
+	)
+	(drawing
+		(text "clk" (rect 177 43 194 58)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 197 67 211 79)(font "Arial" (color 0 0 0)))
+		(text "clk_0_clk_reset" (rect 289 43 390 58)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 252 67 288 79)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 163 83 196 98)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 197 107 233 119)(font "Arial" (color 0 0 0)))
+		(text "altpll_0_inclk_interface_reset" (rect 20 123 209 138)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset" (rect 197 147 221 159)(font "Arial" (color 0 0 0)))
+		(text "altpll_0_c0" (rect 289 83 359 98)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 273 107 287 119)(font "Arial" (color 0 0 0)))
+		(text " clock " (rect 455 168 488 180)(font "Arial" ))
+		(line (pt 193 52)(pt 193 76))
+		(line (pt 194 52)(pt 194 76))
+		(line (pt 287 52)(pt 287 76))
+		(line (pt 286 52)(pt 286 76))
+		(line (pt 193 92)(pt 193 116))
+		(line (pt 194 92)(pt 194 116))
+		(line (pt 193 132)(pt 193 156))
+		(line (pt 194 132)(pt 194 156))
+		(line (pt 287 92)(pt 287 116))
+		(line (pt 286 92)(pt 286 116))
+		(line (pt 192 32)(pt 288 32))
+		(line (pt 288 32)(pt 288 168))
+		(line (pt 192 168)(pt 288 168))
+		(line (pt 192 32)(pt 192 168))
+		(line (pt 0 0)(pt 480 0))
+		(line (pt 480 0)(pt 480 184))
+		(line (pt 0 184)(pt 480 184))
+		(line (pt 0 0)(pt 0 184))
+	)
+)
+(symbol
+	(rect 904 376 1072 488)
+	(text "LED_4" (rect 5 0 38 12)(font "Arial" ))
+	(text "inst" (rect 8 96 25 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "nrst" (rect 0 0 18 12)(font "Arial" ))
+		(text "nrst" (rect 21 27 39 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 43 35 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "coax1" (rect 0 0 29 12)(font "Arial" ))
+		(text "coax1" (rect 21 59 50 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "coax2" (rect 0 0 29 12)(font "Arial" ))
+		(text "coax2" (rect 21 75 50 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 168 48)
+		(output)
+		(text "coax_out_1" (rect 0 0 56 12)(font "Arial" ))
+		(text "coax_out_1" (rect 100 43 156 55)(font "Arial" ))
+		(line (pt 168 48)(pt 152 48))
+	)
+	(port
+		(pt 168 32)
+		(bidir)
+		(text "led[3..0]" (rect 0 0 40 12)(font "Arial" ))
+		(text "led[3..0]" (rect 117 27 157 39)(font "Arial" ))
+		(line (pt 168 32)(pt 152 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 152 96))
+	)
+)
+(connector
+	(pt -56 384)
+	(pt -8 384)
+)
+(connector
+	(pt 1200 408)
+	(pt 1072 408)
+	(bus)
+)
+(connector
+	(pt 760 408)
+	(pt 904 408)
+)
+(connector
+	(pt 472 424)
+	(pt 904 424)
+)
+(connector
+	(pt 760 440)
+	(pt 904 440)
+)
+(connector
+	(pt 760 456)
+	(pt 904 456)
+)
+(connector
+	(pt 1112 472)
+	(pt 1200 472)
+)
+(connector
+	(pt 1112 424)
+	(pt 1072 424)
+)
+(connector
+	(pt 1112 448)
+	(pt 1200 448)
+)
+(connector
+	(pt 1112 424)
+	(pt 1112 448)
+)
+(connector
+	(pt 1112 448)
+	(pt 1112 472)
+)
+(junction (pt 1112 448))
