@@ -4989,199 +4989,199 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <instance part="J19" gate="1-C32" x="73.66" y="-99.06">
 <attribute name="NAME" x="76.2" y="-99.822" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A1" x="99.06" y="-20.32">
-<attribute name="VALUE" x="99.06" y="-19.05" size="1.778" layer="96"/>
-<attribute name="NAME" x="101.6" y="-21.082" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A1" x="119.38" y="-20.32">
+<attribute name="VALUE" x="119.38" y="-19.05" size="1.778" layer="96"/>
+<attribute name="NAME" x="121.92" y="-21.082" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A2" x="99.06" y="-22.86">
-<attribute name="NAME" x="101.6" y="-23.622" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A2" x="119.38" y="-22.86">
+<attribute name="NAME" x="121.92" y="-23.622" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A3" x="99.06" y="-25.4">
-<attribute name="NAME" x="101.6" y="-26.162" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A3" x="119.38" y="-25.4">
+<attribute name="NAME" x="121.92" y="-26.162" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A4" x="99.06" y="-27.94">
-<attribute name="NAME" x="101.6" y="-28.702" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A4" x="119.38" y="-27.94">
+<attribute name="NAME" x="121.92" y="-28.702" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A5" x="99.06" y="-30.48">
-<attribute name="NAME" x="101.6" y="-31.242" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A5" x="119.38" y="-30.48">
+<attribute name="NAME" x="121.92" y="-31.242" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A6" x="99.06" y="-33.02">
-<attribute name="NAME" x="101.6" y="-33.782" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A6" x="119.38" y="-33.02">
+<attribute name="NAME" x="121.92" y="-33.782" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A7" x="99.06" y="-35.56">
-<attribute name="NAME" x="101.6" y="-36.322" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A7" x="119.38" y="-35.56">
+<attribute name="NAME" x="121.92" y="-36.322" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A8" x="99.06" y="-38.1">
-<attribute name="NAME" x="101.6" y="-38.862" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A8" x="119.38" y="-38.1">
+<attribute name="NAME" x="121.92" y="-38.862" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A9" x="99.06" y="-40.64">
-<attribute name="NAME" x="101.6" y="-41.402" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A9" x="119.38" y="-40.64">
+<attribute name="NAME" x="121.92" y="-41.402" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A10" x="99.06" y="-43.18">
-<attribute name="NAME" x="101.6" y="-43.942" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A10" x="119.38" y="-43.18">
+<attribute name="NAME" x="121.92" y="-43.942" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A11" x="99.06" y="-45.72">
-<attribute name="NAME" x="101.6" y="-46.482" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A11" x="119.38" y="-45.72">
+<attribute name="NAME" x="121.92" y="-46.482" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A12" x="99.06" y="-48.26">
-<attribute name="NAME" x="101.6" y="-49.022" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A12" x="119.38" y="-48.26">
+<attribute name="NAME" x="121.92" y="-49.022" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A13" x="99.06" y="-50.8">
-<attribute name="NAME" x="101.6" y="-51.562" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A13" x="119.38" y="-50.8">
+<attribute name="NAME" x="121.92" y="-51.562" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A14" x="99.06" y="-53.34">
-<attribute name="NAME" x="101.6" y="-54.102" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A14" x="119.38" y="-53.34">
+<attribute name="NAME" x="121.92" y="-54.102" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A15" x="99.06" y="-55.88">
-<attribute name="NAME" x="101.6" y="-56.642" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A15" x="119.38" y="-55.88">
+<attribute name="NAME" x="121.92" y="-56.642" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A16" x="99.06" y="-58.42">
-<attribute name="NAME" x="101.6" y="-59.182" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A16" x="119.38" y="-58.42">
+<attribute name="NAME" x="121.92" y="-59.182" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A17" x="99.06" y="-60.96">
-<attribute name="NAME" x="101.6" y="-61.722" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A17" x="119.38" y="-60.96">
+<attribute name="NAME" x="121.92" y="-61.722" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A18" x="99.06" y="-63.5">
-<attribute name="NAME" x="101.6" y="-64.262" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A18" x="119.38" y="-63.5">
+<attribute name="NAME" x="121.92" y="-64.262" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A19" x="99.06" y="-66.04">
-<attribute name="NAME" x="101.6" y="-66.802" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A19" x="119.38" y="-66.04">
+<attribute name="NAME" x="121.92" y="-66.802" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A20" x="99.06" y="-68.58">
-<attribute name="NAME" x="101.6" y="-69.342" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A20" x="119.38" y="-68.58">
+<attribute name="NAME" x="121.92" y="-69.342" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A21" x="99.06" y="-71.12">
-<attribute name="NAME" x="101.6" y="-71.882" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A21" x="119.38" y="-71.12">
+<attribute name="NAME" x="121.92" y="-71.882" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A22" x="99.06" y="-73.66">
-<attribute name="NAME" x="101.6" y="-74.422" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A22" x="119.38" y="-73.66">
+<attribute name="NAME" x="121.92" y="-74.422" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A23" x="99.06" y="-76.2">
-<attribute name="NAME" x="101.6" y="-76.962" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A23" x="119.38" y="-76.2">
+<attribute name="NAME" x="121.92" y="-76.962" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A24" x="99.06" y="-78.74">
-<attribute name="NAME" x="101.6" y="-79.502" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A24" x="119.38" y="-78.74">
+<attribute name="NAME" x="121.92" y="-79.502" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A25" x="99.06" y="-81.28">
-<attribute name="NAME" x="101.6" y="-82.042" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A25" x="119.38" y="-81.28">
+<attribute name="NAME" x="121.92" y="-82.042" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A26" x="99.06" y="-83.82">
-<attribute name="NAME" x="101.6" y="-84.582" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A26" x="119.38" y="-83.82">
+<attribute name="NAME" x="121.92" y="-84.582" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A27" x="99.06" y="-86.36">
-<attribute name="NAME" x="101.6" y="-87.122" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A27" x="119.38" y="-86.36">
+<attribute name="NAME" x="121.92" y="-87.122" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A28" x="99.06" y="-88.9">
-<attribute name="NAME" x="101.6" y="-89.662" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A28" x="119.38" y="-88.9">
+<attribute name="NAME" x="121.92" y="-89.662" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A29" x="99.06" y="-91.44">
-<attribute name="NAME" x="101.6" y="-92.202" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A29" x="119.38" y="-91.44">
+<attribute name="NAME" x="121.92" y="-92.202" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A30" x="99.06" y="-93.98">
-<attribute name="NAME" x="101.6" y="-94.742" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A30" x="119.38" y="-93.98">
+<attribute name="NAME" x="121.92" y="-94.742" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A31" x="99.06" y="-96.52">
-<attribute name="NAME" x="101.6" y="-97.282" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A31" x="119.38" y="-96.52">
+<attribute name="NAME" x="121.92" y="-97.282" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-A32" x="99.06" y="-99.06">
-<attribute name="NAME" x="101.6" y="-99.822" size="1.524" layer="95"/>
+<instance part="J19" gate="2-A32" x="119.38" y="-99.06">
+<attribute name="NAME" x="121.92" y="-99.822" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C1" x="124.46" y="-20.32">
-<attribute name="VALUE" x="124.46" y="-19.05" size="1.778" layer="96"/>
-<attribute name="NAME" x="127" y="-21.082" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C1" x="144.78" y="-20.32">
+<attribute name="VALUE" x="144.78" y="-19.05" size="1.778" layer="96"/>
+<attribute name="NAME" x="147.32" y="-21.082" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C2" x="124.46" y="-22.86">
-<attribute name="NAME" x="127" y="-23.622" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C2" x="144.78" y="-22.86">
+<attribute name="NAME" x="147.32" y="-23.622" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C3" x="124.46" y="-25.4">
-<attribute name="NAME" x="127" y="-26.162" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C3" x="144.78" y="-25.4">
+<attribute name="NAME" x="147.32" y="-26.162" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C4" x="124.46" y="-27.94">
-<attribute name="NAME" x="127" y="-28.702" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C4" x="144.78" y="-27.94">
+<attribute name="NAME" x="147.32" y="-28.702" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C5" x="124.46" y="-30.48">
-<attribute name="NAME" x="127" y="-31.242" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C5" x="144.78" y="-30.48">
+<attribute name="NAME" x="147.32" y="-31.242" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C6" x="124.46" y="-33.02">
-<attribute name="NAME" x="127" y="-33.782" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C6" x="144.78" y="-33.02">
+<attribute name="NAME" x="147.32" y="-33.782" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C7" x="124.46" y="-35.56">
-<attribute name="NAME" x="127" y="-36.322" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C7" x="144.78" y="-35.56">
+<attribute name="NAME" x="147.32" y="-36.322" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C8" x="124.46" y="-38.1">
-<attribute name="NAME" x="127" y="-38.862" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C8" x="144.78" y="-38.1">
+<attribute name="NAME" x="147.32" y="-38.862" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C9" x="124.46" y="-40.64">
-<attribute name="NAME" x="127" y="-41.402" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C9" x="144.78" y="-40.64">
+<attribute name="NAME" x="147.32" y="-41.402" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C10" x="124.46" y="-43.18">
-<attribute name="NAME" x="127" y="-43.942" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C10" x="144.78" y="-43.18">
+<attribute name="NAME" x="147.32" y="-43.942" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C11" x="124.46" y="-45.72">
-<attribute name="NAME" x="127" y="-46.482" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C11" x="144.78" y="-45.72">
+<attribute name="NAME" x="147.32" y="-46.482" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C12" x="124.46" y="-48.26">
-<attribute name="NAME" x="127" y="-49.022" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C12" x="144.78" y="-48.26">
+<attribute name="NAME" x="147.32" y="-49.022" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C13" x="124.46" y="-50.8">
-<attribute name="NAME" x="127" y="-51.562" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C13" x="144.78" y="-50.8">
+<attribute name="NAME" x="147.32" y="-51.562" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C14" x="124.46" y="-53.34">
-<attribute name="NAME" x="127" y="-54.102" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C14" x="144.78" y="-53.34">
+<attribute name="NAME" x="147.32" y="-54.102" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C15" x="124.46" y="-55.88">
-<attribute name="NAME" x="127" y="-56.642" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C15" x="144.78" y="-55.88">
+<attribute name="NAME" x="147.32" y="-56.642" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C16" x="124.46" y="-58.42">
-<attribute name="NAME" x="127" y="-59.182" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C16" x="144.78" y="-58.42">
+<attribute name="NAME" x="147.32" y="-59.182" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C17" x="124.46" y="-60.96">
-<attribute name="NAME" x="127" y="-61.722" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C17" x="144.78" y="-60.96">
+<attribute name="NAME" x="147.32" y="-61.722" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C18" x="124.46" y="-63.5">
-<attribute name="NAME" x="127" y="-64.262" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C18" x="144.78" y="-63.5">
+<attribute name="NAME" x="147.32" y="-64.262" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C19" x="124.46" y="-66.04">
-<attribute name="NAME" x="127" y="-66.802" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C19" x="144.78" y="-66.04">
+<attribute name="NAME" x="147.32" y="-66.802" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C20" x="124.46" y="-68.58">
-<attribute name="NAME" x="127" y="-69.342" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C20" x="144.78" y="-68.58">
+<attribute name="NAME" x="147.32" y="-69.342" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C21" x="124.46" y="-71.12">
-<attribute name="NAME" x="127" y="-71.882" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C21" x="144.78" y="-71.12">
+<attribute name="NAME" x="147.32" y="-71.882" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C22" x="124.46" y="-73.66">
-<attribute name="NAME" x="127" y="-74.422" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C22" x="144.78" y="-73.66">
+<attribute name="NAME" x="147.32" y="-74.422" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C23" x="124.46" y="-76.2">
-<attribute name="NAME" x="127" y="-76.962" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C23" x="144.78" y="-76.2">
+<attribute name="NAME" x="147.32" y="-76.962" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C24" x="124.46" y="-78.74">
-<attribute name="NAME" x="127" y="-79.502" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C24" x="144.78" y="-78.74">
+<attribute name="NAME" x="147.32" y="-79.502" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C25" x="124.46" y="-81.28">
-<attribute name="NAME" x="127" y="-82.042" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C25" x="144.78" y="-81.28">
+<attribute name="NAME" x="147.32" y="-82.042" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C26" x="124.46" y="-83.82">
-<attribute name="NAME" x="127" y="-84.582" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C26" x="144.78" y="-83.82">
+<attribute name="NAME" x="147.32" y="-84.582" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C27" x="124.46" y="-86.36">
-<attribute name="NAME" x="127" y="-87.122" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C27" x="144.78" y="-86.36">
+<attribute name="NAME" x="147.32" y="-87.122" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C28" x="124.46" y="-88.9">
-<attribute name="NAME" x="127" y="-89.662" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C28" x="144.78" y="-88.9">
+<attribute name="NAME" x="147.32" y="-89.662" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C29" x="124.46" y="-91.44">
-<attribute name="NAME" x="127" y="-92.202" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C29" x="144.78" y="-91.44">
+<attribute name="NAME" x="147.32" y="-92.202" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C30" x="124.46" y="-93.98">
-<attribute name="NAME" x="127" y="-94.742" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C30" x="144.78" y="-93.98">
+<attribute name="NAME" x="147.32" y="-94.742" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C31" x="124.46" y="-96.52">
-<attribute name="NAME" x="127" y="-97.282" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C31" x="144.78" y="-96.52">
+<attribute name="NAME" x="147.32" y="-97.282" size="1.524" layer="95"/>
 </instance>
-<instance part="J19" gate="2-C32" x="124.46" y="-99.06">
-<attribute name="NAME" x="127" y="-99.822" size="1.524" layer="95"/>
+<instance part="J19" gate="2-C32" x="144.78" y="-99.06">
+<attribute name="NAME" x="147.32" y="-99.822" size="1.524" layer="95"/>
 </instance>
 <instance part="J20" gate="G$1" x="58.42" y="-142.24" rot="R270">
 <attribute name="VALUE" x="45.974" y="-137.16" size="1.778" layer="96" font="vector" rot="R270"/>
@@ -5660,15 +5660,15 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </segment>
 <segment>
 <pinref part="J19" gate="2-A9" pin="MS"/>
-<wire x1="96.52" y1="-40.64" x2="88.9" y2="-40.64" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="-40.64" x2="88.9" y2="-45.72" width="0.1524" layer="91"/>
-<label x="88.9" y="-45.72" size="1.778" layer="95" rot="R90"/>
+<wire x1="116.84" y1="-40.64" x2="109.22" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-40.64" x2="109.22" y2="-45.72" width="0.1524" layer="91"/>
+<label x="109.22" y="-45.72" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J19" gate="2-C9" pin="MS"/>
-<wire x1="121.92" y1="-40.64" x2="114.3" y2="-40.64" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="-40.64" x2="114.3" y2="-45.72" width="0.1524" layer="91"/>
-<label x="114.3" y="-45.72" size="1.778" layer="95" rot="R90"/>
+<wire x1="142.24" y1="-40.64" x2="134.62" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="-40.64" x2="134.62" y2="-45.72" width="0.1524" layer="91"/>
+<label x="134.62" y="-45.72" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J20" gate="G$1" pin="2"/>
@@ -5760,15 +5760,15 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </segment>
 <segment>
 <pinref part="J19" gate="2-A32" pin="MS"/>
-<wire x1="96.52" y1="-99.06" x2="88.9" y2="-99.06" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="-99.06" x2="88.9" y2="-93.98" width="0.1524" layer="91"/>
-<label x="88.9" y="-96.52" size="1.778" layer="95" rot="R90"/>
+<wire x1="116.84" y1="-99.06" x2="109.22" y2="-99.06" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-99.06" x2="109.22" y2="-93.98" width="0.1524" layer="91"/>
+<label x="109.22" y="-96.52" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J19" gate="2-C32" pin="MS"/>
-<wire x1="121.92" y1="-99.06" x2="114.3" y2="-99.06" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="-99.06" x2="114.3" y2="-93.98" width="0.1524" layer="91"/>
-<label x="114.3" y="-96.52" size="1.778" layer="95" rot="R90"/>
+<wire x1="142.24" y1="-99.06" x2="134.62" y2="-99.06" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="-99.06" x2="134.62" y2="-93.98" width="0.1524" layer="91"/>
+<label x="134.62" y="-96.52" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J20" gate="G$1" pin="5"/>
@@ -6550,6 +6550,16 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <wire x1="-7.62" y1="170.18" x2="-7.62" y2="147.32" width="0.1524" layer="91"/>
 <label x="-7.62" y="162.56" size="1.778" layer="95" rot="R90"/>
 </segment>
+<segment>
+<pinref part="J19" gate="1-A27" pin="MS"/>
+<wire x1="43.18" y1="-86.36" x2="22.86" y2="-86.36" width="0.1524" layer="91"/>
+<label x="22.86" y="-86.36" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J19" gate="2-A27" pin="MS"/>
+<wire x1="116.84" y1="-86.36" x2="96.52" y2="-86.36" width="0.1524" layer="91"/>
+<label x="96.52" y="-86.36" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="IO189" class="0">
 <segment>
@@ -6557,6 +6567,16 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <pinref part="J18" gate="G$1" pin="6"/>
 <wire x1="-5.08" y1="170.18" x2="-5.08" y2="147.32" width="0.1524" layer="91"/>
 <label x="-5.08" y="162.56" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="J19" gate="1-A28" pin="MS"/>
+<wire x1="43.18" y1="-88.9" x2="22.86" y2="-88.9" width="0.1524" layer="91"/>
+<label x="22.86" y="-88.9" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J19" gate="2-A28" pin="MS"/>
+<wire x1="116.84" y1="-88.9" x2="96.52" y2="-88.9" width="0.1524" layer="91"/>
+<label x="96.52" y="-88.9" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IO187" class="0">
@@ -6566,6 +6586,16 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <wire x1="-2.54" y1="170.18" x2="-2.54" y2="147.32" width="0.1524" layer="91"/>
 <label x="-2.54" y="162.56" size="1.778" layer="95" rot="R90"/>
 </segment>
+<segment>
+<pinref part="J19" gate="1-A29" pin="MS"/>
+<wire x1="43.18" y1="-91.44" x2="22.86" y2="-91.44" width="0.1524" layer="91"/>
+<label x="22.86" y="-91.44" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J19" gate="2-A29" pin="MS"/>
+<wire x1="116.84" y1="-91.44" x2="96.52" y2="-91.44" width="0.1524" layer="91"/>
+<label x="96.52" y="-91.44" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="IO185" class="0">
 <segment>
@@ -6573,6 +6603,16 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <pinref part="J18" gate="G$1" pin="8"/>
 <wire x1="0" y1="170.18" x2="0" y2="147.32" width="0.1524" layer="91"/>
 <label x="0" y="162.56" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="J19" gate="1-A30" pin="MS"/>
+<wire x1="43.18" y1="-93.98" x2="22.86" y2="-93.98" width="0.1524" layer="91"/>
+<label x="22.86" y="-93.98" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J19" gate="2-A30" pin="MS"/>
+<wire x1="116.84" y1="-93.98" x2="96.52" y2="-93.98" width="0.1524" layer="91"/>
+<label x="96.52" y="-93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="186OE" class="0">
@@ -6632,9 +6672,9 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </segment>
 <segment>
 <pinref part="J19" gate="2-C31" pin="MS"/>
-<wire x1="121.92" y1="-96.52" x2="116.84" y2="-96.52" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="-96.52" x2="116.84" y2="-88.9" width="0.1524" layer="91"/>
-<label x="116.84" y="-93.98" size="1.778" layer="95" rot="R90"/>
+<wire x1="142.24" y1="-96.52" x2="137.16" y2="-96.52" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="-96.52" x2="137.16" y2="-88.9" width="0.1524" layer="91"/>
+<label x="137.16" y="-93.98" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J20" gate="G$1" pin="1"/>
@@ -6651,9 +6691,9 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </segment>
 <segment>
 <pinref part="J19" gate="2-A31" pin="MS"/>
-<wire x1="96.52" y1="-96.52" x2="91.44" y2="-96.52" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="-96.52" x2="91.44" y2="-88.9" width="0.1524" layer="91"/>
-<label x="91.44" y="-93.98" size="1.778" layer="95" rot="R90"/>
+<wire x1="116.84" y1="-96.52" x2="111.76" y2="-96.52" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="-96.52" x2="111.76" y2="-88.9" width="0.1524" layer="91"/>
+<label x="111.76" y="-93.98" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J20" gate="G$1" pin="3"/>
@@ -6786,11 +6826,6 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <approved hash="101,1,43.18,-78.74,J191-A24,MS,,,,"/>
 <approved hash="101,1,43.18,-81.28,J191-A25,MS,,,,"/>
 <approved hash="101,1,43.18,-83.82,J191-A26,MS,,,,"/>
-<approved hash="101,1,43.18,-86.36,J191-A27,MS,,,,"/>
-<approved hash="101,1,43.18,-88.9,J191-A28,MS,,,,"/>
-<approved hash="101,1,43.18,-91.44,J191-A29,MS,,,,"/>
-<approved hash="101,1,43.18,-93.98,J191-A30,MS,,,,"/>
-<approved hash="101,1,43.18,-96.52,J191-A31,MS,,,,"/>
 <approved hash="101,1,71.12,-20.32,J191-C1,MSV,,,,"/>
 <approved hash="101,1,71.12,-22.86,J191-C2,MS,,,,"/>
 <approved hash="101,1,71.12,-25.4,J191-C3,MS,,,,"/>
@@ -6820,67 +6855,60 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <approved hash="101,1,71.12,-88.9,J191-C28,MS,,,,"/>
 <approved hash="101,1,71.12,-91.44,J191-C29,MS,,,,"/>
 <approved hash="101,1,71.12,-93.98,J191-C30,MS,,,,"/>
-<approved hash="101,1,71.12,-96.52,J191-C31,MS,,,,"/>
-<approved hash="101,1,96.52,-20.32,J192-A1,MSV,,,,"/>
-<approved hash="101,1,96.52,-22.86,J192-A2,MS,,,,"/>
-<approved hash="101,1,96.52,-25.4,J192-A3,MS,,,,"/>
-<approved hash="101,1,96.52,-27.94,J192-A4,MS,,,,"/>
-<approved hash="101,1,96.52,-30.48,J192-A5,MS,,,,"/>
-<approved hash="101,1,96.52,-33.02,J192-A6,MS,,,,"/>
-<approved hash="101,1,96.52,-35.56,J192-A7,MS,,,,"/>
-<approved hash="101,1,96.52,-38.1,J192-A8,MS,,,,"/>
-<approved hash="101,1,96.52,-43.18,J192-A10,MS,,,,"/>
-<approved hash="101,1,96.52,-45.72,J192-A11,MS,,,,"/>
-<approved hash="101,1,96.52,-48.26,J192-A12,MS,,,,"/>
-<approved hash="101,1,96.52,-50.8,J192-A13,MS,,,,"/>
-<approved hash="101,1,96.52,-53.34,J192-A14,MS,,,,"/>
-<approved hash="101,1,96.52,-55.88,J192-A15,MS,,,,"/>
-<approved hash="101,1,96.52,-58.42,J192-A16,MS,,,,"/>
-<approved hash="101,1,96.52,-60.96,J192-A17,MS,,,,"/>
-<approved hash="101,1,96.52,-63.5,J192-A18,MS,,,,"/>
-<approved hash="101,1,96.52,-66.04,J192-A19,MS,,,,"/>
-<approved hash="101,1,96.52,-68.58,J192-A20,MS,,,,"/>
-<approved hash="101,1,96.52,-71.12,J192-A21,MS,,,,"/>
-<approved hash="101,1,96.52,-73.66,J192-A22,MS,,,,"/>
-<approved hash="101,1,96.52,-76.2,J192-A23,MS,,,,"/>
-<approved hash="101,1,96.52,-78.74,J192-A24,MS,,,,"/>
-<approved hash="101,1,96.52,-81.28,J192-A25,MS,,,,"/>
-<approved hash="101,1,96.52,-83.82,J192-A26,MS,,,,"/>
-<approved hash="101,1,96.52,-86.36,J192-A27,MS,,,,"/>
-<approved hash="101,1,96.52,-88.9,J192-A28,MS,,,,"/>
-<approved hash="101,1,96.52,-91.44,J192-A29,MS,,,,"/>
-<approved hash="101,1,96.52,-93.98,J192-A30,MS,,,,"/>
-<approved hash="101,1,96.52,-96.52,J192-A31,MS,,,,"/>
-<approved hash="101,1,121.92,-20.32,J192-C1,MSV,,,,"/>
-<approved hash="101,1,121.92,-22.86,J192-C2,MS,,,,"/>
-<approved hash="101,1,121.92,-25.4,J192-C3,MS,,,,"/>
-<approved hash="101,1,121.92,-27.94,J192-C4,MS,,,,"/>
-<approved hash="101,1,121.92,-30.48,J192-C5,MS,,,,"/>
-<approved hash="101,1,121.92,-33.02,J192-C6,MS,,,,"/>
-<approved hash="101,1,121.92,-35.56,J192-C7,MS,,,,"/>
-<approved hash="101,1,121.92,-38.1,J192-C8,MS,,,,"/>
-<approved hash="101,1,121.92,-43.18,J192-C10,MS,,,,"/>
-<approved hash="101,1,121.92,-45.72,J192-C11,MS,,,,"/>
-<approved hash="101,1,121.92,-48.26,J192-C12,MS,,,,"/>
-<approved hash="101,1,121.92,-50.8,J192-C13,MS,,,,"/>
-<approved hash="101,1,121.92,-53.34,J192-C14,MS,,,,"/>
-<approved hash="101,1,121.92,-55.88,J192-C15,MS,,,,"/>
-<approved hash="101,1,121.92,-58.42,J192-C16,MS,,,,"/>
-<approved hash="101,1,121.92,-60.96,J192-C17,MS,,,,"/>
-<approved hash="101,1,121.92,-63.5,J192-C18,MS,,,,"/>
-<approved hash="101,1,121.92,-66.04,J192-C19,MS,,,,"/>
-<approved hash="101,1,121.92,-68.58,J192-C20,MS,,,,"/>
-<approved hash="101,1,121.92,-71.12,J192-C21,MS,,,,"/>
-<approved hash="101,1,121.92,-73.66,J192-C22,MS,,,,"/>
-<approved hash="101,1,121.92,-76.2,J192-C23,MS,,,,"/>
-<approved hash="101,1,121.92,-78.74,J192-C24,MS,,,,"/>
-<approved hash="101,1,121.92,-81.28,J192-C25,MS,,,,"/>
-<approved hash="101,1,121.92,-83.82,J192-C26,MS,,,,"/>
-<approved hash="101,1,121.92,-86.36,J192-C27,MS,,,,"/>
-<approved hash="101,1,121.92,-88.9,J192-C28,MS,,,,"/>
-<approved hash="101,1,121.92,-91.44,J192-C29,MS,,,,"/>
-<approved hash="101,1,121.92,-93.98,J192-C30,MS,,,,"/>
-<approved hash="101,1,121.92,-96.52,J192-C31,MS,,,,"/>
+<approved hash="101,1,116.84,-20.32,J192-A1,MSV,,,,"/>
+<approved hash="101,1,116.84,-22.86,J192-A2,MS,,,,"/>
+<approved hash="101,1,116.84,-25.4,J192-A3,MS,,,,"/>
+<approved hash="101,1,116.84,-27.94,J192-A4,MS,,,,"/>
+<approved hash="101,1,116.84,-30.48,J192-A5,MS,,,,"/>
+<approved hash="101,1,116.84,-33.02,J192-A6,MS,,,,"/>
+<approved hash="101,1,116.84,-35.56,J192-A7,MS,,,,"/>
+<approved hash="101,1,116.84,-38.1,J192-A8,MS,,,,"/>
+<approved hash="101,1,116.84,-43.18,J192-A10,MS,,,,"/>
+<approved hash="101,1,116.84,-45.72,J192-A11,MS,,,,"/>
+<approved hash="101,1,116.84,-48.26,J192-A12,MS,,,,"/>
+<approved hash="101,1,116.84,-50.8,J192-A13,MS,,,,"/>
+<approved hash="101,1,116.84,-53.34,J192-A14,MS,,,,"/>
+<approved hash="101,1,116.84,-55.88,J192-A15,MS,,,,"/>
+<approved hash="101,1,116.84,-58.42,J192-A16,MS,,,,"/>
+<approved hash="101,1,116.84,-60.96,J192-A17,MS,,,,"/>
+<approved hash="101,1,116.84,-63.5,J192-A18,MS,,,,"/>
+<approved hash="101,1,116.84,-66.04,J192-A19,MS,,,,"/>
+<approved hash="101,1,116.84,-68.58,J192-A20,MS,,,,"/>
+<approved hash="101,1,116.84,-71.12,J192-A21,MS,,,,"/>
+<approved hash="101,1,116.84,-73.66,J192-A22,MS,,,,"/>
+<approved hash="101,1,116.84,-76.2,J192-A23,MS,,,,"/>
+<approved hash="101,1,116.84,-78.74,J192-A24,MS,,,,"/>
+<approved hash="101,1,116.84,-81.28,J192-A25,MS,,,,"/>
+<approved hash="101,1,116.84,-83.82,J192-A26,MS,,,,"/>
+<approved hash="101,1,142.24,-20.32,J192-C1,MSV,,,,"/>
+<approved hash="101,1,142.24,-22.86,J192-C2,MS,,,,"/>
+<approved hash="101,1,142.24,-25.4,J192-C3,MS,,,,"/>
+<approved hash="101,1,142.24,-27.94,J192-C4,MS,,,,"/>
+<approved hash="101,1,142.24,-30.48,J192-C5,MS,,,,"/>
+<approved hash="101,1,142.24,-33.02,J192-C6,MS,,,,"/>
+<approved hash="101,1,142.24,-35.56,J192-C7,MS,,,,"/>
+<approved hash="101,1,142.24,-38.1,J192-C8,MS,,,,"/>
+<approved hash="101,1,142.24,-43.18,J192-C10,MS,,,,"/>
+<approved hash="101,1,142.24,-45.72,J192-C11,MS,,,,"/>
+<approved hash="101,1,142.24,-48.26,J192-C12,MS,,,,"/>
+<approved hash="101,1,142.24,-50.8,J192-C13,MS,,,,"/>
+<approved hash="101,1,142.24,-53.34,J192-C14,MS,,,,"/>
+<approved hash="101,1,142.24,-55.88,J192-C15,MS,,,,"/>
+<approved hash="101,1,142.24,-58.42,J192-C16,MS,,,,"/>
+<approved hash="101,1,142.24,-60.96,J192-C17,MS,,,,"/>
+<approved hash="101,1,142.24,-63.5,J192-C18,MS,,,,"/>
+<approved hash="101,1,142.24,-66.04,J192-C19,MS,,,,"/>
+<approved hash="101,1,142.24,-68.58,J192-C20,MS,,,,"/>
+<approved hash="101,1,142.24,-71.12,J192-C21,MS,,,,"/>
+<approved hash="101,1,142.24,-73.66,J192-C22,MS,,,,"/>
+<approved hash="101,1,142.24,-76.2,J192-C23,MS,,,,"/>
+<approved hash="101,1,142.24,-78.74,J192-C24,MS,,,,"/>
+<approved hash="101,1,142.24,-81.28,J192-C25,MS,,,,"/>
+<approved hash="101,1,142.24,-83.82,J192-C26,MS,,,,"/>
+<approved hash="101,1,142.24,-86.36,J192-C27,MS,,,,"/>
+<approved hash="101,1,142.24,-88.9,J192-C28,MS,,,,"/>
+<approved hash="101,1,142.24,-91.44,J192-C29,MS,,,,"/>
+<approved hash="101,1,142.24,-93.98,J192-C30,MS,,,,"/>
 <approved hash="104,1,218.44,160.02,VSLUE,VCC,5V,,,"/>
 <approved hash="104,1,218.44,114.3,VSLUE2,VCC,5V,,,"/>
 <approved hash="104,1,218.44,68.58,VSLUE3,VCC,5V,,,"/>
@@ -6917,6 +6945,10 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <approved hash="206,1,190.5,2.54,OUT15,,,,,"/>
 <approved hash="206,1,190.5,17.78,OUT16,,,,,"/>
 <approved hash="206,1,190.5,12.7,OUT16,,,,,"/>
+<approved hash="110,1,38.1,-88.9,IO189,-12V,,,,"/>
+<approved hash="110,1,111.76,-88.9,IO189,-12V,,,,"/>
+<approved hash="110,1,35.56,-93.98,IO185,5V,,,,"/>
+<approved hash="110,1,109.22,-93.98,IO185,5V,,,,"/>
 </errors>
 </schematic>
 </drawing>
