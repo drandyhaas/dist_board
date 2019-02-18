@@ -2,7 +2,7 @@ module LED_4(
 	input nrst,
 	input clk,
 	inout reg [3:0]led,
-	input [7:0] coax_in,
+	input [15:0] coax_in,
 	output reg [15:0] coax_out,	
 	input [7:0] deadticks, input [7:0] firingticks);
 		
@@ -15,7 +15,8 @@ module LED_4(
 		READY: begin // start off waiting for a trigger condition
 			firingcounter<=0;
 			coax_out <= 0; // not sending the trigger output
-			if (coax_in>0) begin // trigger on the OR of inputs
+			//if ( (coax_in & 16'b0000001100000000) >0) begin // trigger on the OR of inputs (after masking with active inputs)
+			if ( coax_in >0) begin // trigger on the OR of inputs
 				state = FIRING; // fire the trigger
 			end
 		end

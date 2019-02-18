@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP3C16Q240C8
 set_global_assignment -name TOP_LEVEL_ENTITY coincidence
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:20:30  NOVEMBER 06, 2018"
-set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -105,4 +105,15 @@ set_global_assignment -name CDF_FILE Chain1.cdf
 set_global_assignment -name CDF_FILE Chain2.cdf
 set_location_assignment PIN_185 -to serial_in
 set_location_assignment PIN_187 -to serial_out
+set_location_assignment PIN_43 -to coax_in[10]
+set_location_assignment PIN_45 -to coax_in[11]
+set_location_assignment PIN_49 -to coax_in[12]
+set_location_assignment PIN_51 -to coax_in[13]
+set_location_assignment PIN_55 -to coax_in[14]
+set_location_assignment PIN_57 -to coax_in[15]
+set_location_assignment PIN_37 -to coax_in[8]
+set_location_assignment PIN_39 -to coax_in[9]
+set_location_assignment PIN_186 -to enable_outputs
+set_global_assignment -name CDF_FILE Chain1_dropbox.cdf
+set_global_assignment -name CDF_FILE Chain2_dropbox.cdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

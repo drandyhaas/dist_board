@@ -1,5 +1,5 @@
 module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
-	deadticks, firingticks);
+	deadticks, firingticks, enable_outputs);
 	
 	input clk;
 	input[7:0] rxData;
@@ -8,6 +8,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	output reg txStart;
 	output reg[7:0] txData;
 	output reg[7:0] readdata;//first byte we got
+	output reg enable_outputs=0;//set low to enable outputs
 	reg [7:0] extradata[10];//to store command extra data, like arguemnts (up to 10 bytes)
 	localparam READ=0, SOLVING=1, WRITE1=3, WRITE2=4, READMORE=9;
 	integer state=READ;
@@ -57,6 +58,10 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 				firingticks=extradata[0];
 				state=READ;
 			end
+		end
+		else if (readdata==3) begin //toggle output enable
+			enable_outputs = ~enable_outputs;
+			state=READ;
 		end
 		else state=READ; // if we got some other command, just ignore it
 	end		
