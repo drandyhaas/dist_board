@@ -3,12 +3,12 @@
 <eagle version="9.2.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.1" altunitdist="mm" altunit="mm"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
-<layer number="1" name="power" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="power" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="route2" color="16" fill="1" visible="yes" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -218,6 +218,20 @@
 <text x="62.5" y="-42.4" size="0.8128" layer="21" rot="R270">--12V</text>
 <text x="68.5" y="-42.4" size="0.8128" layer="21" rot="R270">5V</text>
 <text x="73.5" y="-42.4" size="0.8128" layer="21" rot="R270">5V</text>
+<wire x1="18" y1="88" x2="19" y2="88" width="0.1524" layer="21"/>
+<wire x1="19" y1="88" x2="75" y2="88" width="0.1524" layer="21"/>
+<wire x1="75" y1="88" x2="76" y2="87" width="0.1524" layer="21"/>
+<wire x1="76" y1="87" x2="76" y2="21" width="0.1524" layer="21"/>
+<wire x1="76" y1="21" x2="75" y2="20" width="0.1524" layer="21"/>
+<wire x1="75" y1="20" x2="18" y2="20" width="0.1524" layer="21"/>
+<wire x1="18" y1="20" x2="16" y2="22" width="0.1524" layer="21"/>
+<wire x1="16" y1="22" x2="16" y2="88" width="0.1524" layer="21"/>
+<wire x1="16" y1="88" x2="18" y2="88" width="0.1524" layer="21"/>
+<text x="32" y="52" size="1.778" layer="21">Waveshare
+
+CoreEP3C16
+or
+CoreEP4CE10</text>
 </plain>
 <libraries>
 <library name="Seeed-Connector" urn="urn:adsk.eagle:library:478">
@@ -1722,6 +1736,20 @@ design rules under a new name.
 <attribute name="NAME" x="55.603" y="-47.27" size="0.8128" layer="25" font="vector" rot="R90"/>
 <attribute name="PROD_ID" value="CONN-08438" x="58" y="-47" size="1.778" layer="27" display="off"/>
 </element>
+<element name="X1" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="87758-1616" value="87758-1616" x="39" y="25">
+<attribute name="MF" value="MOLEX" x="39" y="25" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="87758-1616" x="39" y="25" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="31.38" y="21.19" size="1.27" layer="25"/>
+<attribute name="OC_FARNELL" value="7472366" x="39" y="25" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="59J1563" x="39" y="25" size="1.778" layer="27" display="off"/>
+</element>
+<element name="X2" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="87758-1616" value="87758-1616" x="55" y="25">
+<attribute name="MF" value="MOLEX" x="55" y="25" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="87758-1616" x="55" y="25" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="47.38" y="21.19" size="1.27" layer="25"/>
+<attribute name="OC_FARNELL" value="7472366" x="55" y="25" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="59J1563" x="55" y="25" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="IO240">
@@ -2943,6 +2971,10 @@ design rules under a new name.
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
