@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "232_out",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_dout0",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_dout1",
+					"strict" : false
+				},
+				{
+					"name" : "led1",
+					"strict" : false
+				},
+				{
+					"name" : "oe",
+					"strict" : false
+				},
+				{
+					"name" : "clock1",
+					"strict" : false
+				},
+				{
+					"name" : "dout[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dout[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dout[0]",
+					"strict" : false
+				},
+				{
+					"name" : "232_in",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

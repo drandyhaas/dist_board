@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at delayer.v(33): always construct contains both blocking and non-blocking assignments File: C:/Users/ahaas/Dropbox/cygwin/home/cygwinhome/dist_board/trig3_board_muon-lifetime_de0nano-firmware/delayer.v Line: 33

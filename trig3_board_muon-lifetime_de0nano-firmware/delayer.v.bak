@@ -1,0 +1,14 @@
+module SyncDelay( clk, input1, output1);
+input clk;
+input wire input1;
+output reg output1;
+
+reg[3:0] bits;
+
+always @ (posedge clk)
+begin
+    output1 <= bits[3];
+    bits <= {bits[2:0], input1};
+end //always
+
+endmodule
