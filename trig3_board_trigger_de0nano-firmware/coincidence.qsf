@@ -102,12 +102,13 @@ set_global_assignment -name VERILOG_FILE serialprocessor.v
 set_global_assignment -name VERILOG_FILE async.v
 set_global_assignment -name VERILOG_FILE LED_4.v
 set_global_assignment -name BDF_FILE coincidence.bdf
-set_global_assignment -name CDF_FILE Chain1_dropbox.cdf
-set_global_assignment -name CDF_FILE Chain2_dropbox.cdf
 set_global_assignment -name QIP_FILE pll2.qip
 set_global_assignment -name QIP_FILE pll1.qip
 set_global_assignment -name QIP_FILE lvds_rx.qip
 set_location_assignment PIN_P16 -to "coax_in[3](n)"
 set_location_assignment PIN_B3 -to coax_out[5]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to coax_out[5]
+set_global_assignment -name SDC_FILE coincidence.sdc
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name CDF_FILE Chain2.cdf
+set_global_assignment -name CDF_FILE Chain1.cdf
