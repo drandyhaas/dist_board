@@ -1,0 +1,44 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/ --output-directory=C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/clock/ --report-file=bsf:C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/clock.bsf --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP3C16Q240C8 --system-info=DEVICE_SPEEDGRADE=8 --component-file=C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/clock.qsys
+Progress: Loading coincidence/clock.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding altpll_0 [altpll 13.0]
+Progress: Parameterizing module altpll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: clock.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Warning: clock.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: clock.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: clock.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/ --output-directory=C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/clock/synthesis/ --file-set=QUARTUS_SYNTH --report-file=sopcinfo:C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/clock.sopcinfo --report-file=html:C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/clock.html --report-file=qip:C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/clock/synthesis/clock.qip --report-file=cmp:C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/clock.cmp --report-file=svd --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP3C16Q240C8 --system-info=DEVICE_SPEEDGRADE=8 --component-file=C:/Users/ahaas/Dropbox/documents/FPGA/QuartusII/EP3C16-Verilog-VHDL/verilog/coincidence/clock.qsys --language=VERILOG
+Progress: Loading coincidence/clock.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding altpll_0 [altpll 13.0]
+Progress: Parameterizing module altpll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: clock.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Warning: clock.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: clock.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: clock.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: clock: Generating clock "clock" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 2 modules, 1 connections
+Info: No custom instruction connections, skipping transform 
+Info: No Avalon connections, skipping transform 
+Info: merlin_translator_transform: After transform: 2 modules, 1 connections
+Info: altpll_0: "clock" instantiated altpll "altpll_0"
+Info: clock: Done clock" with 2 modules, 2 files, 12420 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
