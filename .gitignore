@@ -10,3 +10,8 @@
 *.job
 *.pro
 *.pyc
+*-firmware/db/
+*-firmware/incremental_db/
+*-firmware/output_files/*.summary
+*-firmware/output_files/*.rpt
+*-firmware/output_files/*.done
