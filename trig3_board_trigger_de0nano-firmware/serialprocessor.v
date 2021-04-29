@@ -1,7 +1,8 @@
 module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	deadticks, firingticks, enable_outputs, 
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
-	phaseoffset, usefullwidth, passthrough, h, resethist, vetopmtlast);
+	histos, resethist
+	);
 	
 	input clk;
 	input[7:0] rxData;
@@ -15,12 +16,6 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	localparam READ=0, SOLVING=1, WRITE1=3, WRITE2=4, READMORE=5, PLLCLOCK=6, CLKSWITCH=7;
 	integer state=READ;
 	integer bytesread, byteswanted;
-	output reg usefullwidth=1;
-	output reg passthrough=0;
-	output reg vetopmtlast=1;
-	
-	input integer h[4];
-	output reg resethist=0;
 	
 	integer pllclock_counter=0;
 	integer scanclk_cycles=0;
@@ -29,14 +24,15 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	output reg phasestep=0;
 	output reg scanclk=0;
 	output reg clkswitch=0; // No matter what, inclk0 is the default clock
-	
-	output reg[2:0] phaseoffset=0; // offset the pmt counter phase by this many bins
-	
+		
 	integer ioCount, ioCountToSend;
-	reg[7:0] data[16];//for writing out data in WRITE1,2
+	reg[7:0] data[16]; // for writing out data in WRITE1,2
 	
-	output reg[7:0] deadticks=10; // dead for 200 ns
-	output reg[7:0] firingticks=9; // 50 ns wide pulse
+	output reg[7:0] deadticks=10; // 
+	output reg[7:0] firingticks=9; // 
+	
+	input integer histos[4];
+	output reg resethist;
 
 	always @(posedge clk) begin
 	case (state)
@@ -45,7 +41,6 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 		bytesread<=0;
 		byteswanted<=0;
       ioCount = 0;
-		resethist=0;
       if (rxReady) begin
 			readdata = rxData;
          state = SOLVING;
@@ -59,19 +54,19 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 		end
 	end
    SOLVING: begin
-		if (readdata==0) begin // send the firmware version				
+		if (readdata==0) begin		
 			ioCountToSend = 1;
-			data[0]=9; // this is the firmware version
+			data[0]=1; // this is the firmware version
 			state=WRITE1;				
 		end
-		else if (readdata==1) begin //wait for next byte: number of 20ns ticks to remain dead for after firing outputs
+		else if (readdata==1) begin //wait for next byte: some useful byte
 			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
 			else begin
 				deadticks=extradata[0];
 				state=READ;
 			end
 		end
-		else if (readdata==2) begin //wait for next byte: number of 5ns ticks to fire outputs for
+		else if (readdata==2) begin //wait for next byte: some useful byte
 			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
 			else begin
 				firingticks=extradata[0];
@@ -89,7 +84,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			state=CLKSWITCH;
 		end
 		else if (readdata==5) begin //adjust clock phase
-			phasecounterselect=3'b000; // all clocks - see https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyc3/cyc3_ciii51006.pdf table 5-10.
+			phasecounterselect=3'b000; // all clocks - see https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyc3/cyc3_ciii51006.pdf table 5-10
 			//phaseupdown=1'b1; // up
 			scanclk=1'b0; // start low
 			phasestep=1'b1; // assert!
@@ -97,16 +92,13 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			scanclk_cycles=0;
 			state=PLLCLOCK;
 		end
-		else if (readdata==6) begin //step phaseoffset of pmt counter by one		
-			phaseoffset=phaseoffset+1;
+		else if (readdata==6) begin //
 			state=READ;
 		end
-		else if (readdata==7) begin //toggle use of full width (second time bin)
-			usefullwidth = ~usefullwidth;
+		else if (readdata==7) begin //
 			state=READ;
 		end
-		else if (readdata==8) begin //toggle use of pmt passthrough
-			passthrough = ~passthrough;
+		else if (readdata==8) begin //
 			state=READ;
 		end
 		else if (readdata==9) begin //toggle phaseupdown up (default) or down
@@ -115,27 +107,26 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 		end
 		else if (readdata==10) begin //send out histo
 			ioCountToSend = 16;
-			data[0]=h[0][7:0];
-			data[1]=h[0][15:8];
-			data[2]=h[0][23:16];
-			data[3]=h[0][31:24];
-			data[4]=h[1][7:0];
-			data[5]=h[1][15:8];
-			data[6]=h[1][23:16];
-			data[7]=h[1][31:24];
-			data[8]=h[2][7:0];
-			data[9]=h[2][15:8];
-			data[10]=h[2][23:16];
-			data[11]=h[2][31:24];
-			data[12]=h[3][7:0];
-			data[13]=h[3][15:8];
-			data[14]=h[3][23:16];
-			data[15]=h[3][31:24];
+			data[0]=histos[0][7:0];
+			data[1]=histos[0][15:8];
+			data[2]=histos[0][23:16];
+			data[3]=histos[0][31:24];
+			data[4]=histos[1][7:0];
+			data[5]=histos[1][15:8];
+			data[6]=histos[1][23:16];
+			data[7]=histos[1][31:24];
+			data[8]=histos[2][7:0];
+			data[9]=histos[2][15:8];
+			data[10]=histos[2][23:16];
+			data[11]=histos[2][31:24];
+			data[12]=histos[3][7:0];
+			data[13]=histos[3][15:8];
+			data[14]=histos[3][23:16];
+			data[15]=histos[3][31:24];
 			state=WRITE1;	
 			resethist=1;
 		end
-		else if (readdata==11) begin //toggle vetopmtlast
-			vetopmtlast = ~vetopmtlast;
+		else if (readdata==11) begin //
 			state=READ;
 		end
 		else if (readdata==12) begin //adjust clock phase
