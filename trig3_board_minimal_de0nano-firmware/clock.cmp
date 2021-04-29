@@ -1,0 +1,10 @@
+	component clock is
+		port (
+			clk_clk                              : in  std_logic := 'X'; -- clk
+			clk_0_clk_reset_reset_n              : out std_logic;        -- reset_n
+			reset_reset_n                        : in  std_logic := 'X'; -- reset_n
+			altpll_0_inclk_interface_reset_reset : in  std_logic := 'X'; -- reset
+			altpll_0_c0_clk                      : out std_logic         -- clk
+		);
+	end component clock;
+
