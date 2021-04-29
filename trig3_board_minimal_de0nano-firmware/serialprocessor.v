@@ -83,7 +83,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			clkswitch = 1;
 			state=CLKSWITCH;
 		end
-		else if (readdata==5) begin //adjust clock phase
+		else if (readdata==5) begin //adjust clock phases
 			phasecounterselect=3'b000; // all clocks - see https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyc3/cyc3_ciii51006.pdf table 5-10
 			//phaseupdown=1'b1; // up
 			scanclk=1'b0; // start low
@@ -129,8 +129,8 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 		else if (readdata==11) begin //
 			state=READ;
 		end
-		else if (readdata==12) begin //adjust clock phase
-			phasecounterselect=3'b011; // clock c1 - see https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyc3/cyc3_ciii51006.pdf table 5-10.
+		else if (readdata==12) begin //adjust phase of clock c1
+			phasecounterselect=3'b011; // clock c1 - see https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyc3/cyc3_ciii51006.pdf table 5-10
 			//phaseupdown=1'b1; // up
 			scanclk=1'b0; // start low
 			phasestep=1'b1; // assert!
