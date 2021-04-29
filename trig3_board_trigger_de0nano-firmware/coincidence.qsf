@@ -119,15 +119,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to coax_out[9]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to coax_out
 set_location_assignment PIN_B1 -to led6_clklock
 set_location_assignment PIN_R9 -to clk50in
-set_global_assignment -name VERILOG_FILE serialprocessor.v
-set_global_assignment -name VERILOG_FILE async.v
-set_global_assignment -name VERILOG_FILE LED_4.v
-set_global_assignment -name BDF_FILE coincidence.bdf
-set_global_assignment -name QIP_FILE pll2.qip
-set_global_assignment -name QIP_FILE pll1.qip
-set_global_assignment -name SDC_FILE coincidence.sdc
-set_global_assignment -name CDF_FILE Chain2.cdf
-set_global_assignment -name CDF_FILE Chain1.cdf
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led7_clkchoice
 set_location_assignment PIN_L3 -to led7_clkchoice
 set_location_assignment PIN_F3 -to led5_plllock
@@ -165,3 +156,12 @@ set_location_assignment PIN_C8 -to coax_out[13]
 set_location_assignment PIN_C6 -to coax_out[14]
 set_location_assignment PIN_D6 -to coax_out[15]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE serialprocessor.v
+set_global_assignment -name VERILOG_FILE async.v
+set_global_assignment -name VERILOG_FILE LED_4.v
+set_global_assignment -name BDF_FILE coincidence.bdf
+set_global_assignment -name QIP_FILE pll2.qip
+set_global_assignment -name QIP_FILE pll1.qip
+set_global_assignment -name SDC_FILE coincidence.sdc
+set_global_assignment -name CDF_FILE Chain1.cdf
+set_global_assignment -name CDF_FILE Chain2.cdf
