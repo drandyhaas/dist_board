@@ -24,7 +24,7 @@ module LED_4(
 
 integer sparerightcounter=0;
 always@(posedge clk_adc) begin
-	if (sparerightcounter<250) spareright<=1;
+	if (sparerightcounter<655) spareright<=1; // time waiting for sync pulses, including time waiting for normal triggers to cease, 250+200+205 worst case
 	else spareright<=0;
 	if (sparerightcounter[27]) sparerightcounter<=0;
 	else sparerightcounter<=sparerightcounter+1;
@@ -35,18 +35,20 @@ reg[1:0] Pulsecounter=0;
 reg[7:0] Trecovery[3:0];
 always @(posedge clk_adc) begin
 	if (spareright) begin
-		if (coax_in[0] && Pulsecounter==0) Trecovery[0]<=Trecovery[0]+1;
-		if (coax_in[0] && Pulsecounter==1) Trecovery[1]<=Trecovery[1]+1;
-		if (coax_in[0] && Pulsecounter==2) Trecovery[2]<=Trecovery[2]+1;
-		if (coax_in[0] && Pulsecounter==3) Trecovery[3]<=Trecovery[3]+1;
-		delaycounter[0] <= (Trecovery[0]/2==27 && Trecovery[1]==0 && Trecovery[2]==0 && Trecovery[3]==0);
-		delaycounter[1] <= (Trecovery[1]/2==27 && Trecovery[0]==0 && Trecovery[2]==0 && Trecovery[3]==0);
-		delaycounter[2] <= (Trecovery[2]/2==27 && Trecovery[0]==0 && Trecovery[1]==0 && Trecovery[3]==0);
-		delaycounter[3] <= (Trecovery[3]/2==27 && Trecovery[0]==0 && Trecovery[1]==0 && Trecovery[2]==0);
-		histos[0] <= Trecovery[0];
-		histos[1] <= Trecovery[1];
-		histos[2] <= Trecovery[2];
-		histos[3] <= Trecovery[3];
+		if (sparerightcounter>200) begin // time to wait for normal triggers to cease
+			if (coax_in[0] && Pulsecounter==0) Trecovery[0]<=Trecovery[0]+1;
+			if (coax_in[0] && Pulsecounter==1) Trecovery[1]<=Trecovery[1]+1;
+			if (coax_in[0] && Pulsecounter==2) Trecovery[2]<=Trecovery[2]+1;
+			if (coax_in[0] && Pulsecounter==3) Trecovery[3]<=Trecovery[3]+1;
+			delaycounter[0] <= (Trecovery[0]/2==27 && Trecovery[1]==0 && Trecovery[2]==0 && Trecovery[3]==0);
+			delaycounter[1] <= (Trecovery[1]/2==27 && Trecovery[0]==0 && Trecovery[2]==0 && Trecovery[3]==0);
+			delaycounter[2] <= (Trecovery[2]/2==27 && Trecovery[0]==0 && Trecovery[1]==0 && Trecovery[3]==0);
+			delaycounter[3] <= (Trecovery[3]/2==27 && Trecovery[0]==0 && Trecovery[1]==0 && Trecovery[2]==0);
+			histos[0] <= Trecovery[0];
+			histos[1] <= Trecovery[1];
+			histos[2] <= Trecovery[2];
+			histos[3] <= Trecovery[3];
+		end
 	end
 	else begin
 		Trecovery[0]=0; Trecovery[1]=0; Trecovery[2]=0; Trecovery[3]=0;
@@ -57,18 +59,20 @@ reg[1:0] Pulsecounter2=0;
 reg[7:0] Trecovery2[3:0];
 always @(negedge clk_adc) begin // do the same on the negative edge, to see which edge syncs the triggers in better
 	if (spareright) begin
-		if (coax_in[0] && Pulsecounter2==0) Trecovery2[0]<=Trecovery2[0]+1;
-		if (coax_in[0] && Pulsecounter2==1) Trecovery2[1]<=Trecovery2[1]+1;
-		if (coax_in[0] && Pulsecounter2==2) Trecovery2[2]<=Trecovery2[2]+1;
-		if (coax_in[0] && Pulsecounter2==3) Trecovery2[3]<=Trecovery2[3]+1;
-		delaycounter[4] <= (Trecovery2[0]/2==27 && Trecovery2[1]==0 && Trecovery2[2]==0 && Trecovery2[3]==0);
-		delaycounter[5] <= (Trecovery2[1]/2==27 && Trecovery2[0]==0 && Trecovery2[2]==0 && Trecovery2[3]==0);
-		delaycounter[6] <= (Trecovery2[2]/2==27 && Trecovery2[0]==0 && Trecovery2[1]==0 && Trecovery2[3]==0);
-		delaycounter[7] <= (Trecovery2[3]/2==27 && Trecovery2[0]==0 && Trecovery2[1]==0 && Trecovery2[2]==0);
-		histos[4] <= Trecovery2[0];
-		histos[5] <= Trecovery2[1];
-		histos[6] <= Trecovery2[2];
-		histos[7] <= Trecovery2[3];
+		if (sparerightcounter>200) begin // time to wait for normal triggers to cease
+			if (coax_in[0] && Pulsecounter2==0) Trecovery2[0]<=Trecovery2[0]+1;
+			if (coax_in[0] && Pulsecounter2==1) Trecovery2[1]<=Trecovery2[1]+1;
+			if (coax_in[0] && Pulsecounter2==2) Trecovery2[2]<=Trecovery2[2]+1;
+			if (coax_in[0] && Pulsecounter2==3) Trecovery2[3]<=Trecovery2[3]+1;
+			delaycounter[4] <= (Trecovery2[0]/2==27 && Trecovery2[1]==0 && Trecovery2[2]==0 && Trecovery2[3]==0);
+			delaycounter[5] <= (Trecovery2[1]/2==27 && Trecovery2[0]==0 && Trecovery2[2]==0 && Trecovery2[3]==0);
+			delaycounter[6] <= (Trecovery2[2]/2==27 && Trecovery2[0]==0 && Trecovery2[1]==0 && Trecovery2[3]==0);
+			delaycounter[7] <= (Trecovery2[3]/2==27 && Trecovery2[0]==0 && Trecovery2[1]==0 && Trecovery2[2]==0);
+			histos[4] <= Trecovery2[0];
+			histos[5] <= Trecovery2[1];
+			histos[6] <= Trecovery2[2];
+			histos[7] <= Trecovery2[3];
+		end
 	end
 	else begin
 		Trecovery2[0]=0; Trecovery2[1]=0; Trecovery2[2]=0; Trecovery2[3]=0;

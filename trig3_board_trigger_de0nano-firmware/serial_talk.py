@@ -9,15 +9,16 @@ result = ser.read(1); byte_array = unpack('%dB' % len(result), result); print("f
 
 #ser.write(bytearray([4])) # toggle use other clk input
 
-for myiter in range(100):
+for myiter in range(60):
 
     #if myiter%2==0: ser.write(bytearray([5])) #increment phase
-    time.sleep(.3)
+    time.sleep(.5)
 
     ser.write(bytearray([11]))  # delaycounter trigger info
     result = ser.read(1);
     byte_array = unpack('%dB' % len(result), result);
-    print("delaycounter", byte_array[0])
+    print("delaycounter", bin(byte_array[0]))
+    #if byte_array[0]>0: continue
 
     ser.write(bytearray([10])) # histo
     result = ser.read(32); byte_array = unpack('%dB' % len(result), result)
