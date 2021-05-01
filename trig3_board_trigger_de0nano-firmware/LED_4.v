@@ -5,7 +5,7 @@ module LED_4(
 	input [15:0] coax_in,
 	output [15:0] coax_out,	
 	input [7:0] deadticks, input [7:0] firingticks,
-	input clk_adc, output integer histos[4], input resethist, output spareright, output reg[7:0] delaycounter
+	input clk_adc, output integer histos[8], input resethist, output spareright, output reg[7:0] delaycounter
 	);
 	
 	integer i;
@@ -65,6 +65,10 @@ always @(negedge clk_adc) begin // do the same on the negative edge, to see whic
 		delaycounter[5] <= (Trecovery2[1]/2==27 && Trecovery2[0]==0 && Trecovery2[2]==0 && Trecovery2[3]==0);
 		delaycounter[6] <= (Trecovery2[2]/2==27 && Trecovery2[0]==0 && Trecovery2[1]==0 && Trecovery2[3]==0);
 		delaycounter[7] <= (Trecovery2[3]/2==27 && Trecovery2[0]==0 && Trecovery2[1]==0 && Trecovery2[2]==0);
+		histos[4] <= Trecovery2[0];
+		histos[5] <= Trecovery2[1];
+		histos[6] <= Trecovery2[2];
+		histos[7] <= Trecovery2[3];
 	end
 	else begin
 		Trecovery2[0]=0; Trecovery2[1]=0; Trecovery2[2]=0; Trecovery2[3]=0;

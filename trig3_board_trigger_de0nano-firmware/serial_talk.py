@@ -20,10 +20,10 @@ for myiter in range(100):
     print("delaycounter", byte_array[0])
 
     ser.write(bytearray([10])) # histo
-    result = ser.read(16); byte_array = unpack('%dB' % len(result), result)
+    result = ser.read(32); byte_array = unpack('%dB' % len(result), result)
     myint=[]
-    for i in range(4):
+    for i in range(8):
         myint.append( byte_array[4*i+0]+256*byte_array[4*i+1]+256*256*byte_array[4*i+2]+0*256*256*256*byte_array[4*i+3] )
-    print(myint[0],myint[1],myint[2],myint[3])
+    print(myint[0],myint[1],myint[2],myint[3],myint[4],myint[5],myint[6],myint[7])
 
 ser.close()

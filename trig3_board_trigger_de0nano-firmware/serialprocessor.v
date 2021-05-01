@@ -26,14 +26,15 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	output reg clkswitch=0; // No matter what, inclk0 is the default clock
 		
 	integer ioCount, ioCountToSend;
-	reg[7:0] data[16]; // for writing out data in WRITE1,2
+	reg[7:0] data[64]; // for writing out data in WRITE1,2
 	
 	output reg[7:0] deadticks=10; // 
 	output reg[7:0] firingticks=9; // 
 	
-	input integer histos[4];
+	input integer histos[8];
 	output reg resethist;
 	input reg[7:0] delaycounter;
+	integer i;
 
 	always @(posedge clk) begin
 	case (state)
@@ -107,23 +108,11 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			state=READ;
 		end
 		else if (readdata==10) begin //send out histo
-			ioCountToSend = 16;
-			data[0]=histos[0][7:0];
-			data[1]=histos[0][15:8];
-			data[2]=histos[0][23:16];
-			data[3]=histos[0][31:24];
-			data[4]=histos[1][7:0];
-			data[5]=histos[1][15:8];
-			data[6]=histos[1][23:16];
-			data[7]=histos[1][31:24];
-			data[8]=histos[2][7:0];
-			data[9]=histos[2][15:8];
-			data[10]=histos[2][23:16];
-			data[11]=histos[2][31:24];
-			data[12]=histos[3][7:0];
-			data[13]=histos[3][15:8];
-			data[14]=histos[3][23:16];
-			data[15]=histos[3][31:24];
+			ioCountToSend = 32;
+			i=0; while (i<32) begin
+				data[i]=histos[i/4][8*i%32 +:8]; // selects 8 bits starting at bit 8*i%32
+				i=i+1;
+			end
 			state=WRITE1;	
 			resethist=1;
 		end

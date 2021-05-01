@@ -89,8 +89,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 232 64)
 		(output)
-		(text "histos[0..3][31..0]" (rect 0 0 66 12)(font "Arial" ))
-		(text "histos[0..3][31..0]" (rect 145 59 211 71)(font "Arial" ))
+		(text "histos[0..7][31..0]" (rect 0 0 66 12)(font "Arial" ))
+		(text "histos[0..7][31..0]" (rect 145 59 211 71)(font "Arial" ))
 		(line (pt 232 64)(pt 216 64)(line_width 3))
 	)
 	(port
