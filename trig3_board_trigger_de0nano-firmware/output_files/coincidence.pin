@@ -32,7 +32,7 @@
  --                  Bank 4:       3.3V
  --                  Bank 5:       3.3V
  --                  Bank 6:       3.3V
- --                  Bank 7:       3.3V
+ --                  Bank 7:       3.0V
  --                  Bank 8:       3.3V
  -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
  --                  It can also be used to report unused dedicated pins. The connection
@@ -78,12 +78,12 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :      
 coax_in[15]                  : A8        : input  : 3.3-V LVTTL       :         : 8         : Y              
 GND+                         : A9        :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 7         :                
-led[3]                       : A11       : output : 3.3-V LVTTL       :         : 7         : Y              
+led[3]                       : A11       : output : 3.0-V LVTTL       :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
-led[1]                       : A13       : output : 3.3-V LVTTL       :         : 7         : Y              
+led[1]                       : A13       : output : 3.0-V LVTTL       :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A14       :        :                   :         : 7         :                
-led[0]                       : A15       : output : 3.3-V LVTTL       :         : 7         : Y              
-VCCIO7                       : A16       : power  :                   : 3.3V    : 7         :                
+led[0]                       : A15       : output : 3.0-V LVTTL       :         : 7         : Y              
+VCCIO7                       : A16       : power  :                   : 3.0V    : 7         :                
 led6_clklock                 : B1        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND                          : B2        : gnd    :                   :         :           :                
 coax_out[6]                  : B3        : output : 3.3-V LVTTL       :         : 8         : Y              
@@ -94,9 +94,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : B7        :        :                   :      
 coax_in[14]                  : B8        : input  : 3.3-V LVTTL       :         : 8         : Y              
 GND+                         : B9        :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B10       :        :                   :         : 7         :                
-coax_out[0]                  : B11       : output : 3.3-V LVTTL       :         : 7         : Y              
+coax_out[0]                  : B11       : output : 3.0-V LVTTL       :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B12       :        :                   :         : 7         :                
-led[2]                       : B13       : output : 3.3-V LVTTL       :         : 7         : Y              
+led[2]                       : B13       : output : 3.0-V LVTTL       :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B14       :        :                   :         : 7         :                
 GND                          : B15       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B16       :        :                   :         : 6         :                
@@ -108,11 +108,11 @@ GND                          : C5        : gnd    :                   :         
 coax_out[14]                 : C6        : output : 3.3-V LVTTL       :         : 8         : Y              
 VCCIO8                       : C7        : power  :                   : 3.3V    : 8         :                
 coax_out[13]                 : C8        : output : 3.3-V LVTTL       :         : 8         : Y              
-coax_in[5]                   : C9        : input  : 3.3-V LVTTL       :         : 7         : Y              
-VCCIO7                       : C10       : power  :                   : 3.3V    : 7         :                
+coax_in[5]                   : C9        : input  : 3.0-V LVTTL       :         : 7         : Y              
+VCCIO7                       : C10       : power  :                   : 3.0V    : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C11       :        :                   :         : 7         :                
 GND                          : C12       : gnd    :                   :         :           :                
-VCCIO7                       : C13       : power  :                   : 3.3V    : 7         :                
+VCCIO7                       : C13       : power  :                   : 3.0V    : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C14       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C15       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 6         :                
@@ -124,14 +124,14 @@ coax_out[9]                  : D5        : output : 3.3-V LVTTL       :         
 coax_out[15]                 : D6        : output : 3.3-V LVTTL       :         : 8         : Y              
 GND                          : D7        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D8        :        :                   :         : 8         :                
-coax_in[4]                   : D9        : input  : 3.3-V LVTTL       :         : 7         : Y              
+coax_in[4]                   : D9        : input  : 3.0-V LVTTL       :         : 7         : Y              
 GND                          : D10       : gnd    :                   :         :           :                
-coax_out[2]                  : D11       : output : 3.3-V LVTTL       :         : 7         : Y              
-coax_out[7]                  : D12       : output : 3.3-V LVTTL       :         : 7         : Y              
+coax_out[2]                  : D11       : output : 3.0-V LVTTL       :         : 7         : Y              
+coax_out[7]                  : D12       : output : 3.0-V LVTTL       :         : 7         : Y              
 VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D16       :        :                   :         : 6         :                
+spareright                   : D16       : output : 3.3-V LVTTL       :         : 6         : Y              
 GND+                         : E1        :        :                   :         : 1         :                
 GND                          : E2        : gnd    :                   :         :           :                
 VCCIO1                       : E3        : power  :                   : 3.3V    : 1         :                
@@ -141,7 +141,7 @@ coax_out[12]                 : E6        : output : 3.3-V LVTTL       :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E8        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E9        :        :                   :         : 7         :                
-coax_out[1]                  : E10       : output : 3.3-V LVTTL       :         : 7         : Y              
+coax_out[1]                  : E10       : output : 3.0-V LVTTL       :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E11       :        :                   :         : 7         :                
 GNDA2                        : E12       : gnd    :                   :         :           :                
 GND                          : E13       : gnd    :                   :         :           :                

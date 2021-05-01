@@ -3,16 +3,21 @@ from struct import unpack
 import time
 
 ser=Serial("COM21",115200,timeout=1.0)
-    
+
 ser.write(bytearray([0])) # firmware version
 result = ser.read(1); byte_array = unpack('%dB' % len(result), result); print("firmware v",byte_array[0])
 
-ser.write(bytearray([4])) # toggle use other clk input
+#ser.write(bytearray([4])) # toggle use other clk input
 
-for myiter in range(10):
+for myiter in range(100):
 
-    if myiter%2==0: ser.write(bytearray([5])) #increment phase
+    #if myiter%2==0: ser.write(bytearray([5])) #increment phase
     time.sleep(.3)
+
+    ser.write(bytearray([11]))  # delaycounter trigger info
+    result = ser.read(1);
+    byte_array = unpack('%dB' % len(result), result);
+    print("delaycounter", byte_array[0])
 
     ser.write(bytearray([10])) # histo
     result = ser.read(16); byte_array = unpack('%dB' % len(result), result)
