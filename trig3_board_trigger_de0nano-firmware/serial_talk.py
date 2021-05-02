@@ -24,16 +24,16 @@ byte_array = unpack('%dB' % len(result), result);
 print("using external active clock", bin(byte_array[0]))
 time.sleep(.1)
 
-for myiter in range(60):
+for myiter in range(600):
 
-    if myiter%2==0: ser.write(bytearray([5])) #increment phase
+    #if myiter%2==0: ser.write(bytearray([5])) #increment phase
     time.sleep(.5)
 
     ser.write(bytearray([11]))  # delaycounter trigger info
     result = ser.read(1)
     byte_array = unpack('%dB' % len(result), result);
     print("delaycounter", bin(byte_array[0]))
-    #if byte_array[0]>0: continue
+    if byte_array[0]==0: break #continue
 
     ser.write(bytearray([10])) # histo
     result = ser.read(32); byte_array = unpack('%dB' % len(result), result)
