@@ -84,7 +84,7 @@ led[1]                       : A13       : output : 3.0-V LVTTL       :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : A14       :        :                   :         : 7         :                
 led[0]                       : A15       : output : 3.0-V LVTTL       :         : 7         : Y              
 VCCIO7                       : A16       : power  :                   : 3.0V    : 7         :                
-led6_clklock                 : B1        : output : 3.3-V LVTTL       :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B1        :        :                   :         : 1         :                
 GND                          : B2        : gnd    :                   :         :           :                
 coax_out[6]                  : B3        : output : 3.3-V LVTTL       :         : 8         : Y              
 coax_out[4]                  : B4        : output : 3.3-V LVTTL       :         : 8         : Y              

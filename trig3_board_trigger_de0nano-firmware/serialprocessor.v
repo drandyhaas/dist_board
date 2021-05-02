@@ -1,7 +1,7 @@
 module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	deadticks, firingticks, enable_outputs, 
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
-	histos, resethist, delaycounter
+	histos, resethist, delaycounter, activeclock
 	);
 	
 	input clk;
@@ -34,6 +34,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	input integer histos[8];
 	output reg resethist;
 	input reg[7:0] delaycounter;
+	input activeclock;
 	integer i;
 
 	always @(posedge clk) begin
@@ -58,7 +59,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
    SOLVING: begin
 		if (readdata==0) begin		
 			ioCountToSend = 1;
-			data[0]=2; // this is the firmware version
+			data[0]=3; // this is the firmware version
 			state=WRITE1;				
 		end
 		else if (readdata==1) begin //wait for next byte: some useful byte
@@ -80,8 +81,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			state=READ;
 		end
 		else if (readdata==4) begin //toggle clk inputs
-			pllclock_counter=0;
-			
+			pllclock_counter=0;			
 			clkswitch = 1;
 			state=CLKSWITCH;
 		end
@@ -100,10 +100,12 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 		else if (readdata==7) begin //
 			state=READ;
 		end
-		else if (readdata==8) begin //
-			state=READ;
+		else if (readdata==8) begin // report what clock is active input
+			ioCountToSend = 1;
+			data[0]= 0 | activeclock;
+			state=WRITE1;
 		end
-		else if (readdata==9) begin //toggle phaseupdown up (default) or down
+		else if (readdata==9) begin // toggle phaseupdown up (default) or down
 			phaseupdown = ~phaseupdown;
 			state=READ;
 		end

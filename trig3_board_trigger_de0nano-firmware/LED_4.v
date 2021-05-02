@@ -8,19 +8,19 @@ module LED_4(
 	input clk_adc, output integer histos[8], input resethist, output spareright, output reg[7:0] delaycounter
 	);
 	
-	integer i;
-	always@(posedge clk_adc) begin
-		i=0; while (i<16) begin
-			coax_out[i] <= coax_in[i];
-			//if (resethist) begin
-			//	if (i<4) histos[i] <= 0;
-			//end
-			//else begin
-			//	if (i<4) histos[i] <= histos[i]+1;
-			//end
-			i=i+1;
-		end
+integer i;
+always@(posedge clk_adc) begin
+	i=0; while (i<16) begin
+		coax_out[i] <= coax_in[i];
+		//if (resethist) begin
+		//	if (i<4) histos[i] <= 0;
+		//end
+		//else begin
+		//	if (i<4) histos[i] <= histos[i]+1;
+		//end
+		i=i+1;
 	end
+end
 
 integer sparerightcounter=0;
 always@(posedge clk_adc) begin
@@ -81,21 +81,21 @@ always @(negedge clk_adc) begin // do the same on the negative edge, to see whic
 end
 
 
-	//for LEDs
-	reg [1:0] ledi;
-	integer counter=0;
-	always@(posedge clk) begin
-		counter<=counter+1;
-		if (counter[25]) begin			
-			counter<=0;
-			ledi<=ledi+2'b01;
-			case (ledi)
-			0:	begin led <= 4'b0001; end
-			1:	begin led <= 4'b0010; end
-			2:	begin led <= 4'b0100; end
-			3:	begin led <= 4'b1000; end
-			endcase
-		end
+//for LEDs
+reg [1:0] ledi;
+integer counter=0;
+always@(posedge clk) begin
+	counter<=counter+1;
+	if (counter[25]) begin			
+		counter<=0;
+		ledi<=ledi+2'b01;
+		case (ledi)
+		0:	begin led <= 4'b0001; end
+		1:	begin led <= 4'b0010; end
+		2:	begin led <= 4'b0100; end
+		3:	begin led <= 4'b1000; end
+		endcase
 	end
+end
 	
 endmodule

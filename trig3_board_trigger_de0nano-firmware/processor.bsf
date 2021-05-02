@@ -66,6 +66,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
+		(pt 0 128)
+		(input)
+		(text "activeclock" (rect 0 0 43 12)(font "Arial" ))
+		(text "activeclock" (rect 21 123 64 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
 		(pt 264 32)
 		(output)
 		(text "txStart" (rect 0 0 25 12)(font "Arial" ))
