@@ -33,7 +33,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	
 	input integer histos[8];
 	output reg resethist;
-	input reg[7:0] delaycounter;
+	input reg[7:0] delaycounter[16];
 	input activeclock;
 	integer i;
 
@@ -120,7 +120,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 		end
 		else if (readdata==11) begin // send the delaycounter trigger data
 			ioCountToSend = 1;
-			data[0]=delaycounter;
+			data[0]=delaycounter[0];//need to select which delaycounter channel to send
 			state=WRITE1;
 		end
 		else if (readdata==12) begin //adjust phase of clock c1

@@ -1,5 +1,5 @@
 Warning (10268): Verilog HDL information at serialprocessor.v(40): always construct contains both blocking and non-blocking assignments File: C:/gitwork/head/dist_board/trig3_board_trigger_de0nano-firmware/serialprocessor.v Line: 40
 Info (10281): Verilog HDL Declaration information at serialprocessor.v(16): object "CLKSWITCH" differs only in case from object "clkswitch" in the same scope File: C:/gitwork/head/dist_board/trig3_board_trigger_de0nano-firmware/serialprocessor.v Line: 16
-Warning (10268): Verilog HDL information at LED_4.v(12): always construct contains both blocking and non-blocking assignments File: C:/gitwork/head/dist_board/trig3_board_trigger_de0nano-firmware/LED_4.v Line: 12
-Warning (10268): Verilog HDL information at LED_4.v(36): always construct contains both blocking and non-blocking assignments File: C:/gitwork/head/dist_board/trig3_board_trigger_de0nano-firmware/LED_4.v Line: 36
+Warning (10268): Verilog HDL information at LED_4.v(14): always construct contains both blocking and non-blocking assignments File: C:/gitwork/head/dist_board/trig3_board_trigger_de0nano-firmware/LED_4.v Line: 14
+Warning (10268): Verilog HDL information at LED_4.v(33): always construct contains both blocking and non-blocking assignments File: C:/gitwork/head/dist_board/trig3_board_trigger_de0nano-firmware/LED_4.v Line: 33
 Warning (10268): Verilog HDL information at LED_4.v(60): always construct contains both blocking and non-blocking assignments File: C:/gitwork/head/dist_board/trig3_board_trigger_de0nano-firmware/LED_4.v Line: 60

@@ -2,22 +2,19 @@ module LED_4(
 	input nrst,
 	input clk,
 	output reg [3:0] led,
-	input [15:0] coax_in,
-	output [15:0] coax_out,	
+	input [16-1:0] coax_in,
+	output [16-1:0] coax_out,	
 	input [7:0] deadticks, input [7:0] firingticks,
-	input clk_adc, output integer histos[8], input resethist, output spareright, output reg[7:0] delaycounter
+	input clk_adc, output integer histosout[8], input resethist, output spareright, output reg [7:0] delaycounter[16]
 	);
-	
+
+integer histos[8][16];
 integer i;
+integer j;
 always@(posedge clk_adc) begin
 	i=0; while (i<16) begin
 		coax_out[i] <= coax_in[i];
-		//if (resethist) begin
-		//	if (i<4) histos[i] <= 0;
-		//end
-		//else begin
-		//	if (i<4) histos[i] <= histos[i]+1;
-		//end
+		if (i<8) histosout[i] <= histos[i][0];//have to select channel for histo to send to serial
 		i=i+1;
 	end
 end
@@ -32,50 +29,56 @@ end
 
 // triggers (from other boards) are synced in
 reg[1:0] Pulsecounter=0;
-reg[7:0] Trecovery[3:0];
+reg[7:0] Trecovery[3:0][16];
 always @(posedge clk_adc) begin
 	if (spareright) begin
 		if (sparerightcounter>200) begin // time to wait for normal triggers to cease
-			if (coax_in[0] && Pulsecounter==0) Trecovery[0]<=Trecovery[0]+1;
-			if (coax_in[0] && Pulsecounter==1) Trecovery[1]<=Trecovery[1]+1;
-			if (coax_in[0] && Pulsecounter==2) Trecovery[2]<=Trecovery[2]+1;
-			if (coax_in[0] && Pulsecounter==3) Trecovery[3]<=Trecovery[3]+1;
-			delaycounter[0] <= (Trecovery[0]/2==27 && Trecovery[1]==0 && Trecovery[2]==0 && Trecovery[3]==0);
-			delaycounter[1] <= (Trecovery[1]/2==27 && Trecovery[0]==0 && Trecovery[2]==0 && Trecovery[3]==0);
-			delaycounter[2] <= (Trecovery[2]/2==27 && Trecovery[0]==0 && Trecovery[1]==0 && Trecovery[3]==0);
-			delaycounter[3] <= (Trecovery[3]/2==27 && Trecovery[0]==0 && Trecovery[1]==0 && Trecovery[2]==0);
-			histos[0] <= Trecovery[0];
-			histos[1] <= Trecovery[1];
-			histos[2] <= Trecovery[2];
-			histos[3] <= Trecovery[3];
+			i=0; while (i<4) begin
+				j=0; while (j<16) begin
+					if (coax_in[j] && Pulsecounter==i) Trecovery[i][j]<=Trecovery[i][j]+1;
+					delaycounter[j][i] <= (Trecovery[i][j]/2==27 && Trecovery[(i+1)%4][j]==0 && Trecovery[(i+2)%4][j]==0 && Trecovery[(i+3)%4][j]==0);
+					histos[i][j] <= Trecovery[i][j];
+					j=j+1;
+				end
+				i=i+1;
+			end
 		end
 	end
 	else begin
-		Trecovery[0]=0; Trecovery[1]=0; Trecovery[2]=0; Trecovery[3]=0;
+		i=0; while (i<4) begin
+			j=0; while (j<16) begin
+				Trecovery[i][j]=0;
+				j=j+1;
+			end
+			i=i+1;
+		end
 	end
 	Pulsecounter<=Pulsecounter+1; // for iterating through the trigger bins
 end
 reg[1:0] Pulsecounter2=0;
-reg[7:0] Trecovery2[3:0];
+reg[7:0] Trecovery2[3:0][16];
 always @(negedge clk_adc) begin // do the same on the negative edge, to see which edge syncs the triggers in better
 	if (spareright) begin
 		if (sparerightcounter>200) begin // time to wait for normal triggers to cease
-			if (coax_in[0] && Pulsecounter2==0) Trecovery2[0]<=Trecovery2[0]+1;
-			if (coax_in[0] && Pulsecounter2==1) Trecovery2[1]<=Trecovery2[1]+1;
-			if (coax_in[0] && Pulsecounter2==2) Trecovery2[2]<=Trecovery2[2]+1;
-			if (coax_in[0] && Pulsecounter2==3) Trecovery2[3]<=Trecovery2[3]+1;
-			delaycounter[4] <= (Trecovery2[0]/2==27 && Trecovery2[1]==0 && Trecovery2[2]==0 && Trecovery2[3]==0);
-			delaycounter[5] <= (Trecovery2[1]/2==27 && Trecovery2[0]==0 && Trecovery2[2]==0 && Trecovery2[3]==0);
-			delaycounter[6] <= (Trecovery2[2]/2==27 && Trecovery2[0]==0 && Trecovery2[1]==0 && Trecovery2[3]==0);
-			delaycounter[7] <= (Trecovery2[3]/2==27 && Trecovery2[0]==0 && Trecovery2[1]==0 && Trecovery2[2]==0);
-			histos[4] <= Trecovery2[0];
-			histos[5] <= Trecovery2[1];
-			histos[6] <= Trecovery2[2];
-			histos[7] <= Trecovery2[3];
+			i=0; while (i<4) begin
+				j=0; while (j<16) begin
+					if (coax_in[j] && Pulsecounter2==i) Trecovery2[i][j]<=Trecovery2[i][j]+1;
+					delaycounter[j][4+i] <= (Trecovery2[i][j]/2==27 && Trecovery2[(i+1)%4][j]==0 && Trecovery2[(i+2)%4][j]==0 && Trecovery2[(i+3)%4][j]==0);
+					histos[4+i][j] <= Trecovery2[i][j];
+					j=j+1;
+				end
+				i=i+1;
+			end
 		end
 	end
 	else begin
-		Trecovery2[0]=0; Trecovery2[1]=0; Trecovery2[2]=0; Trecovery2[3]=0;
+		i=0; while (i<4) begin
+			j=0; while (j<16) begin
+				Trecovery2[i][j]=0;
+				j=j+1;
+			end
+			i=i+1;
+		end
 	end
 	Pulsecounter2<=Pulsecounter2+1;
 end
