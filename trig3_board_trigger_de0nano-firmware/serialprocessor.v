@@ -1,5 +1,5 @@
 module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
-	deadticks, firingticks, enable_outputs, 
+	deadticks, histotosend, enable_outputs, 
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
 	histos, resethist, delaycounter, activeclock
 	);
@@ -28,8 +28,8 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	integer ioCount, ioCountToSend;
 	reg[7:0] data[64]; // for writing out data in WRITE1,2
 	
-	output reg[7:0] deadticks=10; // 
-	output reg[7:0] firingticks=9; // 
+	output reg[7:0] deadticks=0; // 
+	output reg[7:0] histotosend=0; // 
 	
 	input integer histos[8];
 	output reg resethist;
@@ -69,10 +69,10 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 				state=READ;
 			end
 		end
-		else if (readdata==2) begin //wait for next byte: some useful byte
+		else if (readdata==2) begin //wait for next byte: which histos to send out over serial when asked for histos
 			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
 			else begin
-				firingticks=extradata[0];
+				histotosend=extradata[0];
 				state=READ;
 			end
 		end
@@ -119,8 +119,11 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			resethist=1;
 		end
 		else if (readdata==11) begin // send the delaycounter trigger data
-			ioCountToSend = 1;
-			data[0]=delaycounter[0];//need to select which delaycounter channel to send
+			ioCountToSend = 16;
+			i=0; while (i<16) begin			
+				data[i]=delaycounter[i];
+				i=i+1;
+			end
 			state=WRITE1;
 		end
 		else if (readdata==12) begin //adjust phase of clock c1

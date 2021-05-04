@@ -4,7 +4,7 @@ module LED_4(
 	output reg [3:0] led,
 	input [16-1:0] coax_in,
 	output [16-1:0] coax_out,	
-	input [7:0] deadticks, input [7:0] firingticks,
+	input [7:0] deadticks, input [7:0] histotosend,
 	input clk_adc, output integer histosout[8], input resethist, output spareright, output reg [7:0] delaycounter[16]
 	);
 
@@ -14,7 +14,7 @@ integer j;
 always@(posedge clk_adc) begin
 	i=0; while (i<16) begin
 		coax_out[i] <= coax_in[i];
-		if (i<8) histosout[i] <= histos[i][0];//have to select channel for histo to send to serial
+		if (i<8) histosout[i] <= histos[i][histotosend];//have to select channel for histo to send to serial
 		i=i+1;
 	end
 end

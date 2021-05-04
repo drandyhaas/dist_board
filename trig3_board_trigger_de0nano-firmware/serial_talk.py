@@ -31,12 +31,14 @@ while myiter<60:
     time.sleep(.5)
 
     ser.write(bytearray([11]))  # delaycounter trigger info
-    result = ser.read(1)
+    result = ser.read(16)
     byte_array = unpack('%dB' % len(result), result)
+    print("all delaycounters:",byte_array)
     delaycounter = byte_array[0]
-    print("delaycounter", bin(delaycounter))
+    print("delaycounter 0:", bin(delaycounter))
 
-    ser.write(bytearray([10])) # histo
+    ser.write(bytearray([2,0])) # get histos from channel 0
+    ser.write(bytearray([10])) # get histos
     result = ser.read(32)
     byte_array = unpack('%dB' % len(result), result)
     myint=[]

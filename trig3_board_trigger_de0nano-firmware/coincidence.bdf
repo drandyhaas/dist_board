@@ -106,6 +106,23 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
+	(rect 392 672 568 688)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "led5_plllock" (rect 90 0 146 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 568 688 624 712))
+)
+(pin
+	(output)
 	(rect 1200 400 1376 416)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "led[3..0]" (rect 90 0 130 12)(font "Arial" ))
@@ -174,24 +191,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 360 672 536 688)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "led5_plllock" (rect 90 0 146 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-	(annotation_block (location)(rect 536 688 592 712))
-)
-(pin
-	(output)
-	(rect 360 688 536 704)
+	(rect 384 688 560 704)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "led7_clkchoice" (rect 90 0 161 12)(font "Arial" ))
 	(pt 0 8)
@@ -204,7 +204,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 536 704 592 728))
+	(annotation_block (location)(rect 560 704 616 728))
 )
 (pin
 	(output)
@@ -509,8 +509,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 96)
 		(input)
-		(text "firingticks[7..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "firingticks[7..0]" (rect 21 91 95 103)(font "Arial" ))
+		(text "histotosend[7..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "histotosend[7..0]" (rect 21 91 103 103)(font "Arial" ))
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
@@ -650,8 +650,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 288 96)
 		(output)
-		(text "firingticks[7..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "firingticks[7..0]" (rect 205 91 267 103)(font "Arial" ))
+		(text "histotosend[7..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "histotosend[7..0]" (rect 198 91 267 103)(font "Arial" ))
 		(line (pt 288 96)(pt 272 96)(line_width 3))
 	)
 	(port
@@ -749,15 +749,7 @@ refer to the applicable agreement for further details.
 	(pt 1336 832)
 )
 (connector
-	(pt 368 792)
-	(pt 400 792)
-)
-(connector
 	(pt 1336 832)
-	(pt 1336 792)
-)
-(connector
-	(pt 888 792)
 	(pt 1336 792)
 )
 (connector
@@ -782,40 +774,12 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 400 792)
-	(pt 888 792)
-)
-(connector
-	(pt 888 792)
-	(pt 888 848)
-)
-(connector
-	(pt 352 696)
-	(pt 360 696)
-)
-(connector
-	(pt 368 632)
-	(pt 352 632)
-)
-(connector
 	(pt 0 632)
 	(pt -8 632)
 )
 (connector
-	(pt 368 792)
-	(pt 368 632)
-)
-(connector
-	(pt 368 632)
-	(pt 928 424)
-)
-(connector
 	(pt 352 648)
 	(pt 928 488)
-)
-(connector
-	(pt 352 680)
-	(pt 360 680)
 )
 (connector
 	(pt 0 648)
@@ -897,10 +861,45 @@ refer to the applicable agreement for further details.
 	(pt 0 696)
 	(pt 1208 960)
 )
-(junction (pt 400 792))
+(connector
+	(pt 352 680)
+	(pt 392 680)
+)
+(connector
+	(pt 352 696)
+	(pt 384 696)
+)
+(connector
+	(pt 400 792)
+	(pt 888 792)
+)
+(connector
+	(pt 888 792)
+	(pt 1336 792)
+)
+(connector
+	(pt 888 792)
+	(pt 888 848)
+)
+(connector
+	(pt 928 424)
+	(pt 888 424)
+)
+(connector
+	(pt 888 424)
+	(pt 888 632)
+)
+(connector
+	(pt 888 632)
+	(pt 888 792)
+)
+(connector
+	(pt 352 632)
+	(pt 888 632)
+)
 (junction (pt 888 792))
-(junction (pt 368 632))
 (junction (pt 352 696))
+(junction (pt 888 632))
 (text "This is the main pll, chooses between internal and external clock" (rect 0 528 376 547)(font "Intel Clear" (font_size 8)))
 (text "Has adjustable phase for each clock output, relative to the chosen input" (rect 0 544 420 563)(font "Intel Clear" (font_size 8)))
 (text "push button 0 is reset" (rect 680 376 808 395)(font "Intel Clear" (font_size 8)))
