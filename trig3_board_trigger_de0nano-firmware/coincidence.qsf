@@ -89,7 +89,6 @@ set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to coax_in[3]
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to coax_out[5]
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to coax_in[9]
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to serial_in
-set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to led6_clklock
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to serial_out
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to coax_in[10]
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to coax_in[11]
@@ -115,7 +114,6 @@ set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to coax_out[12]
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to coax_out[11]
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to coax_out[10]
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to coax_out[9]
-set_location_assignment PIN_B1 -to led6_clklock
 set_location_assignment PIN_R9 -to clk50in
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to led7_clkchoice
 set_location_assignment PIN_L3 -to led7_clkchoice
