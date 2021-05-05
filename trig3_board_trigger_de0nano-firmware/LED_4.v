@@ -46,7 +46,7 @@ always @(posedge clk_adc) begin
 				j=0; while (j<16) begin
 					if (coaxinreg[j] && Pulsecounter==i) Trecovery[i][j]<=Trecovery[i][j]+1;
 					if (Trecovery[i][j]/2==27 && Trecovery[(i+1)%4][j]==0 && Trecovery[(i+2)%4][j]==0 && Trecovery[(i+3)%4][j]==0) delaycounter[j] <= i+1;
-					histos[i][j] <= Trecovery[i][j];
+					histos[i][j] = Trecovery[i][j];
 					j=j+1;
 				end
 				i=i+1;
@@ -66,8 +66,8 @@ always @(posedge clk_adc) begin
 		end
 		
 		j=0; while (j<16) begin
-				thebin[j] = (Pulsecounter-delaycounter[j]+1)%4;
-				if (coaxinreg[j]) begin
+			thebin[j] = (Pulsecounter-delaycounter[j]+1)%4;
+			if (coaxinreg[j]) begin
 				if (delaycounter[j]>0) begin // we have a lock
 					Tin[thebin[j]][j] = 3; // set Tin high for this channel for 4 times this many clk ticks
 					histos[4+thebin[j]][j] = histos[4+thebin[j]][j]+1; // record the trigger for monitoring
@@ -79,6 +79,12 @@ always @(posedge clk_adc) begin
 			else begin // every 4 ticks
 				// count down how long the triggers have been active
 				if (Tin[thebin[j]][j]>0) Tin[thebin[j]][j] = Tin[thebin[j]][j]-1;
+			end
+			if (resethist) begin
+				i=0; while (i<4) begin
+					histos[4+i][j]=0;
+					i=i+1;
+				end
 			end
 			j=j+1;
 		end

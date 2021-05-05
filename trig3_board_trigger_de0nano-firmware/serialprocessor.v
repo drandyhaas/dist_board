@@ -13,7 +13,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	output reg[7:0] readdata;//first byte we got
 	output reg enable_outputs=0;//set low to enable outputs
 	reg [7:0] extradata[10];//to store command extra data, like arguemnts (up to 10 bytes)
-	localparam READ=0, SOLVING=1, WRITE1=3, WRITE2=4, READMORE=5, PLLCLOCK=6, CLKSWITCH=7;
+	localparam READ=0, SOLVING=1, WRITE1=3, WRITE2=4, READMORE=5, PLLCLOCK=6, CLKSWITCH=7, RESETHIST=8;
 	integer state=READ;
 	integer bytesread, byteswanted;
 	
@@ -111,13 +111,12 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			state=READ;
 		end
 		else if (readdata==10) begin //send out histo
-			//resethist=1;
 			ioCountToSend = 32;
 			i=0; while (i<32) begin
 				data[i]=histos[i/4][8*i%32 +:8]; // selects 8 bits starting at bit 8*i%32
 				i=i+1;
 			end
-			state=WRITE1;
+			state=RESETHIST;
 		end
 		else if (readdata==11) begin // send the delaycounter trigger data
 			ioCountToSend = 16;
@@ -157,9 +156,14 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			if (scanclk_cycles>7) state=READ;
 		end
 	end
+	RESETHIST: begin // to reset the histos
+		resethist=1;
+		state=WRITE1;
+	end
 	
 	//just writng out some data bytes over serial
 	WRITE1: begin
+		resethist=0;
 		if (!txBusy) begin
 			txData = data[ioCount];
          txStart = 1;
