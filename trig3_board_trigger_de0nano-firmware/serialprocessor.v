@@ -1,5 +1,5 @@
 module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
-	deadticks, histotosend, enable_outputs, 
+	calibticks, histostosend, enable_outputs, 
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
 	histos, resethist, delaycounter, activeclock
 	);
@@ -26,25 +26,26 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	output reg clkswitch=0; // No matter what, inclk0 is the default clock
 		
 	integer ioCount, ioCountToSend;
-	reg[7:0] data[64]; // for writing out data in WRITE1,2
+	reg[7:0] data[32]; // for writing out data in WRITE1,2
 	
-	output reg[7:0] deadticks=0; // 
-	output reg[7:0] histotosend=0; // 
+	output reg[7:0] calibticks=10; // number of ms (approx) to wait between trigger input timing calibrations, logarithmic, so 10=2^10=1024ms=1s
+	output reg[7:0] histostosend=0; // the board from which to get histos
 	
 	input integer histos[8];
 	output reg resethist;
-	input reg[7:0] delaycounter[16];
+	input reg[2:0] delaycounter[16];
 	input activeclock;
 	integer i;
 
 	always @(posedge clk) begin
 	case (state)
 	READ: begin		  
-		txStart<=0;
-		bytesread<=0;
-		byteswanted<=0;
-      ioCount = 0;
-      if (rxReady) begin
+		txStart=0;
+		bytesread=0;
+		byteswanted=0;
+      ioCount=0;
+      resethist=0;
+		if (rxReady) begin
 			readdata = rxData;
          state = SOLVING;
       end
@@ -62,17 +63,17 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			data[0]=3; // this is the firmware version
 			state=WRITE1;				
 		end
-		else if (readdata==1) begin //wait for next byte: some useful byte
+		else if (readdata==1) begin //wait for next byte: how often to do trigger input calibration
 			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
 			else begin
-				deadticks=extradata[0];
+				calibticks=extradata[0];
 				state=READ;
 			end
 		end
 		else if (readdata==2) begin //wait for next byte: which histos to send out over serial when asked for histos
 			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
 			else begin
-				histotosend=extradata[0];
+				histostosend=extradata[0];
 				state=READ;
 			end
 		end
@@ -102,7 +103,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 		end
 		else if (readdata==8) begin // report what clock is active input
 			ioCountToSend = 1;
-			data[0]= 0 | activeclock;
+			data[0]= {7'b0000000,activeclock};
 			state=WRITE1;
 		end
 		else if (readdata==9) begin // toggle phaseupdown up (default) or down
@@ -110,18 +111,18 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			state=READ;
 		end
 		else if (readdata==10) begin //send out histo
+			//resethist=1;
 			ioCountToSend = 32;
 			i=0; while (i<32) begin
 				data[i]=histos[i/4][8*i%32 +:8]; // selects 8 bits starting at bit 8*i%32
 				i=i+1;
 			end
-			state=WRITE1;	
-			resethist=1;
+			state=WRITE1;
 		end
 		else if (readdata==11) begin // send the delaycounter trigger data
 			ioCountToSend = 16;
 			i=0; while (i<16) begin			
-				data[i]=delaycounter[i];
+				data[i]= {5'b00000,delaycounter[i]};
 				i=i+1;
 			end
 			state=WRITE1;
