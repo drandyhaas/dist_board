@@ -44,7 +44,7 @@ always @(posedge clk_adc) begin
 		if (sparerightcounter>200) begin // time to wait for normal triggers to cease
 			i=0; while (i<4) begin
 				j=0; while (j<16) begin
-					if (coaxinreg[j] && Pulsecounter==i) Trecovery[i][j]<=Trecovery[i][j]+1;
+					if (coaxinreg[j] && Pulsecounter==i) Trecovery[i][j] <= Trecovery[i][j]+1;
 					if (Trecovery[i][j]/2==27 && Trecovery[(i+1)%4][j]==0 && Trecovery[(i+2)%4][j]==0 && Trecovery[(i+3)%4][j]==0) delaycounter[j] <= i+1;
 					histos[i][j] = Trecovery[i][j];
 					j=j+1;
@@ -53,13 +53,16 @@ always @(posedge clk_adc) begin
 			end
 		end
 		else begin
-			delaycounter[j] <= 0;
+			j=0; while (j<16) begin
+				delaycounter[j] <= 0;
+				j=j+1;
+			end
 		end
 	end
 	else begin
 		i=0; while (i<4) begin
 			j=0; while (j<16) begin
-				Trecovery[i][j]<=0;
+				Trecovery[i][j] <= 0;
 				j=j+1;
 			end
 			i=i+1;
@@ -82,7 +85,7 @@ always @(posedge clk_adc) begin
 			end
 			if (resethist) begin
 				i=0; while (i<4) begin
-					histos[4+i][j]=0;
+					histos[4+i][j] = 0;
 					i=i+1;
 				end
 			end
