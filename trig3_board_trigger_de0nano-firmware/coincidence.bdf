@@ -106,23 +106,6 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 392 672 568 688)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "led5_plllock" (rect 90 0 146 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-	(annotation_block (location)(rect 568 688 624 712))
-)
-(pin
-	(output)
 	(rect 1208 400 1384 416)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "led[3..0]" (rect 90 0 130 12)(font "Arial" ))
@@ -153,7 +136,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1384 432 1448 456))
+	(annotation_block (location)(rect 1384 432 1448 768))
 )
 (pin
 	(output)
@@ -210,7 +193,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 1208 448 1384 464)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "spareright" (rect 90 0 138 12)(font "Arial" ))
+	(text "spareleft" (rect 90 0 133 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -221,7 +204,24 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1384 464 1448 488))
+	(annotation_block (location)(rect 1320 464 1384 488))
+)
+(pin
+	(output)
+	(rect 392 672 568 688)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "led6_plllock" (rect 90 0 146 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 568 688 624 712))
 )
 (symbol
 	(rect 424 832 624 944)
@@ -699,8 +699,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 264 80)
 		(output)
-		(text "spareright" (rect 0 0 48 12)(font "Arial" ))
-		(text "spareright" (rect 203 75 243 87)(font "Arial" ))
+		(text "spareleft" (rect 0 0 43 12)(font "Arial" ))
+		(text "spareleft" (rect 207 75 243 87)(font "Arial" ))
 		(line (pt 264 80)(pt 248 80))
 	)
 	(port

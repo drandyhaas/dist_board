@@ -117,8 +117,6 @@ set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to coax_out[9]
 set_location_assignment PIN_R9 -to clk50in
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to led7_clkchoice
 set_location_assignment PIN_L3 -to led7_clkchoice
-set_location_assignment PIN_F3 -to led5_plllock
-set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to led5_plllock
 set_location_assignment PIN_L15 -to coax_in[0]
 set_location_assignment PIN_L16 -to coax_in[1]
 set_location_assignment PIN_R16 -to coax_in[2]
@@ -162,7 +160,8 @@ set_global_assignment -name CDF_FILE Chain1.cdf
 set_global_assignment -name CDF_FILE Chain2.cdf
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM" -to coax_out[0]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 25 OHM" -to coax_out[1]
-set_location_assignment PIN_D16 -to spareright
-set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to spareright
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_location_assignment PIN_T14 -to spareleft
+set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to spareleft
+set_location_assignment PIN_B1 -to led6_plllock
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

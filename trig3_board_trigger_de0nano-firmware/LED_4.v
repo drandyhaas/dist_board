@@ -5,7 +5,7 @@ module LED_4(
 	input [16-1:0] coax_in,
 	output [16-1:0] coax_out,	
 	input [7:0] calibticks, input [7:0] histostosend,
-	input clk_adc, output integer histosout[8], input resethist, output spareright, output reg [2:0] delaycounter[16],
+	input clk_adc, output integer histosout[8], input resethist, output spareleft, output reg [2:0] delaycounter[16],
 	input clk_locked
 	);
 
@@ -26,12 +26,12 @@ always@(posedge clk_adc) begin
 	end
 end
 
-integer sparerightcounter=0;
+integer spareleftcounter=0;
 always@(posedge clk_adc) begin
-	if (sparerightcounter<655) spareright<=1; // time waiting for sync pulses, including time waiting for normal triggers to cease, 250+200+205 worst case
-	else spareright<=0;
-	if (sparerightcounter[17+calibticks]) sparerightcounter<=0;
-	else sparerightcounter<=sparerightcounter+1;
+	if (spareleftcounter<655) spareleft<=1; // time waiting for sync pulses, including time waiting for normal triggers to cease, 250+200+205 worst case
+	else spareleft<=0;
+	if (spareleftcounter[17+calibticks]) spareleftcounter<=0;
+	else spareleftcounter<=spareleftcounter+1;
 end
 
 // triggers (from other boards) are synced in
@@ -40,13 +40,13 @@ reg[5:0] Trecovery[3:0][16];
 reg[3:0] Tin[4][16];
 reg[1:0] thebin[16];
 always @(posedge clk_adc) begin
-	if (spareright) begin
-		if (sparerightcounter>200) begin // time to wait for normal triggers to cease
+	if (spareleft) begin
+		if (spareleftcounter>200) begin // time to wait for normal triggers to cease
 			i=0; while (i<4) begin
 				j=0; while (j<16) begin
 					if (coaxinreg[j] && Pulsecounter==i) Trecovery[i][j] <= Trecovery[i][j]+1;
 					if (Trecovery[i][j]/2==27 && Trecovery[(i+1)%4][j]==0 && Trecovery[(i+2)%4][j]==0 && Trecovery[(i+3)%4][j]==0) delaycounter[j] <= i+1;
-					histos[i][j] = Trecovery[i][j];
+					histos[i][j] <= Trecovery[i][j];
 					j=j+1;
 				end
 				i=i+1;
@@ -69,11 +69,11 @@ always @(posedge clk_adc) begin
 		end
 		
 		j=0; while (j<16) begin
-			thebin[j] = (Pulsecounter-delaycounter[j]+1)%4;
+			thebin[j] <= (Pulsecounter-delaycounter[j]+2)%4; // funky math - should be +1, but need an extra bin because this is not actually updated until after it is used below (gotta love FPGAs!)
 			if (coaxinreg[j]) begin
 				if (delaycounter[j]>0) begin // we have a lock
-					Tin[thebin[j]][j] = 3; // set Tin high for this channel for 4 times this many clk ticks
-					histos[4+thebin[j]][j] = histos[4+thebin[j]][j]+1; // record the trigger for monitoring
+					Tin[thebin[j]][j] <= 3; // set Tin high for this channel for 4 times this many clk ticks
+					histos[4+thebin[j]][j] <= histos[4+thebin[j]][j]+1; // record the trigger for monitoring
 				end
 				else begin
 					//we have a trigger but no lock on the triggers from the board!
@@ -81,11 +81,11 @@ always @(posedge clk_adc) begin
 			end
 			else begin // every 4 ticks
 				// count down how long the triggers have been active
-				if (Tin[thebin[j]][j]>0) Tin[thebin[j]][j] = Tin[thebin[j]][j]-1;
+				if (Tin[thebin[j]][j]>0) Tin[thebin[j]][j] <= Tin[thebin[j]][j]-1;
 			end
 			if (resethist) begin
 				i=0; while (i<4) begin
-					histos[4+i][j] = 0;
+					histos[4+i][j] <= 0;
 					i=i+1;
 				end
 			end
@@ -93,7 +93,7 @@ always @(posedge clk_adc) begin
 		end
 	
 	end
-	Pulsecounter = Pulsecounter+1; // for iterating through the trigger bins
+	Pulsecounter <= Pulsecounter+1; // for iterating through the trigger bins
 end
 
 

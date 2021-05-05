@@ -103,8 +103,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 264 80)
 		(output)
-		(text "spareright" (rect 0 0 38 12)(font "Arial" ))
-		(text "spareright" (rect 205 75 243 87)(font "Arial" ))
+		(text "spareleft" (rect 0 0 34 12)(font "Arial" ))
+		(text "spareleft" (rect 209 75 243 87)(font "Arial" ))
 		(line (pt 264 80)(pt 248 80)(line_width 1))
 	)
 	(port
