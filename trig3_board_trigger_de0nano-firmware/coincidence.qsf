@@ -163,5 +163,8 @@ set_instance_assignment -name OUTPUT_TERMINATION "SERIES 25 OHM" -to coax_out[1]
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
 set_location_assignment PIN_T14 -to spareleft
 set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to spareleft
+set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to led6_plllock
 set_location_assignment PIN_B1 -to led6_plllock
+set_location_assignment PIN_T15 -to ext_trig_out
+set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to ext_trig_out
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

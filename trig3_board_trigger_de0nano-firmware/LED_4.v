@@ -6,7 +6,8 @@ module LED_4(
 	output [16-1:0] coax_out,	
 	input [7:0] calibticks, input [7:0] histostosend,
 	input clk_adc, output integer histosout[8], input resethist, output spareleft, output reg [2:0] delaycounter[16],
-	input clk_locked
+	input clk_locked,
+	output ext_trig_out
 	);
 
 integer i;
@@ -24,6 +25,7 @@ always@(posedge clk_adc) begin
 		end
 		i=i+1;
 	end
+	ext_trig_out <= Tin[0][0]>0 || Tin[1][0]>0; // fire the ext_trig output if board 0 has a trigger that was active on channel 0 or 1
 end
 
 integer spareleftcounter=0;

@@ -114,6 +114,13 @@ refer to the applicable agreement for further details.
 		(text "delaycounter[0..15][2..0]" (rect 149 91 243 103)(font "Arial" ))
 		(line (pt 264 96)(pt 248 96)(line_width 3))
 	)
+	(port
+		(pt 264 112)
+		(output)
+		(text "ext_trig_out" (rect 0 0 47 12)(font "Arial" ))
+		(text "ext_trig_out" (rect 196 107 243 119)(font "Arial" ))
+		(line (pt 264 112)(pt 248 112)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 248 160)(line_width 1))
 	)
