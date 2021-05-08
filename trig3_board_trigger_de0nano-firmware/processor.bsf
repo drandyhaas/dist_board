@@ -20,9 +20,9 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 304 288)
+	(rect 16 16 304 320)
 	(text "processor" (rect 5 0 45 12)(font "Arial" ))
-	(text "inst" (rect 8 256 20 268)(font "Arial" ))
+	(text "inst" (rect 8 288 20 300)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -170,7 +170,14 @@ refer to the applicable agreement for further details.
 		(text "seed[31..0]" (rect 225 235 267 247)(font "Arial" ))
 		(line (pt 288 240)(pt 272 240)(line_width 3))
 	)
+	(port
+		(pt 288 256)
+		(output)
+		(text "prescale[31..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "prescale[31..0]" (rect 211 251 267 263)(font "Arial" ))
+		(line (pt 288 256)(pt 272 256)(line_width 3))
+	)
 	(drawing
-		(rectangle (rect 16 16 272 256)(line_width 1))
+		(rectangle (rect 16 16 272 288)(line_width 1))
 	)
 )

@@ -87,6 +87,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
+		(pt 0 176)
+		(input)
+		(text "prescale[31..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "prescale[31..0]" (rect 21 171 77 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
 		(pt 264 32)
 		(output)
 		(text "led[3..0]" (rect 0 0 30 12)(font "Arial" ))

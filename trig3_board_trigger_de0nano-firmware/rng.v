@@ -63,7 +63,7 @@ module rng(clk,reset,loadseed_i,seed_i,number_o);
 input clk;
 input reset;
 input loadseed_i;
-input [31:0] seed_i;
+input integer seed_i;
 output reg[31:0] number_o;
 reg [42:0] LFSR_reg;
 reg [36:0] CASR_reg;

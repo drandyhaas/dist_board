@@ -2,7 +2,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	calibticks, histostosend, enable_outputs, 
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
 	histos, resethist, delaycounter, activeclock,
-	setseed, seed
+	setseed, seed, prescale
 	);
 	
 	input clk;
@@ -39,7 +39,8 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	integer i;
 	
 	output reg setseed;
-	output reg[31:0] seed;
+	output integer seed;
+	output integer prescale;
 
 	always @(posedge clk) begin
 	case (state)
@@ -108,10 +109,10 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 				state=READ;
 			end
 		end
-		else if (readdata==7) begin //
-			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
+		else if (readdata==7) begin // set prescale int
+			byteswanted=4; if (bytesread<byteswanted) state=READMORE;
 			else begin
-				//something=extradata[0];
+				prescale={extradata[3],extradata[2],extradata[1],extradata[0]};
 				state=READ;
 			end
 		end
