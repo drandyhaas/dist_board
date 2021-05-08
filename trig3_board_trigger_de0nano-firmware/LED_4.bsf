@@ -20,9 +20,9 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 280 192)
+	(rect 16 16 280 224)
 	(text "LED_4" (rect 5 0 36 12)(font "Arial" ))
-	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(text "inst" (rect 8 192 20 204)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -80,6 +80,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 144)(pt 16 144)(line_width 1))
 	)
 	(port
+		(pt 0 160)
+		(input)
+		(text "randnum[31..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "randnum[31..0]" (rect 21 155 80 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
 		(pt 264 32)
 		(output)
 		(text "led[3..0]" (rect 0 0 30 12)(font "Arial" ))
@@ -122,6 +129,6 @@ refer to the applicable agreement for further details.
 		(line (pt 264 112)(pt 248 112)(line_width 1))
 	)
 	(drawing
-		(rectangle (rect 16 16 248 160)(line_width 1))
+		(rectangle (rect 16 16 248 192)(line_width 1))
 	)
 )

@@ -7,7 +7,8 @@ module LED_4(
 	input [7:0] calibticks, input [7:0] histostosend,
 	input clk_adc, output integer histosout[8], input resethist, output spareleft, output reg [2:0] delaycounter[16],
 	input clk_locked,
-	output ext_trig_out
+	output ext_trig_out,
+	input [31:0] randnum
 	);
 
 integer i;

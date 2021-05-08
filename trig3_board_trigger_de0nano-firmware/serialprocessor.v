@@ -1,7 +1,8 @@
 module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	calibticks, histostosend, enable_outputs, 
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
-	histos, resethist, delaycounter, activeclock
+	histos, resethist, delaycounter, activeclock,
+	setseed, seed
 	);
 	
 	input clk;
@@ -36,6 +37,9 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	input reg[2:0] delaycounter[16];
 	input activeclock;
 	integer i;
+	
+	output reg setseed;
+	output reg[31:0] seed;
 
 	always @(posedge clk) begin
 	case (state)
@@ -45,6 +49,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 		byteswanted=0;
       ioCount=0;
       resethist=0;
+		setseed=0;
 		if (rxReady) begin
 			readdata = rxData;
          state = SOLVING;
@@ -60,7 +65,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
    SOLVING: begin
 		if (readdata==0) begin		
 			ioCountToSend = 1;
-			data[0]=3; // this is the firmware version
+			data[0]=4; // this is the firmware version
 			state=WRITE1;				
 		end
 		else if (readdata==1) begin //wait for next byte: how often to do trigger input calibration
@@ -95,11 +100,20 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			scanclk_cycles=0;
 			state=PLLCLOCK;
 		end
-		else if (readdata==6) begin //
-			state=READ;
+		else if (readdata==6) begin // set the random number seed in rng
+			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
+			else begin
+				seed=extradata[0];
+				setseed=1;
+				state=READ;
+			end
 		end
 		else if (readdata==7) begin //
-			state=READ;
+			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
+			else begin
+				//something=extradata[0];
+				state=READ;
+			end
 		end
 		else if (readdata==8) begin // report what clock is active input
 			ioCountToSend = 1;
