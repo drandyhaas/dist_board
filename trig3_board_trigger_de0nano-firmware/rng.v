@@ -64,52 +64,29 @@ input clk;
 input reset;
 input loadseed_i;
 input [31:0] seed_i;
-output [31:0] number_o;
-
-reg [31:0] number_o;
-
+output reg[31:0] number_o;
 reg [42:0] LFSR_reg;
 reg [36:0] CASR_reg;
-
 
 //CASR:
 reg[36:0] CASR_varCASR,CASR_outCASR;
 always @(posedge clk or negedge reset)
-
    begin
-
-
-
-
    if (!reset )
-
       begin
-
       CASR_reg  = (1);
-
       end
-
-   else 
-
+   else
       begin
-
       if (loadseed_i )
-
          begin
-
          CASR_varCASR [36:32]=0;
          CASR_varCASR [31:0]=seed_i ;
          CASR_reg  = (CASR_varCASR );
-
-
          end
-
-      else 
-
+      else
          begin
-
          CASR_varCASR =CASR_reg ;
-
          CASR_outCASR [36]=CASR_varCASR [35]^CASR_varCASR [0];
          CASR_outCASR [35]=CASR_varCASR [34]^CASR_varCASR [36];
          CASR_outCASR [34]=CASR_varCASR [33]^CASR_varCASR [35];
@@ -147,53 +124,31 @@ always @(posedge clk or negedge reset)
          CASR_outCASR [2]=CASR_varCASR [1]^CASR_varCASR [3];
          CASR_outCASR [1]=CASR_varCASR [0]^CASR_varCASR [2];
          CASR_outCASR [0]=CASR_varCASR [36]^CASR_varCASR [1];
-
          CASR_reg  = (CASR_outCASR );
-
          end
-
-
       end
-
-
    end
+
 //LFSR:
 reg[42:0] LFSR_varLFSR;
 reg outbitLFSR;
 always @(posedge clk or negedge reset)
-
    begin
-
-
    if (!reset )
-
       begin
-
       LFSR_reg  = (1);
-
       end
-
-   else 
-
+   else
       begin
-
       if (loadseed_i )
-
          begin
-
          LFSR_varLFSR [42:32]=0;
          LFSR_varLFSR [31:0]=seed_i ;
          LFSR_reg  = (LFSR_varLFSR );
-
-
          end
-
-      else 
-
+      else
          begin
-
          LFSR_varLFSR =LFSR_reg ;
-
          outbitLFSR =LFSR_varLFSR [42];
          LFSR_varLFSR [42]=LFSR_varLFSR [41];
          LFSR_varLFSR [41]=LFSR_varLFSR [40]^outbitLFSR ;
@@ -238,38 +193,22 @@ always @(posedge clk or negedge reset)
          LFSR_varLFSR [2]=LFSR_varLFSR [1];
          LFSR_varLFSR [1]=LFSR_varLFSR [0]^outbitLFSR ;
          LFSR_varLFSR [0]=LFSR_varLFSR [42];
-
          LFSR_reg  = (LFSR_varLFSR );
-
          end
-
-
       end
-
-
    end
+
 //combinate:
 always @(posedge clk or negedge reset)
-
    begin
-
    if (!reset )
-
       begin
-
       number_o  = (0);
-
       end
-
-   else 
-
+   else
       begin
-
       number_o  = (LFSR_reg [31:0]^CASR_reg[31:0]);
-
       end
-
-
    end
 
 endmodule

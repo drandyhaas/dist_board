@@ -101,9 +101,9 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			state=PLLCLOCK;
 		end
 		else if (readdata==6) begin // set the random number seed in rng
-			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
+			byteswanted=4; if (bytesread<byteswanted) state=READMORE;
 			else begin
-				seed=extradata[0];
+				seed={extradata[3],extradata[2],extradata[1],extradata[0]};
 				setseed=1;
 				state=READ;
 			end
