@@ -15,6 +15,8 @@ integer i;
 integer j;
 integer histos[8][16];
 reg [16-1:0] coaxinreg;
+wire pass_prescale;
+assign pass_prescale = (randnum<=prescale);
 always@(posedge clk_adc) begin
 	i=0; while (i<16) begin
 		if (clk_locked) coaxinreg[i]<=coax_in[i];
@@ -26,7 +28,7 @@ always@(posedge clk_adc) begin
 		end
 		i=i+1;
 	end
-	ext_trig_out <= Tin[0][0]>0 || Tin[1][0]>0; // fire the ext_trig output if board 0 has a trigger that was active on channel 0 or 1
+	ext_trig_out <= pass_prescale && (Tin[0][0]>0 || Tin[1][0]>0); // fire the ext_trig output if board 0 has a trigger that was active on channel 0 or 1
 end
 
 integer spareleftcounter=0;
