@@ -13,34 +13,34 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	output reg[7:0] txData;
 	output reg[7:0] readdata;//first byte we got
 	output reg enable_outputs=0;//set low to enable outputs
-	reg [7:0] extradata[10];//to store command extra data, like arguemnts (up to 10 bytes)
+	reg[7:0] extradata[10];//to store command extra data, like arguemnts (up to 10 bytes)
 	localparam READ=0, SOLVING=1, WRITE1=3, WRITE2=4, READMORE=5, PLLCLOCK=6, CLKSWITCH=7, RESETHIST=8;
-	integer state=READ;
-	integer bytesread, byteswanted;
+	reg[7:0] state=READ;
+	reg[7:0] bytesread, byteswanted;
 	
-	integer pllclock_counter=0;
-	integer scanclk_cycles=0;
+	reg[7:0] pllclock_counter=0;
+	reg[7:0] scanclk_cycles=0;
 	output reg[2:0] phasecounterselect; // Dynamic phase shift counter Select. 000:all 001:M 010:C0 011:C1 100:C2 101:C3 110:C4. Registered in the rising edge of scanclk.
 	output reg phaseupdown=1; // Dynamic phase shift direction; 1:UP, 0:DOWN. Registered in the PLL on the rising edge of scanclk.
 	output reg phasestep=0;
 	output reg scanclk=0;
 	output reg clkswitch=0; // No matter what, inclk0 is the default clock
 		
-	integer ioCount, ioCountToSend;
+	reg[7:0] ioCount, ioCountToSend;
 	reg[7:0] data[32]; // for writing out data in WRITE1,2
 	
 	output reg[7:0] calibticks=10; // number of ms (approx) to wait between trigger input timing calibrations, logarithmic, so 10=2^10=1024ms=1s
 	output reg[7:0] histostosend=0; // the board from which to get histos
 	
-	input integer histos[8];
+	input reg[31:0] histos[8];
 	output reg resethist;
 	input reg[2:0] delaycounter[16];
 	input activeclock;
-	integer i;
+	reg[7:0] i;
 	
 	output reg setseed;
-	output integer seed;
-	output integer prescale;
+	output reg[31:0] seed;
+	output reg[31:0] prescale;
 
 	always @(posedge clk) begin
 	case (state)

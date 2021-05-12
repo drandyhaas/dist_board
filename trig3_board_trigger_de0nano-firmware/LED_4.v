@@ -5,33 +5,49 @@ module LED_4(
 	input [16-1:0] coax_in,
 	output [16-1:0] coax_out,	
 	input [7:0] calibticks, input [7:0] histostosend,
-	input clk_adc, output integer histosout[8], input resethist, output spareleft, output reg [2:0] delaycounter[16],
+	input clk_adc, output reg[31:0] histosout[8], input resethist, output spareleft, output reg [2:0] delaycounter[16],
 	input clk_locked,
 	output ext_trig_out,
-	input integer randnum, input integer prescale
+	input reg[31:0] randnum, input reg[31:0] prescale
 	);
 
-integer i;
-integer j;
-integer histos[8][16];
+reg[7:0] i;
+reg[7:0] j;
+reg[31:0] histos[8][16];
 reg [16-1:0] coaxinreg;
 wire pass_prescale;
 assign pass_prescale = (randnum<=prescale);
+reg[7:0] triedtofire=0;
 always@(posedge clk_adc) begin
 	i=0; while (i<16) begin
 		if (clk_locked) coaxinreg[i]<=coax_in[i];
 		else coaxinreg[i]<=0;
 		if (i<4) coax_out[i] <= (Tin[i][0]>0); // fire the channel i if board 0 has a trigger that was active on channel i
 		else coax_out[i] <= coaxinreg[i]; // passthrough
-		if (i<8) begin
-			histosout[i]<=histos[i][histostosend];
-		end
+		if (i<8) histosout[i]<=histos[i][histostosend];
+		//debuging
+		//histosout[0]<=pass_prescale;
+		//histosout[1]<=randnum;
+		//histosout[2]<=prescale;
+		//histosout[2]<=triedtofire;
 		i=i+1;
 	end
-	ext_trig_out <= pass_prescale && (Tin[0][0]>0 || Tin[1][0]>0); // fire the ext_trig output if board 0 has a trigger that was active on channel 0 or 1
+	if (triedtofire==0 && (Tin[0][0]>0 || Tin[1][0]>0)) begin // fire the ext_trig output if board 0 has a trigger that was active on channel 0 or 1
+		if (pass_prescale) begin
+			ext_trig_out <= 1'b1;
+		end
+		else begin
+			ext_trig_out <= 1'b0;
+		end
+		triedtofire <= 20; // will stay dead for this many clk ticks
+	end
+	else begin
+		ext_trig_out <= 1'b0;
+		if (triedtofire>0) triedtofire <= triedtofire-1;
+	end
 end
 
-integer spareleftcounter=0;
+reg[31:0] spareleftcounter=0;
 always@(posedge clk_adc) begin
 	if (spareleftcounter<655) spareleft<=1; // time waiting for sync pulses, including time waiting for normal triggers to cease, 250+200+205 worst case
 	else spareleft<=0;
@@ -104,7 +120,7 @@ end
 
 //for LEDs
 reg [1:0] ledi;
-integer counter=0;
+reg[31:0] counter=0;
 always@(posedge clk) begin
 	counter<=counter+1;
 	if (counter[25]) begin			
