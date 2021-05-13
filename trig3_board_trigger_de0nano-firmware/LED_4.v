@@ -8,7 +8,7 @@ module LED_4(
 	input clk_adc, output reg[31:0] histosout[8], input resethist, output spareleft, output reg [2:0] delaycounter[16],
 	input clk_locked,
 	output ext_trig_out,
-	input reg[31:0] randnum, input reg[31:0] prescale
+	input reg[31:0] randnum, input reg[31:0] prescale, input dorolling
 	);
 
 reg[7:0] i;
@@ -46,7 +46,7 @@ always@(posedge clk_adc) begin
 	end
 	else begin
 		if (autocounter[26]) begin
-			ext_trig_out_counter <= 4;//rolling trigger
+			if (dorolling) ext_trig_out_counter <= 4;//rolling trigger
 			autocounter <= 0;
 		end
 		else begin

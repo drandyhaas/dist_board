@@ -2,7 +2,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	calibticks, histostosend, enable_outputs, 
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
 	histos, resethist, delaycounter, activeclock,
-	setseed, seed, prescale
+	setseed, seed, prescale, dorolling
 	);
 	
 	input clk;
@@ -41,6 +41,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	output reg setseed;
 	output reg[31:0] seed;
 	output reg[31:0] prescale;
+	output reg dorolling=1;
 
 	always @(posedge clk) begin
 	case (state)
@@ -149,6 +150,10 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			pllclock_counter=0;
 			scanclk_cycles=0;
 			state=PLLCLOCK;
+		end
+		else if (readdata==13) begin // toggle rolling of triggers
+			dorolling = ~dorolling;
+			state=READ;
 		end
 		else state=READ; // if we got some other command, just ignore it
 	end
