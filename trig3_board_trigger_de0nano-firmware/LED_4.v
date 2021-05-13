@@ -18,6 +18,8 @@ reg [16-1:0] coaxinreg;
 wire pass_prescale;
 assign pass_prescale = (randnum<=prescale);
 reg[7:0] triedtofire=0;
+reg[7:0] ext_trig_out_counter=0;
+reg[31:0] autocounter=0; // for a rolling trigger
 always@(posedge clk_adc) begin
 	i=0; while (i<16) begin
 		if (clk_locked) coaxinreg[i]<=coax_in[i];
@@ -32,19 +34,28 @@ always@(posedge clk_adc) begin
 		//histosout[2]<=triedtofire;
 		i=i+1;
 	end
-	if (triedtofire==0 && (Tin[0][0]>0 || Tin[1][0]>0)) begin // fire the ext_trig output if board 0 has a trigger that was active on channel 0 or 1
+	if (triedtofire==0 && (Tin[1][0]>0 && Tin[1][6]>0)) begin // fire the ext_trig output if boards 0,6 has a trigger that was active on channel 1
 		if (pass_prescale) begin
-			ext_trig_out <= 1'b1;
+			ext_trig_out_counter <= 4;//clk ticks to fire ext_trig for
+			autocounter <= 0;
 		end
 		else begin
-			ext_trig_out <= 1'b0;
+			if (ext_trig_out_counter>0) ext_trig_out_counter <= ext_trig_out_counter - 1;
 		end
 		triedtofire <= 20; // will stay dead for this many clk ticks
 	end
 	else begin
-		ext_trig_out <= 1'b0;
+		if (autocounter[26]) begin
+			ext_trig_out_counter <= 4;//rolling trigger
+			autocounter <= 0;
+		end
+		else begin
+			if (ext_trig_out_counter>0) ext_trig_out_counter <= ext_trig_out_counter - 1;
+			autocounter <= autocounter+1;
+		end
 		if (triedtofire>0) triedtofire <= triedtofire-1;
 	end
+	ext_trig_out <= (ext_trig_out_counter>0);
 end
 
 reg[31:0] spareleftcounter=0;
