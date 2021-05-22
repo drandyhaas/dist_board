@@ -15,18 +15,24 @@ reg[7:0] i;
 reg[7:0] j;
 reg[31:0] histos[8][16];
 reg [16-1:0] coaxinreg;
-wire pass_prescale;
-assign pass_prescale = (randnum<=prescale);
+reg pass_prescale;
 reg[7:0] triedtofire=0;
 reg[7:0] ext_trig_out_counter=0;
 reg[31:0] autocounter=0; // for a rolling trigger
+reg [7:0] histostosend2;//to pass timing, since it's sent from the slow clk
+reg [7:0] calibticks2;//to pass timing, since it's sent from the slow clk
+reg [31:0] prescale2;//to pass timing, since it's sent from the slow clk
 always@(posedge clk_adc) begin
+	pass_prescale <= (randnum<=prescale2);
+	histostosend2<=histostosend;
+	calibticks2<=calibticks;
+	prescale2<=prescale;
 	i=0; while (i<16) begin
 		if (clk_locked) coaxinreg[i]<=coax_in[i];
 		else coaxinreg[i]<=0;
 		if (i<4) coax_out[i] <= (Tin[i][0]>0); // fire the channel i if board 0 has a trigger that was active on channel i
 		else coax_out[i] <= coaxinreg[i]; // passthrough
-		if (i<8) histosout[i]<=histos[i][histostosend];
+		if (i<8) histosout[i]<=histos[i][histostosend2];
 		//debuging
 		//histosout[0]<=pass_prescale;
 		//histosout[1]<=randnum;
@@ -62,7 +68,7 @@ reg[31:0] spareleftcounter=0;
 always@(posedge clk_adc) begin
 	if (spareleftcounter<655) spareleft<=1; // time waiting for sync pulses, including time waiting for normal triggers to cease, 250+200+205 worst case
 	else spareleft<=0;
-	if (spareleftcounter[17+calibticks]) spareleftcounter<=0;
+	if (spareleftcounter[17+calibticks2]) spareleftcounter<=0;
 	else spareleftcounter<=spareleftcounter+1;
 end
 
@@ -130,7 +136,7 @@ end
 
 
 //for LEDs
-reg [1:0] ledi;
+reg [1:0] ledi=0;
 reg[31:0] counter=0;
 always@(posedge clk) begin
 	counter<=counter+1;
