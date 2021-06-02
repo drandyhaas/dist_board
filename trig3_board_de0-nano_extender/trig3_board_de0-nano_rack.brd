@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="2.54" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.1" altunitdist="mm" altunit="mm"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -257,14 +257,14 @@ by Dr. Andy Haas</text>
 <text x="99" y="3" size="1.778" layer="21" rot="R180">de0-nano board</text>
 <text x="103" y="-42" size="1.778" layer="21" rot="R180">de0-nano_2x13 board</text>
 <text x="87" y="34" size="1.27" layer="21">N9 (Outputs Enabled)</text>
-<wire x1="-45" y1="-63" x2="-45" y2="37" width="0.1524" layer="20"/>
-<wire x1="-45" y1="37" x2="231" y2="37" width="0.1524" layer="20"/>
-<wire x1="231" y1="37" x2="231" y2="-63" width="0.1524" layer="20"/>
-<wire x1="231" y1="-63" x2="-45" y2="-63" width="0.1524" layer="20"/>
-<dimension x1="-33" y1="-63" x2="-33" y2="37" x3="-47" y3="-13" textsize="1.778" layer="20" visible="yes"/>
-<dimension x1="231" y1="-68" x2="-45" y2="-68" x3="93" y3="-65.877821875" textsize="1.778" layer="20" visible="yes"/>
-<dimension x1="115" y1="-68" x2="-45" y2="-68" x3="35" y3="-69" textsize="1.778" layer="20"/>
-<dimension x1="-46" y1="-63" x2="-46" y2="-22" x3="-45" y3="-42.5" textsize="1.778" layer="20" visible="yes"/>
+<wire x1="-45" y1="-69" x2="-45" y2="43" width="0.1524" layer="20"/>
+<wire x1="-45" y1="43" x2="231" y2="43" width="0.1524" layer="20"/>
+<wire x1="231" y1="43" x2="231" y2="-69" width="0.1524" layer="20"/>
+<wire x1="231" y1="-69" x2="-45" y2="-69" width="0.1524" layer="20"/>
+<dimension x1="-33" y1="-63" x2="-33" y2="37" x3="-47" y3="-13" textsize="1.778" layer="21" visible="yes"/>
+<dimension x1="231" y1="-68" x2="-45" y2="-68" x3="93" y3="-65.877821875" textsize="1.778" layer="21" visible="yes"/>
+<dimension x1="115" y1="-68" x2="-45" y2="-68" x3="35" y3="-69" textsize="1.778" layer="21"/>
+<dimension x1="-46" y1="-63" x2="-46" y2="-22" x3="-45" y3="-42.5" textsize="1.778" layer="21" visible="yes"/>
 </plain>
 <libraries>
 <library name="Seeed-Connector" urn="urn:adsk.eagle:library:478">
