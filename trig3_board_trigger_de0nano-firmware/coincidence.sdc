@@ -63,7 +63,7 @@ create_generated_clock -name {clkadcpll} -source [get_pins {inst2pll|altpll_comp
 # Set Clock Uncertainty
 #**************************************************************
 
-
+derive_clock_uncertainty
 
 #**************************************************************
 # Set Input Delay
@@ -81,15 +81,13 @@ create_generated_clock -name {clkadcpll} -source [get_pins {inst2pll|altpll_comp
 # Set Clock Groups
 #**************************************************************
 
-
+set_clock_groups -logically_exclusive -group {clk50pll clkadcpll} -group {clk50inpll clkadcinpll}
 
 #**************************************************************
 # Set False Path
 #**************************************************************
 
 set_false_path -from [get_keepers {processor:instpro|scanclk}] -to [get_keepers {processor:instpro|scanclk}]
-set_false_path -from [get_keepers {LED_4:instled|ledi[1]}] -to [get_keepers {LED_4:instled|ledi[1]}]
-
 
 #**************************************************************
 # Set Multicycle Path

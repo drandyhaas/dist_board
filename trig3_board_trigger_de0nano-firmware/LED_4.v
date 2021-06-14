@@ -51,7 +51,7 @@ always@(posedge clk_adc) begin
 		triedtofire <= 20; // will stay dead for this many clk ticks
 	end
 	else begin
-		if (autocounter[26]) begin
+		if (autocounter[25]) begin
 			if (dorolling) ext_trig_out_counter <= 4;//rolling trigger
 			autocounter <= 0;
 		end
