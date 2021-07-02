@@ -265,6 +265,9 @@ by Dr. Andy Haas</text>
 <dimension x1="231" y1="-68" x2="-45" y2="-68" x3="93" y3="-65.877821875" textsize="1.778" layer="21" visible="yes"/>
 <dimension x1="115" y1="-68" x2="-45" y2="-68" x3="35" y3="-69" textsize="1.778" layer="21"/>
 <dimension x1="-46" y1="-63" x2="-46" y2="-22" x3="-45" y3="-42.5" textsize="1.778" layer="21" visible="yes"/>
+<rectangle x1="42" y1="-61" x2="48" y2="-56" layer="21"/>
+<rectangle x1="32" y1="-21" x2="38" y2="-16" layer="21"/>
+<rectangle x1="22" y1="-21" x2="28" y2="-16" layer="21"/>
 </plain>
 <libraries>
 <library name="Seeed-Connector" urn="urn:adsk.eagle:library:478">
