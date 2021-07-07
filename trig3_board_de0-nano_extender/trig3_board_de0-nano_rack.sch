@@ -10296,7 +10296,7 @@ Source: www.kingbright.com</description>
 <wire x1="-180.34" y1="149.86" x2="-180.34" y2="156.21" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="5V" class="3">
+<net name="5V" class="1">
 <segment>
 <pinref part="VSLUE" gate="G$1" pin="VCC"/>
 <wire x1="279.4" y1="-88.9" x2="284.48" y2="-88.9" width="0.1524" layer="91"/>
@@ -11043,7 +11043,7 @@ Source: www.kingbright.com</description>
 <junction x="289.56" y="154.94"/>
 </segment>
 </net>
-<net name="3V3" class="0">
+<net name="3V3" class="1">
 <segment>
 <pinref part="SV1" gate="G$1" pin="29"/>
 <wire x1="111.76" y1="55.88" x2="93.98" y2="55.88" width="0.1524" layer="91"/>
@@ -12967,7 +12967,7 @@ Source: www.kingbright.com</description>
 <label x="-45.72" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$9" class="0">
+<net name="LED1R" class="1">
 <segment>
 <pinref part="LED1" gate="G$1" pin="C"/>
 <pinref part="R8" gate="G$1" pin="1"/>
