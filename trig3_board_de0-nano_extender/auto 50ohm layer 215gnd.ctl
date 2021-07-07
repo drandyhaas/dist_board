@@ -46,7 +46,7 @@
   cfPolygon       =   10
 
   cfBase.1        =    0
-  cfBase.2        =    9
+  cfBase.2        =   99
   cfBase.3        =    1
   cfBase.4        =    1
   cfBase.5        =    1
@@ -59,7 +59,7 @@
   cfBase.12       =    1
   cfBase.13       =    1
   cfBase.14       =    1
-  cfBase.15       =    9
+  cfBase.15       =   99
   cfBase.16       =    1
 
   ; Maximum Number of...:
@@ -112,7 +112,7 @@
 
   @Optimize1
 
-  Active          =    1
+  Active          =    0
   cfNonPref       =    0
   cfChangeDir     =    6
   cfExtdStep      =    0
@@ -121,12 +121,14 @@
   cfPadImpact     =    2
   cfSmdImpact     =    2
   cfHugging       =    0
+  cfBase.2        =    9
+  cfBase.15       =    9
 
 [Optimize3]
 
   @Optimize2
 
-  Active          =    1
+  Active          =    0
   cfChangeDir     =    8
   cfPadImpact     =    0
   cfSmdImpact     =    0
@@ -135,6 +137,6 @@
 
   @Optimize3
 
-  Active          =    1
+  Active          =    0
   cfChangeDir     =   25
 

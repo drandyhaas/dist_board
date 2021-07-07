@@ -21529,8 +21529,8 @@ Source: AVX .. aphvc.pdf</description>
 <part name="C91" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="0.1uF"/>
 <part name="R17" library="SparkFun-Passives" deviceset="RESISTOR" device="AXIAL-0.3" value="10k"/>
 <part name="J19" library="19inch" library_urn="urn:adsk.eagle:library:79" deviceset="6HE-?-VG64AC" device="160" package3d_urn="urn:adsk.eagle:package:699/1"/>
-<part name="SV1" library="con-lsta" deviceset="FE20-2" device=""/>
-<part name="SV2" library="con-lsta" deviceset="FE20-2" device=""/>
+<part name="SV1" library="con-lsta" deviceset="FE20-2" device="" value="1"/>
+<part name="SV2" library="con-lsta" deviceset="FE20-2" device="" value="2"/>
 <part name="OJ5" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="OJ6" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
 <part name="OJ7" library="Seeed-Connector" library_urn="urn:adsk.eagle:library:478" deviceset="DIP-BLACK-MALE-HEADER-VERT(2P-2.54)" device="" package3d_urn="urn:adsk.eagle:package:33132/1" value="2p-2.54"/>
@@ -22364,7 +22364,7 @@ Source: AVX .. aphvc.pdf</description>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="GND" class="1">
 <segment>
 <pinref part="VSLUE" gate="G$1" pin="GND"/>
 <wire x1="243.84" y1="220.98" x2="231.14" y2="220.98" width="0.1524" layer="91"/>
@@ -25975,8 +25975,6 @@ Source: AVX .. aphvc.pdf</description>
 <approved hash="206,1,243.84,185.42,OUT47,,,,,"/>
 <approved hash="206,1,243.84,180.34,OUT48,,,,,"/>
 <approved hash="206,1,243.84,175.26,OUT48,,,,,"/>
-<approved hash="113,1,119.38,65.7504,SV1,,,,,"/>
-<approved hash="113,1,55.88,68.8696,SV2,,,,,"/>
 </errors>
 </schematic>
 </drawing>
