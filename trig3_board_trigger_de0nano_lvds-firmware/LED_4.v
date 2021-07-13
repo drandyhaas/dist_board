@@ -36,7 +36,7 @@ always@(posedge clk_adc) begin
 		   coaxinreg[i]<=coax_in[i];
 		//else coaxinreg[i]<=0;
 		
-		if (i<8) coax_out[i] <= (Tin[i]>0); // fire the channel i if inputs have a trigger that was active on channel i
+		if (i==8) coax_out[i] <= (Tin[0]>0); // fire the channel 8 if input 0 has a trigger that was active
 		else if (i==10) coax_out[i] <= ext_trig_out; // a test lvds output trigger 
 		else coax_out[i] <= coaxinreg[i]; // passthrough
 		
@@ -75,12 +75,12 @@ always@(posedge clk_adc) begin
 end
 
 // triggers (from other boards) are read in
-reg[3:0] Tin[16];
+reg[5:0] Tin[16];
 always @(posedge clk_adc) begin
 		
 		j=0; while (j<16) begin
 			if (coaxinreg[j]) begin
-					Tin[j] <= 3; // set Tin high for this channel for this many clk ticks
+					Tin[j] <= 20; // set Tin high for this channel for this many clk ticks
 					if (!resethist) histos[4][j] <= histos[4][j]+1; // record the trigger for monitoring
 			end
 			else begin
