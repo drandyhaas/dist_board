@@ -284,6 +284,8 @@ only</text>
 <text x="151.9" y="-36.2" size="0.8128" layer="21" rot="R270">GND</text>
 <text x="96.1" y="-46.9" size="0.8128" layer="21" rot="R270">-12V</text>
 <text x="95.9" y="-36.5" size="0.8128" layer="21" rot="R270">12V</text>
+<text x="49" y="-39" size="1.27" layer="21">Waveshare VME expander LVDS, v1.43
+by Dr. Andy Haas</text>
 </plain>
 <libraries>
 <library name="Seeed-Connector" urn="urn:adsk.eagle:library:478">
