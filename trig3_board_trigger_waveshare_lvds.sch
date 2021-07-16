@@ -26965,7 +26965,7 @@ Source: www.kingbright.com</description>
 <wire x1="195.58" y1="142.24" x2="198.12" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="IO5" class="1">
+<net name="IO5" class="0">
 <segment>
 <wire x1="170.18" y1="152.4" x2="170.18" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="J3" gate="G$1" pin="P$1"/>
@@ -26977,7 +26977,7 @@ Source: www.kingbright.com</description>
 <label x="35.56" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="IO6" class="1">
+<net name="IO6" class="0">
 <segment>
 <wire x1="172.72" y1="134.62" x2="172.72" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="J3" gate="G$1" pin="P$2"/>
@@ -26993,102 +26993,10 @@ Source: www.kingbright.com</description>
 </sheet>
 </sheets>
 <errors>
-<approved hash="101,1,48.26,78.74,X13-11,S,,,,"/>
-<approved hash="101,1,48.26,76.2,X13-13,S,,,,"/>
-<approved hash="101,1,48.26,73.66,X13-15,S,,,,"/>
-<approved hash="101,1,48.26,71.12,X13-17,S,,,,"/>
-<approved hash="101,1,48.26,68.58,X13-19,S,,,,"/>
-<approved hash="101,1,48.26,66.04,X13-21,S,,,,"/>
-<approved hash="101,1,48.26,60.96,X13-25,S,,,,"/>
-<approved hash="101,1,48.26,58.42,X13-27,S,,,,"/>
-<approved hash="101,1,48.26,53.34,X14-1,S,,,,"/>
-<approved hash="101,1,68.58,53.34,X14-2,S,,,,"/>
-<approved hash="101,1,48.26,50.8,X14-3,S,,,,"/>
-<approved hash="101,1,68.58,50.8,X14-4,S,,,,"/>
-<approved hash="101,1,48.26,48.26,X14-5,S,,,,"/>
-<approved hash="101,1,68.58,48.26,X14-6,S,,,,"/>
-<approved hash="101,1,48.26,45.72,X14-7,S,,,,"/>
-<approved hash="101,1,68.58,45.72,X14-8,S,,,,"/>
-<approved hash="101,1,48.26,43.18,X14-9,S,,,,"/>
-<approved hash="101,1,68.58,43.18,X14-10,S,,,,"/>
-<approved hash="101,1,48.26,40.64,X14-11,S,,,,"/>
-<approved hash="101,1,68.58,40.64,X14-12,S,,,,"/>
-<approved hash="101,1,48.26,38.1,X14-13,S,,,,"/>
-<approved hash="101,1,68.58,38.1,X14-14,S,,,,"/>
-<approved hash="101,1,48.26,35.56,X14-15,S,,,,"/>
-<approved hash="101,1,68.58,35.56,X14-16,S,,,,"/>
-<approved hash="101,1,48.26,33.02,X14-17,S,,,,"/>
-<approved hash="101,1,68.58,33.02,X14-18,S,,,,"/>
-<approved hash="101,1,48.26,30.48,X14-19,S,,,,"/>
-<approved hash="101,1,68.58,30.48,X14-20,S,,,,"/>
-<approved hash="101,1,48.26,27.94,X14-21,S,,,,"/>
-<approved hash="101,1,68.58,27.94,X14-22,S,,,,"/>
-<approved hash="101,1,48.26,25.4,X14-23,S,,,,"/>
-<approved hash="101,1,68.58,25.4,X14-24,S,,,,"/>
-<approved hash="101,1,48.26,22.86,X14-25,S,,,,"/>
-<approved hash="101,1,68.58,22.86,X14-26,S,,,,"/>
 <approved hash="101,1,48.26,20.32,X14-27,S,,,,"/>
 <approved hash="101,1,68.58,20.32,X14-28,S,,,,"/>
-<approved hash="101,1,-17.78,129.54,X15-1,S,,,,"/>
-<approved hash="101,1,-15.24,129.54,X15-3,S,,,,"/>
-<approved hash="101,1,-12.7,129.54,X15-5,S,,,,"/>
-<approved hash="101,1,-10.16,129.54,X15-7,S,,,,"/>
-<approved hash="101,1,-7.62,129.54,X15-9,S,,,,"/>
-<approved hash="101,1,-5.08,129.54,X15-11,S,,,,"/>
-<approved hash="101,1,-2.54,129.54,X15-13,S,,,,"/>
-<approved hash="101,1,-40.64,129.54,X16-1,S,,,,"/>
-<approved hash="101,1,-40.64,147.32,X16-2,S,,,,"/>
-<approved hash="101,1,-38.1,129.54,X16-3,S,,,,"/>
-<approved hash="101,1,-38.1,147.32,X16-4,S,,,,"/>
-<approved hash="101,1,-35.56,129.54,X16-5,S,,,,"/>
-<approved hash="101,1,-35.56,147.32,X16-6,S,,,,"/>
-<approved hash="101,1,-33.02,129.54,X16-7,S,,,,"/>
-<approved hash="101,1,-33.02,147.32,X16-8,S,,,,"/>
-<approved hash="101,1,-30.48,129.54,X16-9,S,,,,"/>
-<approved hash="101,1,-30.48,147.32,X16-10,S,,,,"/>
-<approved hash="101,1,-27.94,129.54,X16-11,S,,,,"/>
-<approved hash="101,1,-27.94,147.32,X16-12,S,,,,"/>
-<approved hash="101,1,-25.4,129.54,X16-13,S,,,,"/>
-<approved hash="101,1,-25.4,147.32,X16-14,S,,,,"/>
-<approved hash="101,1,-22.86,129.54,X16-15,S,,,,"/>
-<approved hash="101,1,-22.86,147.32,X16-16,S,,,,"/>
-<approved hash="101,1,-99.06,53.34,X17-1,S,,,,"/>
-<approved hash="101,1,-99.06,50.8,X17-3,S,,,,"/>
-<approved hash="101,1,-99.06,48.26,X17-5,S,,,,"/>
-<approved hash="101,1,-99.06,45.72,X17-7,S,,,,"/>
-<approved hash="101,1,-99.06,43.18,X17-9,S,,,,"/>
-<approved hash="101,1,-78.74,43.18,X17-10,S,,,,"/>
-<approved hash="101,1,-99.06,40.64,X17-11,S,,,,"/>
-<approved hash="101,1,-78.74,40.64,X17-12,S,,,,"/>
-<approved hash="101,1,-99.06,38.1,X17-13,S,,,,"/>
-<approved hash="101,1,-78.74,38.1,X17-14,S,,,,"/>
-<approved hash="101,1,-99.06,35.56,X17-15,S,,,,"/>
-<approved hash="101,1,-78.74,35.56,X17-16,S,,,,"/>
-<approved hash="101,1,-99.06,33.02,X17-17,S,,,,"/>
-<approved hash="101,1,-78.74,33.02,X17-18,S,,,,"/>
-<approved hash="101,1,-99.06,30.48,X17-19,S,,,,"/>
-<approved hash="101,1,-78.74,30.48,X17-20,S,,,,"/>
-<approved hash="101,1,-99.06,27.94,X17-21,S,,,,"/>
-<approved hash="101,1,-78.74,27.94,X17-22,S,,,,"/>
-<approved hash="101,1,-99.06,25.4,X17-23,S,,,,"/>
-<approved hash="101,1,-78.74,25.4,X17-24,S,,,,"/>
-<approved hash="101,1,-99.06,22.86,X17-25,S,,,,"/>
-<approved hash="101,1,-78.74,22.86,X17-26,S,,,,"/>
 <approved hash="101,1,-99.06,20.32,X17-27,S,,,,"/>
 <approved hash="101,1,-78.74,20.32,X17-28,S,,,,"/>
-<approved hash="101,1,-78.74,91.44,X18-2,S,,,,"/>
-<approved hash="101,1,-99.06,88.9,X18-3,S,,,,"/>
-<approved hash="101,1,-99.06,86.36,X18-5,S,,,,"/>
-<approved hash="101,1,-99.06,83.82,X18-7,S,,,,"/>
-<approved hash="101,1,-99.06,81.28,X18-9,S,,,,"/>
-<approved hash="101,1,-99.06,78.74,X18-11,S,,,,"/>
-<approved hash="101,1,-99.06,76.2,X18-13,S,,,,"/>
-<approved hash="101,1,-99.06,73.66,X18-15,S,,,,"/>
-<approved hash="101,1,-99.06,71.12,X18-17,S,,,,"/>
-<approved hash="101,1,-99.06,68.58,X18-19,S,,,,"/>
-<approved hash="101,1,-99.06,66.04,X18-21,S,,,,"/>
-<approved hash="101,1,-99.06,60.96,X18-25,S,,,,"/>
-<approved hash="101,1,-99.06,58.42,X18-27,S,,,,"/>
 <approved hash="101,1,139.7,-218.44,J191-A1,MSV,,,,"/>
 <approved hash="101,1,137.16,-218.44,J191-A2,MS,,,,"/>
 <approved hash="101,1,134.62,-218.44,J191-A3,MS,,,,"/>
@@ -27114,6 +27022,10 @@ Source: www.kingbright.com</description>
 <approved hash="101,1,81.28,-218.44,J191-A24,MS,,,,"/>
 <approved hash="101,1,78.74,-218.44,J191-A25,MS,,,,"/>
 <approved hash="101,1,76.2,-218.44,J191-A26,MS,,,,"/>
+<approved hash="101,1,73.66,-218.44,J191-A27,MS,,,,"/>
+<approved hash="101,1,71.12,-218.44,J191-A28,MS,,,,"/>
+<approved hash="101,1,68.58,-218.44,J191-A29,MS,,,,"/>
+<approved hash="101,1,66.04,-218.44,J191-A30,MS,,,,"/>
 <approved hash="101,1,139.7,-190.5,J191-C1,MSV,,,,"/>
 <approved hash="101,1,137.16,-190.5,J191-C2,MS,,,,"/>
 <approved hash="101,1,134.62,-190.5,J191-C3,MS,,,,"/>
@@ -27207,38 +27119,6 @@ Source: www.kingbright.com</description>
 <approved hash="101,1,-91.44,-190.5,J192-C30,MS,,,,"/>
 <approved hash="101,1,-93.98,-190.5,J192-C31,MS,,,,"/>
 <approved hash="101,1,-96.52,-190.5,J192-C32,MS,,,,"/>
-<approved hash="101,1,-30.48,-55.88,X1-1,S,,,,"/>
-<approved hash="101,1,-30.48,-38.1,X1-2,S,,,,"/>
-<approved hash="101,1,-27.94,-55.88,X1-3,S,,,,"/>
-<approved hash="101,1,-27.94,-38.1,X1-4,S,,,,"/>
-<approved hash="101,1,-25.4,-55.88,X1-5,S,,,,"/>
-<approved hash="101,1,-25.4,-38.1,X1-6,S,,,,"/>
-<approved hash="101,1,-22.86,-55.88,X1-7,S,,,,"/>
-<approved hash="101,1,-22.86,-38.1,X1-8,S,,,,"/>
-<approved hash="101,1,-20.32,-55.88,X1-9,S,,,,"/>
-<approved hash="101,1,-20.32,-38.1,X1-10,S,,,,"/>
-<approved hash="101,1,-17.78,-55.88,X1-11,S,,,,"/>
-<approved hash="101,1,-17.78,-38.1,X1-12,S,,,,"/>
-<approved hash="101,1,-15.24,-55.88,X1-13,S,,,,"/>
-<approved hash="101,1,-15.24,-38.1,X1-14,S,,,,"/>
-<approved hash="101,1,-12.7,-55.88,X1-15,S,,,,"/>
-<approved hash="101,1,-12.7,-38.1,X1-16,S,,,,"/>
-<approved hash="101,1,-7.62,-55.88,X2-1,S,,,,"/>
-<approved hash="101,1,-7.62,-38.1,X2-2,S,,,,"/>
-<approved hash="101,1,-5.08,-55.88,X2-3,S,,,,"/>
-<approved hash="101,1,-5.08,-38.1,X2-4,S,,,,"/>
-<approved hash="101,1,-2.54,-55.88,X2-5,S,,,,"/>
-<approved hash="101,1,-2.54,-38.1,X2-6,S,,,,"/>
-<approved hash="101,1,0,-55.88,X2-7,S,,,,"/>
-<approved hash="101,1,0,-38.1,X2-8,S,,,,"/>
-<approved hash="101,1,2.54,-55.88,X2-9,S,,,,"/>
-<approved hash="101,1,2.54,-38.1,X2-10,S,,,,"/>
-<approved hash="101,1,5.08,-55.88,X2-11,S,,,,"/>
-<approved hash="101,1,5.08,-38.1,X2-12,S,,,,"/>
-<approved hash="101,1,7.62,-55.88,X2-13,S,,,,"/>
-<approved hash="101,1,7.62,-38.1,X2-14,S,,,,"/>
-<approved hash="101,1,10.16,-55.88,X2-15,S,,,,"/>
-<approved hash="101,1,10.16,-38.1,X2-16,S,,,,"/>
 <approved hash="104,1,218.44,88.9,VSLUE,VCC,5V,,,"/>
 <approved hash="104,1,218.44,43.18,VSLUE2,VCC,5V,,,"/>
 <approved hash="104,1,218.44,-2.54,VSLUE3,VCC,5V,,,"/>

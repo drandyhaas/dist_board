@@ -10,7 +10,7 @@
 
   ; Preferred Directions:
 
-  PrefDir.1       = |
+  PrefDir.1       = *
   PrefDir.2       = *
   PrefDir.3       = 0
   PrefDir.4       = 0
@@ -24,7 +24,7 @@
   PrefDir.12      = 0
   PrefDir.13      = 0
   PrefDir.14      = 0
-  PrefDir.15      = -
+  PrefDir.15      = *
   PrefDir.16      = *
 
   Active          =    1
@@ -45,8 +45,8 @@
   cfAvoid         =    4
   cfPolygon       =   10
 
-  cfBase.1        =    9
-  cfBase.2        =    1
+  cfBase.1        =    0
+  cfBase.2        =    9
   cfBase.3        =    1
   cfBase.4        =    1
   cfBase.5        =    1
@@ -59,8 +59,8 @@
   cfBase.12       =    1
   cfBase.13       =    1
   cfBase.14       =    1
-  cfBase.15       =    9
-  cfBase.16       =    1
+  cfBase.15       =    0
+  cfBase.16       =    9
 
   ; Maximum Number of...:
 
@@ -76,7 +76,7 @@
   @Route
 
   Active          =    1
-  cfBase.1        =    0
+  cfBase.2        =    1
   cfBase.15       =    1
   cfBase.16       =    0
 
@@ -88,8 +88,8 @@
   cfNonPref       =    4
   cfBusImpact     =    4
   cfHugging       =    0
-  cfBase.1        =    0
-  cfBase.15       =    0
+  cfBase.2        =    1
+  cfBase.16       =    1
   mnVias          =    0
 
 [Route]
@@ -106,6 +106,8 @@
   cfVia           =   99
   cfExtdStep      =   10
   cfHugging       =    1
+  cfBase.2        =   99
+  cfBase.16       =   99
   mnExtdSteps     =    1
   mnRipupLevel    =    0
 
