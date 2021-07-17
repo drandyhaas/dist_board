@@ -1,0 +1,28 @@
+
+
+C:/Users/ahaas/Dropbox/cygwin/home/cygwinhome/dist_board/trig2_board_pllphase_de0nano-firmware/pll1.v
+
+May 30 10AM:30:59>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/ahaas/Dropbox/cygwin/home/cygwinhome/dist_board/trig2_board_pllphase_de0nano-firmware/pll1.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/ahaas/Dropbox/cygwin/home/cygwinhome/dist_board/trig2_board_pllphase_de0nano-firmware/pll1.v
+
+May 30 10AM:31:28>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/ahaas/Dropbox/cygwin/home/cygwinhome/dist_board/trig2_board_pllphase_de0nano-firmware/pll1.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+C:/Users/ahaas/Dropbox/cygwin/home/cygwinhome/dist_board/trig2_board_pllphase_de0nano-firmware/pll1.v
+
+May 30 10AM:31:37>: Error in CNX file format.
+
+Error messages are listed in file
+C:/Users/ahaas/Dropbox/cygwin/home/cygwinhome/dist_board/trig2_board_pllphase_de0nano-firmware/pll1.cnxerr.
+
+Can't create the custom megafunction variation file(s)

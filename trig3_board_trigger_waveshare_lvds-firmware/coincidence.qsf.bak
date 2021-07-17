@@ -1,0 +1,164 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# Date created = 08:20:30  November 06, 2018
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		coincidence_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE22F17C6
+set_global_assignment -name TOP_LEVEL_ENTITY coincidence
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:20:30  NOVEMBER 06, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk50
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to reset
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name FORCE_CONFIGURATION_VCCIO ON
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name CYCLONEIII_CONFIGURATION_DEVICE EPCS16
+set_location_assignment PIN_R8 -to clk50
+set_location_assignment PIN_N9 -to enable_outputs
+set_location_assignment PIN_A15 -to led[0]
+set_location_assignment PIN_A11 -to led[3]
+set_location_assignment PIN_B13 -to led[2]
+set_location_assignment PIN_A13 -to led[1]
+set_location_assignment PIN_J15 -to reset
+set_location_assignment PIN_J16 -to serial_in
+set_location_assignment PIN_M10 -to serial_out
+set_instance_assignment -name IO_STANDARD "2.5 V" -to enable_outputs
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[4]
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[9]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to serial_in
+set_instance_assignment -name IO_STANDARD "2.5 V" -to serial_out
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[10]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[11]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[12]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[13]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[14]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[15]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_in[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[15]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[14]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[13]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[12]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[11]
+set_instance_assignment -name IO_STANDARD LVDS_E_3R -to coax_out[10]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to coax_out[9]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led7_clkchoice
+set_location_assignment PIN_L3 -to led7_clkchoice
+set_location_assignment PIN_P16 -to coax_in[0]
+set_location_assignment PIN_E8 -to coax_in[1]
+set_location_assignment PIN_T15 -to coax_in[2]
+set_location_assignment PIN_L15 -to coax_in[3]
+set_location_assignment PIN_N15 -to coax_in[4]
+set_location_assignment PIN_R14 -to coax_in[5]
+set_location_assignment PIN_P14 -to coax_in[6]
+set_location_assignment PIN_N16 -to coax_in[7]
+set_location_assignment PIN_B11 -to coax_out[0]
+set_location_assignment PIN_E10 -to coax_out[1]
+set_location_assignment PIN_D11 -to coax_out[2]
+set_location_assignment PIN_J14 -to coax_out[3]
+set_location_assignment PIN_B4 -to coax_out[4]
+set_location_assignment PIN_A4 -to coax_out[5]
+set_location_assignment PIN_B3 -to coax_out[6]
+set_location_assignment PIN_D12 -to coax_out[7]
+set_location_assignment PIN_N14 -to coax_out[8]
+set_location_assignment PIN_D5 -to coax_out[9]
+set_location_assignment PIN_B5 -to coax_out[10]
+set_location_assignment PIN_E6 -to coax_out[12]
+set_location_assignment PIN_C8 -to coax_out[13]
+set_location_assignment PIN_C6 -to coax_out[14]
+set_location_assignment PIN_D6 -to coax_out[15]
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led6_plllock
+set_location_assignment PIN_B1 -to led6_plllock
+set_global_assignment -name BDF_FILE coincidence.bdf
+set_global_assignment -name SDC_FILE coincidence.sdc
+set_global_assignment -name VERILOG_FILE serialprocessor.v
+set_global_assignment -name VERILOG_FILE LED_4.v
+set_global_assignment -name VERILOG_FILE rng.v
+set_global_assignment -name VERILOG_FILE async.v
+set_global_assignment -name QIP_FILE pll2.qip
+set_global_assignment -name QIP_FILE pll1.qip
+set_global_assignment -name CDF_FILE Chain1.cdf
+set_global_assignment -name CDF_FILE Chain2.cdf
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_NCE_PIN OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_instance_assignment -name IO_STANDARD "2.5 V" -to "coax_out[2](n)"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

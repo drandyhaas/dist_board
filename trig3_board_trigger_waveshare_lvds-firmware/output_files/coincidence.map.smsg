@@ -1,0 +1,4 @@
+Info (10281): Verilog HDL Declaration information at serialprocessor.v(17): object "CLKSWITCH" differs only in case from object "clkswitch" in the same scope File: C:/gitwork/master/dist_board/trig3_board_trigger_waveshare_lvds-firmware/serialprocessor.v Line: 17
+Info (10281): Verilog HDL Declaration information at serialprocessor.v(17): object "RESETHIST" differs only in case from object "resethist" in the same scope File: C:/gitwork/master/dist_board/trig3_board_trigger_waveshare_lvds-firmware/serialprocessor.v Line: 17
+Warning (10268): Verilog HDL information at LED_4.v(26): always construct contains both blocking and non-blocking assignments File: C:/gitwork/master/dist_board/trig3_board_trigger_waveshare_lvds-firmware/LED_4.v Line: 26
+Warning (10268): Verilog HDL information at LED_4.v(77): always construct contains both blocking and non-blocking assignments File: C:/gitwork/master/dist_board/trig3_board_trigger_waveshare_lvds-firmware/LED_4.v Line: 77

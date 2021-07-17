@@ -1,0 +1,190 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 304 320)
+	(text "processor" (rect 5 0 45 12)(font "Arial" ))
+	(text "inst" (rect 8 288 20 300)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "Arial" ))
+		(text "clk" (rect 21 27 31 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "rxReady" (rect 0 0 36 12)(font "Arial" ))
+		(text "rxReady" (rect 21 43 57 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "rxData[7..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "rxData[7..0]" (rect 21 59 68 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "txBusy" (rect 0 0 28 12)(font "Arial" ))
+		(text "txBusy" (rect 21 75 49 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "histos[0..7][31..0]" (rect 0 0 66 12)(font "Arial" ))
+		(text "histos[0..7][31..0]" (rect 21 91 87 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "delaycounter[0..15][2..0]" (rect 0 0 94 12)(font "Arial" ))
+		(text "delaycounter[0..15][2..0]" (rect 21 107 115 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "activeclock" (rect 0 0 43 12)(font "Arial" ))
+		(text "activeclock" (rect 21 123 64 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 288 32)
+		(output)
+		(text "txStart" (rect 0 0 25 12)(font "Arial" ))
+		(text "txStart" (rect 242 27 267 39)(font "Arial" ))
+		(line (pt 288 32)(pt 272 32)(line_width 1))
+	)
+	(port
+		(pt 288 48)
+		(output)
+		(text "txData[7..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "txData[7..0]" (rect 221 43 267 55)(font "Arial" ))
+		(line (pt 288 48)(pt 272 48)(line_width 3))
+	)
+	(port
+		(pt 288 64)
+		(output)
+		(text "readdata[7..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "readdata[7..0]" (rect 213 59 267 71)(font "Arial" ))
+		(line (pt 288 64)(pt 272 64)(line_width 3))
+	)
+	(port
+		(pt 288 80)
+		(output)
+		(text "calibticks[7..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "calibticks[7..0]" (rect 213 75 267 87)(font "Arial" ))
+		(line (pt 288 80)(pt 272 80)(line_width 3))
+	)
+	(port
+		(pt 288 96)
+		(output)
+		(text "histostosend[7..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "histostosend[7..0]" (rect 199 91 267 103)(font "Arial" ))
+		(line (pt 288 96)(pt 272 96)(line_width 3))
+	)
+	(port
+		(pt 288 112)
+		(output)
+		(text "enable_outputs" (rect 0 0 59 12)(font "Arial" ))
+		(text "enable_outputs" (rect 208 107 267 119)(font "Arial" ))
+		(line (pt 288 112)(pt 272 112)(line_width 1))
+	)
+	(port
+		(pt 288 128)
+		(output)
+		(text "phasecounterselect[2..0]" (rect 0 0 95 12)(font "Arial" ))
+		(text "phasecounterselect[2..0]" (rect 172 123 267 135)(font "Arial" ))
+		(line (pt 288 128)(pt 272 128)(line_width 3))
+	)
+	(port
+		(pt 288 144)
+		(output)
+		(text "phaseupdown" (rect 0 0 53 12)(font "Arial" ))
+		(text "phaseupdown" (rect 214 139 267 151)(font "Arial" ))
+		(line (pt 288 144)(pt 272 144)(line_width 1))
+	)
+	(port
+		(pt 288 160)
+		(output)
+		(text "phasestep" (rect 0 0 40 12)(font "Arial" ))
+		(text "phasestep" (rect 227 155 267 167)(font "Arial" ))
+		(line (pt 288 160)(pt 272 160)(line_width 1))
+	)
+	(port
+		(pt 288 176)
+		(output)
+		(text "scanclk" (rect 0 0 29 12)(font "Arial" ))
+		(text "scanclk" (rect 238 171 267 183)(font "Arial" ))
+		(line (pt 288 176)(pt 272 176)(line_width 1))
+	)
+	(port
+		(pt 288 192)
+		(output)
+		(text "clkswitch" (rect 0 0 34 12)(font "Arial" ))
+		(text "clkswitch" (rect 233 187 267 199)(font "Arial" ))
+		(line (pt 288 192)(pt 272 192)(line_width 1))
+	)
+	(port
+		(pt 288 208)
+		(output)
+		(text "resethist" (rect 0 0 33 12)(font "Arial" ))
+		(text "resethist" (rect 234 203 267 215)(font "Arial" ))
+		(line (pt 288 208)(pt 272 208)(line_width 1))
+	)
+	(port
+		(pt 288 224)
+		(output)
+		(text "setseed" (rect 0 0 30 12)(font "Arial" ))
+		(text "setseed" (rect 237 219 267 231)(font "Arial" ))
+		(line (pt 288 224)(pt 272 224)(line_width 1))
+	)
+	(port
+		(pt 288 240)
+		(output)
+		(text "seed[31..0]" (rect 0 0 42 12)(font "Arial" ))
+		(text "seed[31..0]" (rect 225 235 267 247)(font "Arial" ))
+		(line (pt 288 240)(pt 272 240)(line_width 3))
+	)
+	(port
+		(pt 288 256)
+		(output)
+		(text "prescale[31..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "prescale[31..0]" (rect 211 251 267 263)(font "Arial" ))
+		(line (pt 288 256)(pt 272 256)(line_width 3))
+	)
+	(port
+		(pt 288 272)
+		(output)
+		(text "dorolling" (rect 0 0 30 12)(font "Arial" ))
+		(text "dorolling" (rect 237 267 267 279)(font "Arial" ))
+		(line (pt 288 272)(pt 272 272)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 272 288)(line_width 1))
+	)
+)
