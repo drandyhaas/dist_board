@@ -33,7 +33,7 @@ always@(posedge clk_adc) begin
 	i=0; while (i<16) begin
 		
 		//if (clk_locked) 
-		   coaxinreg[i]<=coax_in[i];
+		   coaxinreg[i]<= ~coax_in[i];
 		//else coaxinreg[i]<=0;
 		
 		if (i<4) coax_out[i] <= (Tin[i]>0); // fire the output i if a trigger was active on channel i
