@@ -36,7 +36,8 @@ always@(posedge clk_adc) begin
 		   coaxinreg[i]<=coax_in[i];
 		//else coaxinreg[i]<=0;
 		
-		coax_out[i] <= coaxinreg[i]; // passthrough
+		if (i<4) coax_out[i] <= (Tin[i]>0); // fire the output i if a trigger was active on channel i
+		else coax_out[i] <= coaxinreg[i]; // passthrough
 		
 		if (i<8) histosout[i]<=histos[i][histostosend2];
 		
