@@ -16,3 +16,4 @@
 *-firmware/output_files/*.rpt
 *-firmware/output_files/*.done
 */coincidence.qws
+.idea
