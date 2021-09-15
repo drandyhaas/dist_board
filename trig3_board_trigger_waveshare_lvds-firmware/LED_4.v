@@ -43,7 +43,7 @@ always@(posedge clk_adc) begin
 	if (triedtofire==0 && (Tin[0]>0 || Tin[1]>0)) begin // fire the outputs (0,1) if input 0 or 1 has a trigger that was active
 		if (pass_prescale) begin
 			i=0; while (i<16) begin
-				if (i<=1) Tout[i] <= 4; // fire outputs for this long
+				if (i<=1) Tout[i] <= 16; // fire outputs for this long
 				i=i+1;
 			end
 		end
