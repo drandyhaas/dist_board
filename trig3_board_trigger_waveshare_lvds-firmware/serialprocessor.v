@@ -1,7 +1,7 @@
 module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	calibticks, histostosend, enable_outputs, 
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
-	histos, resethist, delaycounter, activeclock,
+	histos, resethist, activeclock,
 	setseed, seed, prescale, dorolling
 	);
 	
@@ -34,7 +34,6 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	
 	input reg[31:0] histos[8];
 	output reg resethist;
-	input reg[2:0] delaycounter[16];
 	input activeclock;
 	reg[7:0] i;
 	
@@ -67,7 +66,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
    SOLVING: begin
 		if (readdata==0) begin		
 			ioCountToSend = 1;
-			data[0]=4; // this is the firmware version
+			data[0]=5; // this is the firmware version
 			state=WRITE1;				
 		end
 		else if (readdata==1) begin //wait for next byte: how often to do trigger input calibration
@@ -134,13 +133,8 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			end
 			state=RESETHIST;
 		end
-		else if (readdata==11) begin // send the delaycounter trigger data
-			ioCountToSend = 16;
-			i=0; while (i<16) begin			
-				data[i]= {5'b00000,delaycounter[i]};
-				i=i+1;
-			end
-			state=WRITE1;
+		else if (readdata==11) begin // 			
+			state=READ;
 		end
 		else if (readdata==12) begin //adjust phase of clock c1
 			phasecounterselect=3'b011; // clock c1 - see https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyc3/cyc3_ciii51006.pdf table 5-10

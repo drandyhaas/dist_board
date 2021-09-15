@@ -2,7 +2,7 @@ import time
 from serial import Serial
 
 serialtimeout=1.0
-ser=Serial("COM3",921600,timeout=serialtimeout)
+ser=Serial("COM7",921600,timeout=serialtimeout)
 
 # read firmware version
 ser.write(bytearray([0]))
