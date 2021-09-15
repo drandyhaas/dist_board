@@ -130,7 +130,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D11       :        :                   :      
 led[0]                       : D12       : output : 2.5 V             :         : 7         : Y              
 VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
 coax_in[0]                   : D14       : input  : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 6         :                
+led[2]                       : D15       : output : 2.5 V             :         : 6         : N              
 coax_in[2]                   : D16       : input  : 2.5 V             :         : 6         : Y              
 GND+                         : E1        :        :                   :         : 1         :                
 GND                          : E2        : gnd    :                   :         :           :                
@@ -156,12 +156,12 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : F6        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8         :                
-led[3]                       : F9        : output : 2.5 V             :         : 7         : N              
-led[2]                       : F10       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F10       :        :                   :         : 7         :                
 coax_in[4]                   : F11       : input  : 2.5 V             :         : 7         : Y              
 VCCA2                        : F12       : power  :                   : 2.5V    :           :                
 coax_in[3]                   : F13       : input  : 2.5 V             :         : 6         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 6         :                
+led[3]                       : F14       : output : 2.5 V             :         : 6         : N              
 coax_in[13]                  : F15       : input  : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 6         :                
 enable_outputs               : G1        : output : 2.5 V             :         : 1         : Y              

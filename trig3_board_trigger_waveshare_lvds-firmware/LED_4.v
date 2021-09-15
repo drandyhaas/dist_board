@@ -31,7 +31,7 @@ always@(posedge clk_adc) begin
 	if (triedtofire>0) triedtofire <= triedtofire-1; // count down deadtime for outputs
 	
 	i=0; while (i<16) begin
-		coaxinreg[i] <= coax_in[i]; // inputs are read into registers and buffered
+		coaxinreg[i] <= ~coax_in[i]; // inputs are inverted (so that unconnected inputs are 0), then read into registers and buffered
 		coax_out[i] <= Tout[i]>0; // outputs fire while Tout is high
 		if (Tout[i]>0) Tout[i] <= Tout[i]-1; // count down how long the triggers have been active
 		//coax_out[i] <= coaxinreg[i]; // passthrough		
