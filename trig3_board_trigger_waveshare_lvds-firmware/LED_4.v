@@ -40,14 +40,14 @@ always@(posedge clk_adc) begin
 	end
 	
 	// these are the actual triggers
-	if (triedtofire==0 && (Tin[0]>0 || Tin[1]>0)) begin // fire the outputs if input 0 or 1 has a trigger that was active
+	if (triedtofire==0 && (Tin[0]>0 || Tin[1]>0)) begin // fire the outputs (0,1) if input 0 or 1 has a trigger that was active
 		if (pass_prescale) begin
 			i=0; while (i<16) begin
-				Tout[i] <= 4; // fire outputs for this long
+				if (i<=1) Tout[i] <= 4; // fire outputs for this long
 				i=i+1;
 			end
 		end
-		triedtofire <= 20; // will stay dead for this many clk ticks
+		triedtofire <= 50; // will stay dead for this many clk ticks
 	end
 	else begin // fire the output i if a trigger was active on channel i (for i>1)
 		i=0; while (i<16) begin 

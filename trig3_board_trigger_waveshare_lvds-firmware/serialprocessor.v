@@ -39,7 +39,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	
 	output reg setseed;
 	output reg[31:0] seed;
-	output reg[31:0] prescale;
+	output reg[31:0] prescale = 32'hffffffff;
 	output reg dorolling=1;
 
 	always @(posedge clk) begin

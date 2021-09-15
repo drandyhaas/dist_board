@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE22F17) Path("C:/Users/haas/Downloads/dist_board/trig3_board_trigger_de0nano_lvds-firmware/output_files/") File("coincidence.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE10F17) Path("C:/gitwork/master/dist_board/trig3_board_trigger_waveshare_lvds-firmware/output_files/") File("coincidence.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

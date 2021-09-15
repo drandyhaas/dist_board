@@ -78,7 +78,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : A8        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A9        :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 7         :                
-led[2]                       : A11       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A11       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A13       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A14       :        :                   :         : 7         :                
@@ -156,8 +156,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : F6        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 7         :                
-led[3]                       : F10       : output : 2.5 V             :         : 7         : N              
+led[3]                       : F9        : output : 2.5 V             :         : 7         : N              
+led[2]                       : F10       : output : 2.5 V             :         : 7         : N              
 coax_in[4]                   : F11       : input  : 2.5 V             :         : 7         : Y              
 VCCA2                        : F12       : power  :                   : 2.5V    :           :                
 coax_in[3]                   : F13       : input  : 2.5 V             :         : 6         : Y              
