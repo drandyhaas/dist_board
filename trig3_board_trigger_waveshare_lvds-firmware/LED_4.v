@@ -58,7 +58,7 @@ always@(posedge clk_adc) begin
 	end
 	
 	//rolling trigger
-	if (autocounter[25]) begin
+	if (autocounter[20]) begin
 		if (dorolling) ext_trig_out_counter <= 4;
 		autocounter <= 0;
 	end

@@ -1,19 +1,56 @@
 from serial import Serial
 from struct import unpack
 import time
+import random
 
 ser=Serial("COM7",921600,timeout=1.0)
 
 ser.write(bytearray([0])) # firmware version
 result = ser.read(1); byte_array = unpack('%dB' % len(result), result); print("firmware v",byte_array[0])
 
-ser.write(bytearray([2,0])) # get histos from channel 0
-ser.write(bytearray([10])) # get histos
-result = ser.read(32)
-byte_array = unpack('%dB' % len(result), result)
-myint=[]
-for i in range(8):
-    myint.append( byte_array[4*i+0]+256*byte_array[4*i+1]+256*256*byte_array[4*i+2]+0*256*256*256*byte_array[4*i+3] )
-print(myint[0],myint[1],myint[2],myint[3],myint[4],myint[5],myint[6],myint[7])
+time.sleep(.5)
+
+def setrngseed():
+    random.seed()
+    b1 = random.randint(0, 255)
+    b2 = random.randint(0, 255)
+    b3 = random.randint(0, 255)
+    b4 = random.randint(0, 255)
+    ser.write(bytearray([6, b1, b2, b3, b4]))
+    print("set trigboard random seed to", b1, b2, b3, b4)
+
+def set_prescale(prescale):  # takes a float from 0-1 that is the fraction of events to pass
+    if prescale > 1.0 or prescale < 0.0:
+        print("bad prescale value,", prescale)
+        return
+    prescaleint = int((pow(2, 32) - 1) * prescale)
+    b4 = int(prescaleint / 256 / 256 / 256) % 256
+    b3 = int(prescaleint / 256 / 256) % 256
+    b2 = int(prescaleint / 256) % 256
+    b1 = int(prescaleint) % 256
+    ser.write(bytearray([7, b1, b2, b3, b4]))
+    print("set trigboard prescale to", prescale, " - will pass", prescaleint, "out of every 4294967295", ", bytes:", b1, b2, b3, b4)
+
+def set_histostosend(h):
+    ser.write(bytearray([2, h]))  # set histos to be from channel h
+    histostosend = h
+    print("will send histos from board", histostosend)
+
+def get_histos():
+    ser.write(bytearray([10]))  # get histos
+    res = ser.read(32)
+    b = unpack('%dB' % len(res), res)
+    mystr = "histos for board: "
+    myint = []
+    for i in range(8):
+        myint.append(b[4 * i + 0] + 256 * b[4 * i + 1] + 256 * 256 * b[4 * i + 2] + 0 * 256 * 256 * 256 * b[4 * i + 3])
+        mystr += str(myint[i]) + " "
+        if i == 3: mystr += ", "
+    return mystr
+
+setrngseed()
+set_prescale(0.3)
+set_histostosend(1)
+histos = get_histos(); print(histos)
 
 ser.close()
