@@ -4,10 +4,11 @@ module LED_4(
 	output reg [3:0] led,
 	input [16-1:0] coax_in,
 	output [16-1:0] coax_out,	
-	input [7:0] calibticks, input [7:0] histostosend,
+	input [7:0] coincidence_time, input [7:0] histostosend,
 	input clk_adc, output reg[31:0] histosout[8], input resethist, 
 	input clk_locked,	output ext_trig_out,
-	input reg[31:0] randnum, input reg[31:0] prescale, input dorolling
+	input reg[31:0] randnum, input reg[31:0] prescale, input dorolling,
+	input [7:0] dead_time
 	);
 
 reg[7:0] i;
@@ -47,11 +48,11 @@ always@(posedge clk_adc) begin
 				i=i+1;
 			end
 		end
-		triedtofire <= 50; // will stay dead for this many clk ticks
+		triedtofire <= dead_time; // will stay dead for this many clk ticks
 	end
 	else begin // fire the output i if a trigger was active on channel i (for i>1)
 		i=0; while (i<16) begin 
-			if (i>1) if (Tin[i]>0) Tout[i]<=4; // fire outputs for this long
+			if (i>1) if (Tin[i]>0) Tout[i]<=16; // fire outputs for this long
 			i=i+1;
 		end
 	end
@@ -70,25 +71,28 @@ end
 
 // triggers (from other boards) are read in and monitored
 reg[5:0] Tin[16];
-always @(posedge clk_adc) begin
+always @(posedge clk_adc) begin		
+	j=0; while (j<16) begin
 		
-		j=0; while (j<16) begin
-			if (coaxinreg[j]) begin
-					Tin[j] <= 20; // set Tin high for this channel for this many clk ticks
-					if (!resethist) histos[4][j] <= histos[4][j]+1; // record the trigger for monitoring
-			end
-			else begin				
-				if (Tin[j]>0) Tin[j] <= Tin[j]-1; // count down how long the triggers have been active
-			end
-			if (resethist) begin
-				i=0; while (i<8) begin
-					histos[i][j] <= 0;
-					i=i+1;
-				end
-			end
-			j=j+1;
+		// buffer inputs
+		if (coaxinreg[j]) begin
+				Tin[j] <= coincidence_time; // set Tin high for this channel for this many clk ticks
+				if (!resethist) histos[0][j] <= histos[0][j]+1; // record the trigger for monitoring
+		end
+		else begin				
+			if (Tin[j]>0) Tin[j] <= Tin[j]-1; // count down how long the triggers have been active
 		end
 		
+		// reset histos
+		if (resethist) begin
+			i=0; while (i<8) begin
+				histos[i][j] <= 0;
+				i=i+1;
+			end
+		end
+		
+		j=j+1;
+	end
 end
 
 

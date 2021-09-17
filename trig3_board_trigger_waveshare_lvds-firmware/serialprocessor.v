@@ -1,8 +1,8 @@
 module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
-	calibticks, histostosend, enable_outputs, 
+	coincidence_time, histostosend, enable_outputs, 
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
 	histos, resethist, activeclock,
-	setseed, seed, prescale, dorolling
+	setseed, seed, prescale, dorolling, dead_time
 	);
 	
 	input clk;
@@ -29,7 +29,8 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	reg[7:0] ioCount, ioCountToSend;
 	reg[7:0] data[32]; // for writing out data in WRITE1,2
 	
-	output reg[7:0] calibticks=10; // number of ms (approx) to wait between trigger input timing calibrations, logarithmic, so 10=2^10=1024ms=1s
+	output reg[7:0] coincidence_time=20; // number of ticks to buffer inputs for (sets the coincidence time)
+	output reg[7:0] dead_time=50; // number of ticks to be dead for after firing
 	output reg[7:0] histostosend=0; // the board from which to get histos
 	
 	input reg[31:0] histos[8];
@@ -38,7 +39,7 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	reg[7:0] i;
 	
 	output reg setseed;
-	output reg[31:0] seed;
+	output reg[31:0] seed = 0;
 	output reg[31:0] prescale = 32'hffffffff;
 	output reg dorolling=1;
 
@@ -69,10 +70,10 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			data[0]=5; // this is the firmware version
 			state=WRITE1;				
 		end
-		else if (readdata==1) begin //wait for next byte: how often to do trigger input calibration
+		else if (readdata==1) begin //wait for next byte: the coincidence time
 			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
 			else begin
-				calibticks=extradata[0];
+				if (extradata[0]<64) coincidence_time=extradata[0];
 				state=READ;
 			end
 		end
@@ -133,8 +134,12 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 			end
 			state=RESETHIST;
 		end
-		else if (readdata==11) begin // 			
-			state=READ;
+		else if (readdata==11) begin //wait for next byte: the dead time
+			byteswanted=1; if (bytesread<byteswanted) state=READMORE;
+			else begin
+				dead_time=extradata[0];
+				state=READ;
+			end
 		end
 		else if (readdata==12) begin //adjust phase of clock c1
 			phasecounterselect=3'b011; // clock c1 - see https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyc3/cyc3_ciii51006.pdf table 5-10
