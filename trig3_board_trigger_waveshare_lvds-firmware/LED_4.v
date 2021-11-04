@@ -16,12 +16,13 @@ reg[7:0] j;
 reg[31:0] histos[8][16];
 reg [16-1:0] coaxinreg;
 reg pass_prescale;
-reg[7:0] triedtofire=0;
+reg[7:0] triedtofire[4];
 reg[7:0] ext_trig_out_counter=0;
 reg[31:0] autocounter=0; // for a rolling trigger
 reg [7:0] histostosend2;//to pass timing, since it's sent from the slow clk
 reg [31:0] prescale2;//to pass timing, since it's sent from the slow clk
 reg[5:0] Tout[16];
+reg[3:0] Nin[4]; // can be up to 4 groups active in each row
 
 always@(posedge clk_adc) begin
 	
@@ -29,7 +30,6 @@ always@(posedge clk_adc) begin
 	histostosend2<=histostosend;
 	prescale2<=prescale;
 	ext_trig_out <= (ext_trig_out_counter>0);
-	if (triedtofire>0) triedtofire <= triedtofire-1; // count down deadtime for outputs
 	
 	i=0; while (i<16) begin
 		coaxinreg[i] <= ~coax_in[i]; // inputs are inverted (so that unconnected inputs are 0), then read into registers and buffered
@@ -37,27 +37,77 @@ always@(posedge clk_adc) begin
 		if (Tout[i]>0) Tout[i] <= Tout[i]-1; // count down how long the triggers have been active
 		//coax_out[i] <= coaxinreg[i]; // passthrough		
 		if (i<8) histosout[i]<=histos[i][histostosend2]; // histo output
+		if (i<4) begin
+			if (triedtofire[i]>0) triedtofire[i] <= triedtofire[i]-1; // count down deadtime for outputs
+		end
 		i=i+1;
 	end
 	
-	// these are the actual triggers
-	if (triedtofire==0 && (Tin[0]>0 || Tin[1]>0)) begin // fire the outputs (0,1) if input 0 or 1 has a trigger that was active
+	// see how many "groups" (a set of two bars) are active in each "row" of 4 groups (for projective triggers)
+	// we ask for them to be >2 so that they will disappear before the calculated "vetos" will be gone
+	Nin[0] <= (Tin[0]>2) + (Tin[1]>2) + (Tin[2]>2) + (Tin[3]>2);
+	Nin[1] <= (Tin[4]>2) + (Tin[5]>2) + (Tin[6]>2) + (Tin[7]>2);
+	Nin[2] <= (Tin[8]>2) + (Tin[9]>2) + (Tin[10]>2) + (Tin[11]>2);
+	Nin[3] <= (Tin[12]>2) + (Tin[13]>2) + (Tin[14]>2) + (Tin[15]>2);
+	//Note that it's important that we use "<=" here, since these will be updated at the _end_ of this always block and then ready to use in the _next_ clock cycle
+	//The "vetos" in each trigger below will be calculated in _this_ clock cycle and so should be present _earlier_
+	
+	// fire the outputs (0 and 1) if there are >1 input groups active
+	if (triedtofire[0]==0 && ((Nin[0]+Nin[1]+Nin[2]+Nin[3])>1) ) begin
 		if (pass_prescale) begin
 			i=0; while (i<16) begin
-				if (i<=1) Tout[i] <= 16; // fire outputs for this long
+				if (i==0 || i==1) Tout[i] <= 16; // fire outputs for this long
 				i=i+1;
 			end
 		end
-		triedtofire <= dead_time; // will stay dead for this many clk ticks
-	end
-	else begin // fire the output i if a trigger was active on channel i (for i>1)
-		i=0; while (i<16) begin 
-			if (i>1) if (Tin[i]>0) Tout[i]<=16; // fire outputs for this long
-			i=i+1;
-		end
+		triedtofire[0] <= dead_time; // will stay dead for this many clk ticks
 	end
 	
-	//rolling trigger
+	// fire the outputs (2 and 3) if there are >1 input groups active in any row
+	if (triedtofire[1]==0 && (Nin[0]>1 || Nin[1]>1 || Nin[2]>1 || Nin[3]>1) ) begin
+		if (pass_prescale) begin
+			i=0; while (i<16) begin
+				if (i==2 || i==3) Tout[i] <= 16; // fire outputs for this long
+				i=i+1;
+			end
+		end
+		triedtofire[1] <= dead_time; // will stay dead for this many clk ticks
+	end
+	
+	// fire the outputs (4 and 5) if there are >2 input groups active in any row
+	if (triedtofire[2]==0 && (Nin[0]>2 || Nin[1]>2 || Nin[2]>2 || Nin[3]>2) ) begin
+		if (pass_prescale) begin
+			i=0; while (i<16) begin
+				if (i==4 || i==5) Tout[i] <= 16; // fire outputs for this long
+				i=i+1;
+			end
+		end
+		triedtofire[2] <= dead_time; // will stay dead for this many clk ticks
+	end
+	
+	// fire the outputs (6 and 7) if there are >2 input groups active in any row, and just 1 row with any input groups active
+	if (triedtofire[3]==0 && (Nin[0]>2 || Nin[1]>2 || Nin[2]>2 || Nin[3]>2) && ( ((Nin[0]>0)+(Nin[1]>0)+(Nin[2]>0)+(Nin[3]>0)) <2 ) ) begin
+		if (pass_prescale) begin
+			i=0; while (i<16) begin
+				if (i==6 || i==7) Tout[i] <= 16; // fire outputs for this long
+				i=i+1;
+			end
+		end
+		triedtofire[3] <= dead_time; // will stay dead for this many clk ticks
+	end
+	
+	// fire the output (8) if there are >0 input groups active (good for testing inputs)
+	if (triedtofire[0]==0 && ((Nin[0]+Nin[1]+Nin[2]+Nin[3])>0) ) begin
+		if (pass_prescale) begin
+			i=0; while (i<16) begin
+				if (i==8) Tout[i] <= 16; // fire outputs for this long
+				i=i+1;
+			end
+		end
+		triedtofire[0] <= dead_time; // will stay dead for this many clk ticks
+	end
+	
+	//rolling trigger (about 119.21 Hz)
 	if (autocounter[20]) begin
 		if (dorolling) ext_trig_out_counter <= 4;
 		autocounter <= 0;
