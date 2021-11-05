@@ -13,16 +13,16 @@ module LED_4(
 
 reg[7:0] i;
 reg[7:0] j;
-reg[31:0] histos[8][16];
-reg [16-1:0] coaxinreg;
+reg[31:0] histos[8][16]; // for monitoring
+reg [16-1:0] coaxinreg; // for buffering input triggers
 reg pass_prescale;
-reg[7:0] triedtofire[4];
+reg[7:0] triedtofire[16]; // for output trigger deadtime
 reg[7:0] ext_trig_out_counter=0;
 reg[31:0] autocounter=0; // for a rolling trigger
 reg [7:0] histostosend2;//to pass timing, since it's sent from the slow clk
 reg [31:0] prescale2;//to pass timing, since it's sent from the slow clk
-reg[5:0] Tout[16];
-reg[3:0] Nin[4]; // can be up to 4 groups active in each row
+reg[5:0] Tout[16]; // for output triggers
+reg[3:0] Nin[4]; // number of groups active in each row of 4 groups
 
 always@(posedge clk_adc) begin
 	
@@ -34,12 +34,10 @@ always@(posedge clk_adc) begin
 	i=0; while (i<16) begin
 		coaxinreg[i] <= ~coax_in[i]; // inputs are inverted (so that unconnected inputs are 0), then read into registers and buffered
 		coax_out[i] <= Tout[i]>0; // outputs fire while Tout is high
-		if (Tout[i]>0) Tout[i] <= Tout[i]-1; // count down how long the triggers have been active
 		//coax_out[i] <= coaxinreg[i]; // passthrough		
+		if (Tout[i]>0) Tout[i] <= Tout[i]-1; // count down how long the triggers have been active
 		if (i<8) histosout[i]<=histos[i][histostosend2]; // histo output
-		if (i<4) begin
-			if (triedtofire[i]>0) triedtofire[i] <= triedtofire[i]-1; // count down deadtime for outputs
-		end
+		if (triedtofire[i]>0) triedtofire[i] <= triedtofire[i]-1; // count down deadtime for outputs
 		i=i+1;
 	end
 	
@@ -59,8 +57,8 @@ always@(posedge clk_adc) begin
 				if (i==0 || i==1) Tout[i] <= 16; // fire outputs for this long
 				i=i+1;
 			end
+			triedtofire[0] <= dead_time; // will stay dead for this many clk ticks
 		end
-		triedtofire[0] <= dead_time; // will stay dead for this many clk ticks
 	end
 	
 	// fire the outputs (2 and 3) if there are >1 input groups active in any row
@@ -70,8 +68,8 @@ always@(posedge clk_adc) begin
 				if (i==2 || i==3) Tout[i] <= 16; // fire outputs for this long
 				i=i+1;
 			end
+			triedtofire[1] <= dead_time; // will stay dead for this many clk ticks
 		end
-		triedtofire[1] <= dead_time; // will stay dead for this many clk ticks
 	end
 	
 	// fire the outputs (4 and 5) if there are >2 input groups active in any row
@@ -81,8 +79,8 @@ always@(posedge clk_adc) begin
 				if (i==4 || i==5) Tout[i] <= 16; // fire outputs for this long
 				i=i+1;
 			end
+			triedtofire[2] <= dead_time; // will stay dead for this many clk ticks
 		end
-		triedtofire[2] <= dead_time; // will stay dead for this many clk ticks
 	end
 	
 	// fire the outputs (6 and 7) if there are >2 input groups active in any row, and just 1 row with any input groups active
@@ -92,19 +90,20 @@ always@(posedge clk_adc) begin
 				if (i==6 || i==7) Tout[i] <= 16; // fire outputs for this long
 				i=i+1;
 			end
+			triedtofire[3] <= dead_time; // will stay dead for this many clk ticks
 		end
-		triedtofire[3] <= dead_time; // will stay dead for this many clk ticks
 	end
 	
 	// fire the output (8) if there are >0 input groups active (good for testing inputs)
-	if (triedtofire[0]==0 && ((Nin[0]+Nin[1]+Nin[2]+Nin[3])>0) ) begin
+	if (triedtofire[4]==0 && ((Nin[0]+Nin[1]+Nin[2]+Nin[3])>0) ) begin
 		if (pass_prescale) begin
 			i=0; while (i<16) begin
 				if (i==8) Tout[i] <= 16; // fire outputs for this long
 				i=i+1;
 			end
+			triedtofire[4] <= dead_time; // will stay dead for this many clk ticks
+			led[1] <= ~led[1]; // toggle an LED
 		end
-		triedtofire[0] <= dead_time; // will stay dead for this many clk ticks
 	end
 	
 	//rolling trigger (about 119.21 Hz)
@@ -127,7 +126,7 @@ always @(posedge clk_adc) begin
 		// buffer inputs
 		if (coaxinreg[j]) begin
 				Tin[j] <= coincidence_time; // set Tin high for this channel for this many clk ticks
-				if (!resethist) histos[0][j] <= histos[0][j]+1; // record the trigger for monitoring
+				if (!resethist) histos[0][j] <= histos[0][j]+1; // record the trigger for monitoring in histo 0 for each input channel
 		end
 		else begin				
 			if (Tin[j]>0) Tin[j] <= Tin[j]-1; // count down how long the triggers have been active
@@ -147,20 +146,10 @@ end
 
 
 //for LEDs
-reg [1:0] ledi=0;
 reg[31:0] counter=0;
 always@(posedge clk) begin
 	counter<=counter+1;
-	if (counter[25]) begin			
-		counter<=0;
-		ledi<=ledi+2'b01;
-		case (ledi)
-		0:	begin led <= 4'b0001; end
-		1:	begin led <= 4'b0010; end
-		2:	begin led <= 4'b0100; end
-		3:	begin led <= 4'b1000; end
-		endcase
-	end
+	led[0]<=counter[25]; // flashing
 end
 	
 endmodule
