@@ -31,26 +31,26 @@ def set_prescale(prescale):  # takes a float from 0-1 that is the fraction of ev
     ser.write(bytearray([7, b1, b2, b3, b4]))
     print("set trigboard prescale to", prescale, " - will pass", prescaleint, "out of every 4294967295", ", bytes:", b1, b2, b3, b4)
 
-def set_histostosend(h):
+def get_histos(h):
     ser.write(bytearray([2, h]))  # set histos to be from channel h
-    histostosend = h
-    print("will send histos from board", histostosend)
-
-def get_histos():
     ser.write(bytearray([10]))  # get histos
     res = ser.read(32)
     b = unpack('%dB' % len(res), res)
-    mystr = "histos for board: "
+    mystr = "histos for "
+    mystr+=str(h)
+    mystr+=": "
     myint = []
     for i in range(8):
         myint.append(b[4 * i + 0] + 256 * b[4 * i + 1] + 256 * 256 * b[4 * i + 2] + 0 * 256 * 256 * 256 * b[4 * i + 3])
         mystr += str(myint[i]) + " "
         if i == 3: mystr += ", "
-    return mystr
+    return mystr, myint
 
 setrngseed()
 set_prescale(0.3)
-set_histostosend(1)
-histos = get_histos(); print(histos)
+
+for his in range(64):
+    histostr, histo = get_histos(his)
+    if histo[0]>0: print(histostr)
 
 ser.close()

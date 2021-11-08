@@ -2,13 +2,15 @@ module processor(clk, rxReady, rxData, txBusy, txStart, txData, readdata,
 	coincidence_time, histostosend, enable_outputs, 
 	phasecounterselect,phaseupdown,phasestep,scanclk, clkswitch,
 	histos, resethist, activeclock,
-	setseed, seed, prescale, dorolling, dead_time
+	setseed, seed, prescale, dorolling, dead_time,
+	io_top_extra
 	);
 	
 	input clk;
 	input[7:0] rxData;
 	input rxReady;
 	input txBusy;
+	input [5-1:0] io_top_extra;
 	output reg txStart;
 	output reg[7:0] txData;
 	output reg[7:0] readdata;//first byte we got

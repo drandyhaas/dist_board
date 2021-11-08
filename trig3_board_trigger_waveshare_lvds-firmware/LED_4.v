@@ -2,19 +2,20 @@ module LED_4(
 	input nrst,
 	input clk,
 	output reg [3:0] led,
-	input [16-1:0] coax_in,
+	input [64-1:0] coax_in,
 	output [16-1:0] coax_out,	
 	input [7:0] coincidence_time, input [7:0] histostosend,
 	input clk_adc, output reg[31:0] histosout[8], input resethist, 
 	input clk_locked,	output ext_trig_out,
 	input reg[31:0] randnum, input reg[31:0] prescale, input dorolling,
-	input [7:0] dead_time
+	input [7:0] dead_time,
+	input [16-1:0] coax_in_extra, output [16-1:0] coax_out_extra, input [14-1:0] io_extra, output [28-1:0] ep4ce10_io_extra
 	);
 
 reg[7:0] i;
 reg[7:0] j;
-reg[31:0] histos[8][16]; // for monitoring
-reg [16-1:0] coaxinreg; // for buffering input triggers
+reg[31:0] histos[8][64]; // for monitoring, 8 ints for each channel
+reg [64-1:0] coaxinreg; // for buffering input triggers
 reg pass_prescale;
 reg[7:0] triedtofire[16]; // for output trigger deadtime
 reg[7:0] ext_trig_out_counter=0;
@@ -22,22 +23,23 @@ reg[31:0] autocounter=0; // for a rolling trigger
 reg [7:0] histostosend2;//to pass timing, since it's sent from the slow clk
 reg [31:0] prescale2;//to pass timing, since it's sent from the slow clk
 reg[5:0] Tout[16]; // for output triggers
-reg[3:0] Nin[4]; // number of groups active in each row of 4 groups
+reg[3:0] Nin[64/4]; // number of groups active in each row of 4 groups
 
 always@(posedge clk_adc) begin
 	
 	pass_prescale <= (randnum<=prescale2);
 	histostosend2<=histostosend;
 	prescale2<=prescale;
-	ext_trig_out <= (ext_trig_out_counter>0);
-	
-	i=0; while (i<16) begin
+	ext_trig_out <= (ext_trig_out_counter>0);	
+	i=0; while (i<64) begin
 		coaxinreg[i] <= ~coax_in[i]; // inputs are inverted (so that unconnected inputs are 0), then read into registers and buffered
-		coax_out[i] <= Tout[i]>0; // outputs fire while Tout is high
-		//coax_out[i] <= coaxinreg[i]; // passthrough		
-		if (Tout[i]>0) Tout[i] <= Tout[i]-1; // count down how long the triggers have been active
-		if (i<8) histosout[i]<=histos[i][histostosend2]; // histo output
-		if (triedtofire[i]>0) triedtofire[i] <= triedtofire[i]-1; // count down deadtime for outputs
+		if (i<8) histosout[i]<=histos[i][histostosend2]; // histo output		
+		if (i<16) begin // for output stuff
+			coax_out[i] <= Tout[i]>0; // outputs fire while Tout is high
+			//coax_out[i] <= coaxinreg[i]; // passthrough		
+			if (Tout[i]>0) Tout[i] <= Tout[i]-1; // count down how long the triggers have been active
+			if (triedtofire[i]>0) triedtofire[i] <= triedtofire[i]-1; // count down deadtime for outputs
+		end
 		i=i+1;
 	end
 	
@@ -102,7 +104,7 @@ always@(posedge clk_adc) begin
 				i=i+1;
 			end
 			triedtofire[4] <= dead_time; // will stay dead for this many clk ticks
-			led[1] <= ~led[1]; // toggle an LED
+			led[1] <= 1'b0; // turn on the LED
 		end
 	end
 	
@@ -114,14 +116,16 @@ always@(posedge clk_adc) begin
 	else begin
 		if (ext_trig_out_counter>0) ext_trig_out_counter <= ext_trig_out_counter - 1;
 		autocounter <= autocounter+1;
-	end	
+	end
+	
+	if (led[0]==1'b1) led[1]<=1'b1; // turn it off when the other led toggles, so we can see it turn back on
 	
 end
 
 // triggers (from other boards) are read in and monitored
-reg[5:0] Tin[16];
+reg[5:0] Tin[64];
 always @(posedge clk_adc) begin		
-	j=0; while (j<16) begin
+	j=0; while (j<64) begin
 		
 		// buffer inputs
 		if (coaxinreg[j]) begin
@@ -130,18 +134,19 @@ always @(posedge clk_adc) begin
 		end
 		else begin				
 			if (Tin[j]>0) Tin[j] <= Tin[j]-1; // count down how long the triggers have been active
-		end
-		
-		// reset histos
-		if (resethist) begin
-			i=0; while (i<8) begin
-				histos[i][j] <= 0;
-				i=i+1;
-			end
-		end
+		end		
 		
 		j=j+1;
 	end
+	
+	// reset histos
+	if (resethist) begin
+		i=0; while (i<8) begin
+			histos[i][histostosend2] <= 0;
+			i=i+1;
+		end
+	end
+	
 end
 
 
@@ -149,7 +154,9 @@ end
 reg[31:0] counter=0;
 always@(posedge clk) begin
 	counter<=counter+1;
-	led[0]<=counter[25]; // flashing
+	led[0]<=counter[26]; // flashing
+	led[2]<=dorolling;
+	led[3]<=clk_locked;
 end
 	
 endmodule

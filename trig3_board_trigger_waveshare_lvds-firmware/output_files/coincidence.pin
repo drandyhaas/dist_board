@@ -69,117 +69,117 @@ CHIP  "coincidence"  ASSIGNED TO AN: EP4CE10F17C8
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 VCCIO8                       : A1        : power  :                   : 2.5V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A2        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A3        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A6        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A8        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A9        :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A11       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A13       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A14       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A15       :        :                   :         : 7         :                
+io_extra[1]                  : A2        : input  : 2.5 V             :         : 8         : Y              
+io_extra[2]                  : A3        : input  : 2.5 V             :         : 8         : Y              
+io_extra[3]                  : A4        : input  : 2.5 V             :         : 8         : Y              
+io_extra[4]                  : A5        : input  : 2.5 V             :         : 8         : Y              
+io_extra[5]                  : A6        : input  : 2.5 V             :         : 8         : Y              
+coax_out_extra[12]           : A7        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[13]         : A8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[14]         : A9        : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[22]         : A10       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[23]         : A11       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[7]          : A12       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[8]          : A13       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[9]          : A14       : output : 2.5 V             :         : 7         : Y              
+coax_out_extra[0]            : A15       : output : 2.5 V             :         : 7         : Y              
 VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B1        :        :                   :         : 1         :                
+io_extra[8]                  : B1        : input  : 2.5 V             :         : 1         : Y              
 GND                          : B2        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B4        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B6        :        :                   :         : 8         :                
-led7_clkchoice               : B7        : output : 2.5 V             :         : 8         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B8        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B9        :        :                   :         : 7         :                
-led6_plllock                 : B10       : output : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B11       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B12       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B13       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B14       :        :                   :         : 7         :                
+io_extra[9]                  : B3        : input  : 2.5 V             :         : 8         : Y              
+io_extra[10]                 : B4        : input  : 2.5 V             :         : 8         : Y              
+io_extra[11]                 : B5        : input  : 2.5 V             :         : 8         : Y              
+io_extra[12]                 : B6        : input  : 2.5 V             :         : 8         : Y              
+led[3]                       : B7        : output : 2.5 V             :         : 8         : Y              
+coax_out_extra[13]           : B8        : output : 2.5 V             :         : 8         : Y              
+coax_out_extra[14]           : B9        : output : 2.5 V             :         : 7         : Y              
+led[2]                       : B10       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[6]          : B11       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[24]         : B12       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[25]         : B13       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[11]         : B14       : output : 2.5 V             :         : 7         : Y              
 GND                          : B15       : gnd    :                   :         :           :                
 reset                        : B16       : input  : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C1        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
+io_extra[0]                  : C2        : input  : 2.5 V             :         : 1         : Y              
+coax_out_extra[7]            : C3        : output : 2.5 V             :         : 8         : Y              
 VCCIO8                       : C4        : power  :                   : 2.5V    : 8         :                
 GND                          : C5        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
+ep4ce10_io_extra[15]         : C6        : output : 2.5 V             :         : 8         : Y              
 VCCIO8                       : C7        : power  :                   : 2.5V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 8         :                
-led[2]                       : C9        : output : 2.5 V             :         : 7         : N              
+ep4ce10_io_extra[20]         : C8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[21]         : C9        : output : 2.5 V             :         : 7         : Y              
 VCCIO7                       : C10       : power  :                   : 2.5V    : 7         :                
 led[1]                       : C11       : output : 2.5 V             :         : 7         : Y              
 GND                          : C12       : gnd    :                   :         :           :                
 VCCIO7                       : C13       : power  :                   : 2.5V    : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C14       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C15       :        :                   :         : 6         :                
+coax_out_extra[1]            : C14       : output : 2.5 V             :         : 7         : Y              
+coax_in[63]                  : C15       : input  : 2.5 V             :         : 6         : Y              
 coax_in[1]                   : C16       : input  : 2.5 V             :         : 6         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 1         :                
+io_extra[7]                  : D1        : input  : 2.5 V             :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D4        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D5        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 8         :                
+io_extra[6]                  : D3        : input  : 2.5 V             :         : 8         : Y              
+coax_out_extra[2]            : D4        : output : 2.5 V             :         : 1         : Y              
+coax_out_extra[15]           : D5        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[0]          : D6        : output : 2.5 V             :         : 8         : Y              
 GND                          : D7        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D8        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D9        :        :                   :         : 7         :                
+ep4ce10_io_extra[4]          : D8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[5]          : D9        : output : 2.5 V             :         : 7         : Y              
 GND                          : D10       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D11       :        :                   :         : 7         :                
+ep4ce10_io_extra[27]         : D11       : output : 2.5 V             :         : 7         : Y              
 led[0]                       : D12       : output : 2.5 V             :         : 7         : Y              
 VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
 coax_in[0]                   : D14       : input  : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 6         :                
+coax_in[62]                  : D15       : input  : 2.5 V             :         : 6         : Y              
 coax_in[2]                   : D16       : input  : 2.5 V             :         : 6         : Y              
-GND+                         : E1        :        :                   :         : 1         :                
+clk50_in                     : E1        : input  : 2.5 V             :         : 1         : Y              
 GND                          : E2        : gnd    :                   :         :           :                
 VCCIO1                       : E3        : power  :                   : 2.5V    : 1         :                
 GND                          : E4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E5        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E8        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E9        :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E10       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E11       :        :                   :         : 7         :                
+coax_out_extra[6]            : E5        : output : 2.5 V             :         : 1         : Y              
+ep4ce10_io_extra[12]         : E6        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[16]         : E7        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[1]          : E8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[3]          : E9        : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[19]         : E10       : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[10]         : E11       : output : 2.5 V             :         : 7         : Y              
 GNDA2                        : E12       : gnd    :                   :         :           :                
 GND                          : E13       : gnd    :                   :         :           :                
 VCCIO6                       : E14       : power  :                   : 2.5V    : 6         :                
-clk50in                      : E15       : input  : 2.5 V             :         : 6         : N              
+GND+                         : E15       :        :                   :         : 6         :                
 clk50                        : E16       : input  : 2.5 V             :         : 6         : Y              
 ext_trig_out(n)              : F1        : output : LVDS_E_3R         :         : 1         : Y              
 ext_trig_out                 : F2        : output : LVDS_E_3R         :         : 1         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1         :                
+io_extra[13]                 : F3        : input  : 2.5 V             :         : 1         : Y              
 nSTATUS                      : F4        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F6        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F10       :        :                   :         : 7         :                
+coax_out_extra[5]            : F5        : output : 2.5 V             :         : 1         : Y              
+coax_out_extra[11]           : F6        : output : 2.5 V             :         : 8         : Y              
+coax_out_extra[10]           : F7        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[17]         : F8        : output : 2.5 V             :         : 8         : Y              
+ep4ce10_io_extra[18]         : F9        : output : 2.5 V             :         : 7         : Y              
+ep4ce10_io_extra[26]         : F10       : output : 2.5 V             :         : 7         : Y              
 coax_in[4]                   : F11       : input  : 2.5 V             :         : 7         : Y              
 VCCA2                        : F12       : power  :                   : 2.5V    :           :                
 coax_in[3]                   : F13       : input  : 2.5 V             :         : 6         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 6         :                
+coax_in[61]                  : F14       : input  : 2.5 V             :         : 6         : Y              
 coax_in[13]                  : F15       : input  : 2.5 V             :         : 6         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 6         :                
+coax_in[50]                  : F16       : input  : 2.5 V             :         : 6         : Y              
 enable_outputs               : G1        : output : 2.5 V             :         : 1         : Y              
 coax_out[15]                 : G2        : output : 2.5 V             :         : 1         : Y              
 VCCIO1                       : G3        : power  :                   : 2.5V    : 1         :                
 GND                          : G4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 1         :                
+coax_out_extra[4]            : G5        : output : 2.5 V             :         : 1         : Y              
 VCCINT                       : G6        : power  :                   : 1.2V    :           :                
 VCCINT                       : G7        : power  :                   : 1.2V    :           :                
 VCCINT                       : G8        : power  :                   : 1.2V    :           :                
 VCCINT                       : G9        : power  :                   : 1.2V    :           :                
 VCCINT                       : G10       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G11       :        :                   :         : 6         :                
+ep4ce10_io_extra[2]          : G11       : output : 2.5 V             :         : 6         : Y              
 MSEL2                        : G12       :        :                   :         : 6         :                
 GND                          : G13       : gnd    :                   :         :           :                
 VCCIO6                       : G14       : power  :                   : 2.5V    : 6         :                
 coax_in[14]                  : G15       : input  : 2.5 V             :         : 6         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 6         :                
+coax_in[49]                  : G16       : input  : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H1        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H2        :        :                   :         : 1         :                
 TCK                          : H3        : input  :                   :         : 1         :                
@@ -196,65 +196,65 @@ MSEL0                        : H13       :        :                   :         
 CONF_DONE                    : H14       :        :                   :         : 6         :                
 GND                          : H15       : gnd    :                   :         :           :                
 GND                          : H16       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J1        :        :                   :         : 2         :                
+io_top_extra[4]              : J1        : input  : 2.5 V             :         : 2         : Y              
 coax_out[14]                 : J2        : output : 2.5 V             :         : 2         : Y              
 nCE                          : J3        :        :                   :         : 1         :                
 TDO                          : J4        : output :                   :         : 1         :                
 TMS                          : J5        : input  :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J6        :        :                   :         : 2         :                
+coax_out_extra[9]            : J6        : output : 2.5 V             :         : 2         : Y              
 GND                          : J7        : gnd    :                   :         :           :                
 GND                          : J8        : gnd    :                   :         :           :                
 GND                          : J9        : gnd    :                   :         :           :                
 GND                          : J10       : gnd    :                   :         :           :                
 coax_in[5]                   : J11       : input  : 2.5 V             :         : 5         : Y              
 coax_in[6]                   : J12       : input  : 2.5 V             :         : 5         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J13       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J14       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J15       :        :                   :         : 5         :                
+coax_in[56]                  : J13       : input  : 2.5 V             :         : 5         : Y              
+coax_in[60]                  : J14       : input  : 2.5 V             :         : 5         : Y              
+coax_in[48]                  : J15       : input  : 2.5 V             :         : 5         : Y              
 coax_in[15]                  : J16       : input  : 2.5 V             :         : 5         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : K1        :        :                   :         : 2         :                
+io_top_extra[3]              : K1        : input  : 2.5 V             :         : 2         : Y              
 coax_out[13]                 : K2        : output : 2.5 V             :         : 2         : Y              
 VCCIO2                       : K3        : power  :                   : 2.5V    : 2         :                
 GND                          : K4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K5        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K6        :        :                   :         : 2         :                
+coax_out_extra[3]            : K5        : output : 2.5 V             :         : 2         : Y              
+coax_out_extra[8]            : K6        : output : 2.5 V             :         : 2         : Y              
 VCCINT                       : K7        : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K9        :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K10       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K11       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K12       :        :                   :         : 5         :                
+coax_in[26]                  : K8        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[3]             : K9        : input  : 2.5 V             :         : 4         : Y              
+coax_in[59]                  : K10       : input  : 2.5 V             :         : 4         : Y              
+coax_in[58]                  : K11       : input  : 2.5 V             :         : 5         : Y              
+coax_in[57]                  : K12       : input  : 2.5 V             :         : 5         : Y              
 GND                          : K13       : gnd    :                   :         :           :                
 VCCIO5                       : K14       : power  :                   : 2.5V    : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K15       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K16       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L1        :        :                   :         : 2         :                
+coax_in[47]                  : K15       : input  : 2.5 V             :         : 5         : Y              
+coax_in[16]                  : K16       : input  : 2.5 V             :         : 5         : Y              
+io_top_extra[2]              : L1        : input  : 2.5 V             :         : 2         : Y              
 coax_out[12]                 : L2        : output : 2.5 V             :         : 2         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 2         :                
+io_top_extra[0]              : L3        : input  : 2.5 V             :         : 2         : Y              
 coax_out[8]                  : L4        : output : 2.5 V             :         : 2         : Y              
 VCCA1                        : L5        : power  :                   : 2.5V    :           :                
 coax_out[7]                  : L6        : output : 2.5 V             :         : 2         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L9        :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L10       :        :                   :         : 4         :                
+coax_in[24]                  : L7        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[2]             : L8        : input  : 2.5 V             :         : 3         : Y              
+coax_in[27]                  : L9        : input  : 2.5 V             :         : 4         : Y              
+coax_in[51]                  : L10       : input  : 2.5 V             :         : 4         : Y              
 coax_in[7]                   : L11       : input  : 2.5 V             :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L12       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L13       :        :                   :         : 5         :                
+coax_in[55]                  : L12       : input  : 2.5 V             :         : 5         : Y              
+coax_in[54]                  : L13       : input  : 2.5 V             :         : 5         : Y              
 coax_in[8]                   : L14       : input  : 2.5 V             :         : 5         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L15       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L16       :        :                   :         : 5         :                
+coax_in[46]                  : L15       : input  : 2.5 V             :         : 5         : Y              
+coax_in[17]                  : L16       : input  : 2.5 V             :         : 5         : Y              
 GND+                         : M1        :        :                   :         : 2         :                
 GND+                         : M2        :        :                   :         : 2         :                
 VCCIO2                       : M3        : power  :                   : 2.5V    : 2         :                
 GND                          : M4        : gnd    :                   :         :           :                
 GNDA1                        : M5        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M6        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M8        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M9        :        :                   :         : 4         :                
+coax_in_extra[0]             : M6        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[1]             : M7        : input  : 2.5 V             :         : 3         : Y              
+coax_in[25]                  : M8        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[4]             : M9        : input  : 2.5 V             :         : 4         : Y              
 coax_in[12]                  : M10       : input  : 2.5 V             :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : M11       :        :                   :         : 4         :                
+coax_in[52]                  : M11       : input  : 2.5 V             :         : 4         : Y              
 coax_in[9]                   : M12       : input  : 2.5 V             :         : 5         : Y              
 GND                          : M13       : gnd    :                   :         :           :                
 VCCIO5                       : M14       : power  :                   : 2.5V    : 5         :                
@@ -268,14 +268,14 @@ coax_out[1]                  : N5        : output : 2.5 V             :         
 coax_out[5]                  : N6        : output : 2.5 V             :         : 3         : Y              
 GND                          : N7        : gnd    :                   :         :           :                
 coax_out[3]                  : N8        : output : 2.5 V             :         : 3         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N9        :        :                   :         : 4         :                
+coax_in[37]                  : N9        : input  : 2.5 V             :         : 4         : Y              
 GND                          : N10       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N11       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N12       :        :                   :         : 4         :                
+coax_in[38]                  : N11       : input  : 2.5 V             :         : 4         : Y              
+coax_in[39]                  : N12       : input  : 2.5 V             :         : 4         : Y              
 coax_in[11]                  : N13       : input  : 2.5 V             :         : 5         : Y              
 coax_in[10]                  : N14       : input  : 2.5 V             :         : 5         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N15       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N16       :        :                   :         : 5         :                
+coax_in[45]                  : N15       : input  : 2.5 V             :         : 5         : Y              
+coax_in[18]                  : N16       : input  : 2.5 V             :         : 5         : Y              
 serial_in                    : P1        : input  : 2.5 V             :         : 2         : Y              
 coax_out[10]                 : P2        : output : 2.5 V             :         : 2         : Y              
 coax_out[4]                  : P3        : output : 2.5 V             :         : 3         : Y              
@@ -284,43 +284,43 @@ GND                          : P5        : gnd    :                   :         
 coax_out[2]                  : P6        : output : 2.5 V             :         : 3         : Y              
 VCCIO3                       : P7        : power  :                   : 2.5V    : 3         :                
 coax_out[6]                  : P8        : output : 2.5 V             :         : 3         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : P9        :        :                   :         : 4         :                
+coax_in_extra[13]            : P9        : input  : 2.5 V             :         : 4         : Y              
 VCCIO4                       : P10       : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P11       :        :                   :         : 4         :                
+coax_in_extra[14]            : P11       : input  : 2.5 V             :         : 4         : Y              
 GND                          : P12       : gnd    :                   :         :           :                
 VCCIO4                       : P13       : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P14       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P15       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P16       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R1        :        :                   :         : 2         :                
+coax_in[53]                  : P14       : input  : 2.5 V             :         : 4         : Y              
+coax_in[44]                  : P15       : input  : 2.5 V             :         : 5         : Y              
+coax_in[19]                  : P16       : input  : 2.5 V             :         : 5         : Y              
+io_top_extra[1]              : R1        : input  : 2.5 V             :         : 2         : Y              
 GND                          : R2        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R3        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R4        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R6        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R8        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R9        :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R10       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R11       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R12       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R13       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R14       :        :                   :         : 4         :                
+coax_in_extra[5]             : R3        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[6]             : R4        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[7]             : R5        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[8]             : R6        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[9]             : R7        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[10]            : R8        : input  : 2.5 V             :         : 3         : Y              
+coax_in_extra[11]            : R9        : input  : 2.5 V             :         : 4         : Y              
+coax_in_extra[12]            : R10       : input  : 2.5 V             :         : 4         : Y              
+coax_in_extra[15]            : R11       : input  : 2.5 V             :         : 4         : Y              
+coax_in[23]                  : R12       : input  : 2.5 V             :         : 4         : Y              
+coax_in[22]                  : R13       : input  : 2.5 V             :         : 4         : Y              
+coax_in[21]                  : R14       : input  : 2.5 V             :         : 4         : Y              
 GND                          : R15       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R16       :        :                   :         : 5         :                
+coax_in[20]                  : R16       : input  : 2.5 V             :         : 5         : Y              
 VCCIO3                       : T1        : power  :                   : 2.5V    : 3         :                
 coax_out[9]                  : T2        : output : 2.5 V             :         : 3         : Y              
-led[3]                       : T3        : output : 2.5 V             :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T5        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T6        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T8        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T9        :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T11       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T12       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T13       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T14       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T15       :        :                   :         : 4         :                
+coax_in[28]                  : T3        : input  : 2.5 V             :         : 3         : Y              
+coax_in[29]                  : T4        : input  : 2.5 V             :         : 3         : Y              
+coax_in[30]                  : T5        : input  : 2.5 V             :         : 3         : Y              
+coax_in[31]                  : T6        : input  : 2.5 V             :         : 3         : Y              
+coax_in[32]                  : T7        : input  : 2.5 V             :         : 3         : Y              
+coax_in[33]                  : T8        : input  : 2.5 V             :         : 3         : Y              
+coax_in[34]                  : T9        : input  : 2.5 V             :         : 4         : Y              
+coax_in[35]                  : T10       : input  : 2.5 V             :         : 4         : Y              
+coax_in[36]                  : T11       : input  : 2.5 V             :         : 4         : Y              
+coax_in[40]                  : T12       : input  : 2.5 V             :         : 4         : Y              
+coax_in[41]                  : T13       : input  : 2.5 V             :         : 4         : Y              
+coax_in[42]                  : T14       : input  : 2.5 V             :         : 4         : Y              
+coax_in[43]                  : T15       : input  : 2.5 V             :         : 4         : Y              
 VCCIO4                       : T16       : power  :                   : 2.5V    : 4         :                

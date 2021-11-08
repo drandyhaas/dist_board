@@ -66,6 +66,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 112)(pt 16 112)(line_width 1))
 	)
 	(port
+		(pt 0 128)
+		(input)
+		(text "io_top_extra[4..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "io_top_extra[4..0]" (rect 21 123 91 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
 		(pt 264 32)
 		(output)
 		(text "txStart" (rect 0 0 25 12)(font "Arial" ))
