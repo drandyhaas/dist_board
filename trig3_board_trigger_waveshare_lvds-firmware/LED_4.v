@@ -20,14 +20,20 @@ reg pass_prescale;
 reg[7:0] triedtofire[16]; // for output trigger deadtime
 reg[7:0] ext_trig_out_counter=0;
 reg[31:0] autocounter=0; // for a rolling trigger
-reg [7:0] histostosend2;//to pass timing, since it's sent from the slow clk
-reg [31:0] prescale2;//to pass timing, since it's sent from the slow clk
+reg resethist2; // to pass timing
+reg [7:0] histostosend2; // to pass timing, since it's sent from the slow clk
+reg [31:0] prescale2; // to pass timing, since it's sent from the slow clk
 reg[5:0] Tout[16]; // for output triggers
-reg[3:0] Nin[64/4]; // number of groups active in each row of 4 groups
+reg[2:0] Nin[64/4]; // number of groups active in each row of 4 groups
+reg[6:0] Nactive;//max of 16*4=64
+reg[4:0] Nactivetemp[4];//max of 4*4=16
+reg[4:0] Nactiverows;//max of 16
+reg[2:0] Nactiverowstemp[4];// max of 4
 
 always@(posedge clk_adc) begin
 	
 	pass_prescale <= (randnum<=prescale2);
+	resethist2<=resethist;
 	histostosend2<=histostosend;
 	prescale2<=prescale;
 	ext_trig_out <= (ext_trig_out_counter>0);	
@@ -45,15 +51,19 @@ always@(posedge clk_adc) begin
 	
 	// see how many "groups" (a set of two bars) are active in each "row" of 4 groups (for projective triggers)
 	// we ask for them to be >2 so that they will disappear before the calculated "vetos" will be gone
-	Nin[0] <= (Tin[0]>2) + (Tin[1]>2) + (Tin[2]>2) + (Tin[3]>2);
-	Nin[1] <= (Tin[4]>2) + (Tin[5]>2) + (Tin[6]>2) + (Tin[7]>2);
-	Nin[2] <= (Tin[8]>2) + (Tin[9]>2) + (Tin[10]>2) + (Tin[11]>2);
-	Nin[3] <= (Tin[12]>2) + (Tin[13]>2) + (Tin[14]>2) + (Tin[15]>2);
+	i=0; while (i<16) begin
+		Nin[i] <= (Tin[4*i]>2) + (Tin[4*i+1]>2) + (Tin[4*i+2]>2) + (Tin[4*i+3]>2);
+		if (i<4) Nactivetemp[i] <= Nin[4*i]+Nin[4*i+1]+Nin[4*i+2]+Nin[4*i+3]; // pipelined for timing closure
+		if (i<4) Nactiverowstemp[i] <= (Nin[4*i]>0)+(Nin[4*i+1]>0)+(Nin[4*i+2]>0)+(Nin[4*i+3]>0); // pipelined for timing closure
+		i=i+1;
+	end
+	Nactive <= Nactivetemp[0]+Nactivetemp[1]+Nactivetemp[2]+Nactivetemp[3]; // pipelined for timing closure
+	Nactiverows <= Nactiverowstemp[0]+Nactiverowstemp[1]+Nactiverowstemp[2]+Nactiverowstemp[3]; // pipelined for timing closure
 	//Note that it's important that we use "<=" here, since these will be updated at the _end_ of this always block and then ready to use in the _next_ clock cycle
 	//The "vetos" in each trigger below will be calculated in _this_ clock cycle and so should be present _earlier_
 	
 	// fire the outputs (0 and 1) if there are >1 input groups active
-	if (triedtofire[0]==0 && ((Nin[0]+Nin[1]+Nin[2]+Nin[3])>1) ) begin
+	if (triedtofire[0]==0 && (Nactive>1) ) begin
 		if (pass_prescale) begin
 			i=0; while (i<16) begin
 				if (i==0 || i==1) Tout[i] <= 16; // fire outputs for this long
@@ -64,7 +74,7 @@ always@(posedge clk_adc) begin
 	end
 	
 	// fire the outputs (2 and 3) if there are >1 input groups active in any row
-	if (triedtofire[1]==0 && (Nin[0]>1 || Nin[1]>1 || Nin[2]>1 || Nin[3]>1) ) begin
+	if (triedtofire[1]==0 && (Nin[0]>1||Nin[1]>1||Nin[2]>1||Nin[3]>1||Nin[4]>1||Nin[5]>1||Nin[6]>1||Nin[7]>1||Nin[8]>1||Nin[9]>1||Nin[10]>1||Nin[11]>1||Nin[12]>1||Nin[13]>1||Nin[14]>1||Nin[15]>1) ) begin
 		if (pass_prescale) begin
 			i=0; while (i<16) begin
 				if (i==2 || i==3) Tout[i] <= 16; // fire outputs for this long
@@ -75,7 +85,7 @@ always@(posedge clk_adc) begin
 	end
 	
 	// fire the outputs (4 and 5) if there are >2 input groups active in any row
-	if (triedtofire[2]==0 && (Nin[0]>2 || Nin[1]>2 || Nin[2]>2 || Nin[3]>2) ) begin
+	if (triedtofire[2]==0 && (Nin[0]>2||Nin[1]>2||Nin[2]>2||Nin[3]>2||Nin[4]>2||Nin[5]>2||Nin[6]>2||Nin[7]>2||Nin[8]>2||Nin[9]>2||Nin[10]>2||Nin[11]>2||Nin[12]>2||Nin[13]>2||Nin[14]>2||Nin[15]>2) ) begin
 		if (pass_prescale) begin
 			i=0; while (i<16) begin
 				if (i==4 || i==5) Tout[i] <= 16; // fire outputs for this long
@@ -86,7 +96,8 @@ always@(posedge clk_adc) begin
 	end
 	
 	// fire the outputs (6 and 7) if there are >2 input groups active in any row, and just 1 row with any input groups active
-	if (triedtofire[3]==0 && (Nin[0]>2 || Nin[1]>2 || Nin[2]>2 || Nin[3]>2) && ( ((Nin[0]>0)+(Nin[1]>0)+(Nin[2]>0)+(Nin[3]>0)) <2 ) ) begin
+	if (triedtofire[3]==0 && (Nin[0]>2||Nin[1]>2||Nin[2]>2||Nin[3]>2||Nin[4]>2||Nin[5]>2||Nin[6]>2||Nin[7]>2||Nin[8]>2||Nin[9]>2||Nin[10]>2||Nin[11]>2||Nin[12]>2||Nin[13]>2||Nin[14]>2||Nin[15]>2) 
+								 && (Nactiverows<2) ) begin
 		if (pass_prescale) begin
 			i=0; while (i<16) begin
 				if (i==6 || i==7) Tout[i] <= 16; // fire outputs for this long
@@ -97,7 +108,7 @@ always@(posedge clk_adc) begin
 	end
 	
 	// fire the output (8) if there are >0 input groups active (good for testing inputs)
-	if (triedtofire[4]==0 && ((Nin[0]+Nin[1]+Nin[2]+Nin[3])>0) ) begin
+	if (triedtofire[4]==0 && (Nactive>0) ) begin
 		if (pass_prescale) begin
 			i=0; while (i<16) begin
 				if (i==8) Tout[i] <= 16; // fire outputs for this long
@@ -130,7 +141,7 @@ always @(posedge clk_adc) begin
 		// buffer inputs
 		if (coaxinreg[j]) begin
 				Tin[j] <= coincidence_time; // set Tin high for this channel for this many clk ticks
-				if (!resethist) histos[0][j] <= histos[0][j]+1; // record the trigger for monitoring in histo 0 for each input channel
+				if (!resethist2) histos[0][j] <= histos[0][j]+1; // record the trigger for monitoring in histo 0 for each input channel
 		end
 		else begin				
 			if (Tin[j]>0) Tin[j] <= Tin[j]-1; // count down how long the triggers have been active
@@ -140,7 +151,7 @@ always @(posedge clk_adc) begin
 	end
 	
 	// reset histos
-	if (resethist) begin
+	if (resethist2) begin
 		i=0; while (i<8) begin
 			histos[i][histostosend2] <= 0;
 			i=i+1;
