@@ -191,6 +191,13 @@ refer to the applicable agreement for further details.
 		(text "dead_time[7..0]" (rect 182 283 243 295)(font "Arial" ))
 		(line (pt 264 288)(pt 248 288)(line_width 3))
 	)
+	(port
+		(pt 264 304)
+		(output)
+		(text "triggermask[63..0]" (rect 0 0 71 12)(font "Arial" ))
+		(text "triggermask[63..0]" (rect 172 299 243 311)(font "Arial" ))
+		(line (pt 264 304)(pt 248 304)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 248 320)(line_width 1))
 	)

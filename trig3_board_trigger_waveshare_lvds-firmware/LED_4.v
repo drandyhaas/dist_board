@@ -9,7 +9,8 @@ module LED_4(
 	input clk_locked,	output ext_trig_out,
 	input reg[31:0] randnum, input reg[31:0] prescale, input dorolling,
 	input [7:0] dead_time,
-	input [16-1:0] coax_in_extra, output [16-1:0] coax_out_extra, input [14-1:0] io_extra, output [28-1:0] ep4ce10_io_extra
+	input [16-1:0] coax_in_extra, output [16-1:0] coax_out_extra, input [14-1:0] io_extra, output [28-1:0] ep4ce10_io_extra,
+	input [63:0] triggermask
 	);
 
 reg[7:0] i;
@@ -38,7 +39,8 @@ always@(posedge clk_adc) begin
 	prescale2<=prescale;
 	ext_trig_out <= (ext_trig_out_counter>0);	
 	i=0; while (i<64) begin
-		coaxinreg[i] <= ~coax_in[i]; // inputs are inverted (so that unconnected inputs are 0), then read into registers and buffered
+		if (triggermask[i]) coaxinreg[i] <= ~coax_in[i]; // inputs are inverted (so that unconnected inputs are 0), then read into registers and buffered
+		else coaxinreg[i] <= 0; // masked out inputs are set to 0 regardless of input
 		if (i<8) histosout[i]<=histos[i][histostosend2]; // histo output		
 		if (i<16) begin // for output stuff
 			coax_out[i] <= Tout[i]>0; // outputs fire while Tout is high
