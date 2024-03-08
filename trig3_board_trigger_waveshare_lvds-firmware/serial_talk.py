@@ -3,7 +3,7 @@ from struct import unpack
 import time
 import random
 
-ser=Serial("COM7",921600,timeout=1.0)
+ser=Serial("COM3",921600,timeout=1.0)
 
 ser.write(bytearray([0])) # firmware version
 result = ser.read(1); byte_array = unpack('%dB' % len(result), result); print("firmware v",byte_array[0])
@@ -62,10 +62,13 @@ def get_histos(h):
 setrngseed()
 set_prescale(0.3)
 
-set_inputmask("ff","ff","00","00","00","00","00","00") # use just the first 16 inputs
+set_inputmask("ff","ff","ff","ff","00","00","00","00") # use just the first 32 inputs
 
-for his in range(64):
-    histostr, histo = get_histos(his)
-    if histo[0]>0: print(histostr)
+while True:
+    for his in range(64):
+        histostr, histo = get_histos(his)
+        if 0 < histo[0] < 10000:
+            print(histostr)
+    time.sleep(0.5)
 
 ser.close()
